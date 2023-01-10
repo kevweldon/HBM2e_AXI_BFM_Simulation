@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/my_sys_mgc_axi4_master_0.v"
+   type="VERILOG"
+   library="my_sys_mgc_axi4_master_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="my_sys_mgc_axi4_master_0.my_sys_mgc_axi4_master_0" />
+ <deviceFamily name="agilex" />
+ <device name="AGMF039R47A2E2VR0" />
+</simPackage>

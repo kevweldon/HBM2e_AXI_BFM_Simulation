@@ -1,0 +1,22 @@
+#!/bin/sh
+# Kevin Weldon - 2019
+# echo on
+set -x
+
+OPEN_MODELSIM=1
+
+# Remove wlf file
+rm -f vsim.wlf
+rm -f transcript
+# Run simulation in ModelSim
+vsim -mvchome $QUARTUS_ROOTDIR/../ip/altera/mentor_vip_ae/common -c -do 'source run_sim.tcl'
+# Open QuestaSim and view waves
+cp transcript sim_transcript
+if [ $OPEN_MODELSIM == 1 ]
+then
+    cat sim_transcript | grep top_tb:
+    vsim -gui -view vsim.wlf -do 'wave.do' &
+fi
+
+# echo off
+set +x

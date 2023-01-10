@@ -1,0 +1,16 @@
+# system info clk100 on 2023.01.09.10:44:13
+system_info:
+name,value
+DEVICE,AGMF039R47A2E2VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for clk100 on 2023.01.09.10:44:13
+files:
+filepath,kind,attributes,module,is_top
+sim/clk100.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,clk100,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

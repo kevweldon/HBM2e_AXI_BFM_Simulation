@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/uib_clkref.v"
+   type="VERILOG"
+   library="uib_clkref"
+   hasInlineConfiguration="true" />
+ <topLevel name="uib_clkref.uib_clkref" />
+ <deviceFamily name="agilex" />
+ <device name="AGMF039R47A2E2VR0" />
+</simPackage>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.12.14.06:27:30"
+ outputDirectory="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/noc_reset/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="AGMF039R47A2E2VR0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="in_reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="in_reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="out_reset" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="in_reset" />
+   <property name="associatedResetSinks" value="in_reset" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="out_reset" direction="output" role="reset" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="noc_reset" version="1.0" name="noc_reset">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/noc_reset/synth/noc_reset.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/noc_reset/synth/noc_reset.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/noc_reset.ip" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <messages>
+   <message level="Info" culprit="noc_reset">"Generating: noc_reset"</message>
+  </messages>
+ </entity>
+</deploy>

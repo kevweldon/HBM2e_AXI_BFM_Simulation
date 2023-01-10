@@ -1,0 +1,25 @@
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.3.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:03:52  OCTOBER 19, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.4.0 Pro Edition"
+set_global_assignment -name FAMILY Agilex
+set_global_assignment -name DEVICE AGMF039R47A2E2VR0
+set_global_assignment -name FLOW_DISABLE_ASSEMBLER ON
+set_global_assignment -name FLOW_ENABLE_INTERACTIVE_TIMING_ANALYZER OFF
+set_global_assignment -name STA_AUTO_UPDATE_TIMING_NETLIST OFF
+set_global_assignment -name PWRMGT_VOLTAGE_OUTPUT_FORMAT "LINEAR FORMAT"
+set_global_assignment -name PWRMGT_LINEAR_FORMAT_N "-12"
+set_global_assignment -name BOARD default
+set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
+set_global_assignment -name SYSTEMVERILOG_FILE top.sv
+set_global_assignment -name SDC_FILE top.sdc
+set_global_assignment -name QSYS_FILE my_sys.qsys
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_hbm_fp_0.ip
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_intel_noc_initiator_0.ip
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_iopll_0.ip
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_clock_bridge_0.ip
+set_global_assignment -name IP_FILE ip/my_sys/clk100.ip
+set_global_assignment -name IP_FILE ip/my_sys/noc_reset.ip
+set_global_assignment -name IP_FILE ip/my_sys/axi_reset.ip
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_mgc_axi4_master_0.ip
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_intel_noc_clock_ctrl_0.ip

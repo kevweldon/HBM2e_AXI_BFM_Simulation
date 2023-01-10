@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/axi_reset.v"
+   type="VERILOG"
+   library="axi_reset"
+   hasInlineConfiguration="true" />
+ <topLevel name="axi_reset.axi_reset" />
+ <deviceFamily name="agilex" />
+ <device name="AGMF039R47A2E2VR0" />
+</simPackage>

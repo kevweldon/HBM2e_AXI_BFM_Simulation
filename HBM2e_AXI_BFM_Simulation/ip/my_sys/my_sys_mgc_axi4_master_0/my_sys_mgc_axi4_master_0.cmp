@@ -1,0 +1,87 @@
+	component my_sys_mgc_axi4_master_0 is
+		generic (
+			AXI4_ADDRESS_WIDTH          : integer := 64;
+			AXI4_RDATA_WIDTH            : integer := 256;
+			AXI4_WDATA_WIDTH            : integer := 256;
+			AXI4_ID_WIDTH               : integer := 7;
+			AXI4_USER_WIDTH             : integer := 8;
+			AXI4_REGION_MAP_SIZE        : integer := 16;
+			index                       : integer := 0;
+			READ_ISSUING_CAPABILITY     : integer := 16;
+			WRITE_ISSUING_CAPABILITY    : integer := 16;
+			COMBINED_ISSUING_CAPABILITY : integer := 16;
+			USE_AWID                    : integer := 1;
+			USE_AWREGION                : integer := 1;
+			USE_AWLEN                   : integer := 1;
+			USE_AWSIZE                  : integer := 1;
+			USE_AWBURST                 : integer := 1;
+			USE_AWLOCK                  : integer := 1;
+			USE_AWCACHE                 : integer := 0;
+			USE_AWQOS                   : integer := 1;
+			USE_WSTRB                   : integer := 1;
+			USE_BID                     : integer := 1;
+			USE_BRESP                   : integer := 1;
+			USE_ARID                    : integer := 1;
+			USE_ARREGION                : integer := 1;
+			USE_ARLEN                   : integer := 1;
+			USE_ARSIZE                  : integer := 1;
+			USE_ARBURST                 : integer := 1;
+			USE_ARLOCK                  : integer := 1;
+			USE_ARCACHE                 : integer := 0;
+			USE_ARQOS                   : integer := 1;
+			USE_RID                     : integer := 1;
+			USE_RRESP                   : integer := 1;
+			USE_RLAST                   : integer := 1;
+			USE_AWUSER                  : integer := 1;
+			USE_ARUSER                  : integer := 1;
+			USE_WUSER                   : integer := 1;
+			USE_RUSER                   : integer := 1;
+			USE_BUSER                   : integer := 0
+		);
+		port (
+			AWVALID  : out std_logic;                                         -- awvalid
+			AWPROT   : out std_logic_vector(2 downto 0);                      -- awprot
+			AWREGION : out std_logic_vector(3 downto 0);                      -- awregion
+			AWLEN    : out std_logic_vector(7 downto 0);                      -- awlen
+			AWSIZE   : out std_logic_vector(2 downto 0);                      -- awsize
+			AWBURST  : out std_logic_vector(1 downto 0);                      -- awburst
+			AWLOCK   : out std_logic;                                         -- awlock
+			AWQOS    : out std_logic_vector(3 downto 0);                      -- awqos
+			AWREADY  : in  std_logic                      := 'X';             -- awready
+			ARVALID  : out std_logic;                                         -- arvalid
+			ARPROT   : out std_logic_vector(2 downto 0);                      -- arprot
+			ARREGION : out std_logic_vector(3 downto 0);                      -- arregion
+			ARLEN    : out std_logic_vector(7 downto 0);                      -- arlen
+			ARSIZE   : out std_logic_vector(2 downto 0);                      -- arsize
+			ARBURST  : out std_logic_vector(1 downto 0);                      -- arburst
+			ARLOCK   : out std_logic;                                         -- arlock
+			ARQOS    : out std_logic_vector(3 downto 0);                      -- arqos
+			ARREADY  : in  std_logic                      := 'X';             -- arready
+			RVALID   : in  std_logic                      := 'X';             -- rvalid
+			RRESP    : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rresp
+			RLAST    : in  std_logic                      := 'X';             -- rlast
+			RREADY   : out std_logic;                                         -- rready
+			WVALID   : out std_logic;                                         -- wvalid
+			WLAST    : out std_logic;                                         -- wlast
+			WREADY   : in  std_logic                      := 'X';             -- wready
+			BVALID   : in  std_logic                      := 'X';             -- bvalid
+			BRESP    : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- bresp
+			BREADY   : out std_logic;                                         -- bready
+			AWADDR   : out std_logic_vector(63 downto 0);                     -- awaddr
+			AWID     : out std_logic_vector(6 downto 0);                      -- awid
+			AWUSER   : out std_logic_vector(7 downto 0);                      -- awuser
+			ARADDR   : out std_logic_vector(63 downto 0);                     -- araddr
+			ARID     : out std_logic_vector(6 downto 0);                      -- arid
+			ARUSER   : out std_logic_vector(7 downto 0);                      -- aruser
+			RUSER    : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ruser
+			WUSER    : out std_logic_vector(7 downto 0);                      -- wuser
+			RDATA    : in  std_logic_vector(255 downto 0) := (others => 'X'); -- rdata
+			RID      : in  std_logic_vector(6 downto 0)   := (others => 'X'); -- rid
+			WDATA    : out std_logic_vector(255 downto 0);                    -- wdata
+			WSTRB    : out std_logic_vector(31 downto 0);                     -- wstrb
+			BID      : in  std_logic_vector(6 downto 0)   := (others => 'X'); -- bid
+			ACLK     : in  std_logic                      := 'X';             -- clk
+			ARESETn  : in  std_logic                      := 'X'              -- reset_n
+		);
+	end component my_sys_mgc_axi4_master_0;
+

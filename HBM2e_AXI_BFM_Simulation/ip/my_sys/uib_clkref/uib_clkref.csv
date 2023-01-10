@@ -1,0 +1,16 @@
+# system info uib_clkref on 2022.10.26.15:55:16
+system_info:
+name,value
+DEVICE,AGMF039R47A2E2VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for uib_clkref on 2022.10.26.15:55:16
+files:
+filepath,kind,attributes,module,is_top
+sim/uib_clkref.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,uib_clkref,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

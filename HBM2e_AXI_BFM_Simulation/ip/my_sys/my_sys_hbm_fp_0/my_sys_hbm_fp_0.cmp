@@ -1,0 +1,16 @@
+	component my_sys_hbm_fp_0 is
+		port (
+			ch0_u0_wmc_intr   : out std_logic;                                       -- conduit
+			ch0_u1_wmc_intr   : out std_logic;                                       -- conduit
+			hbm_reset_in      : in  std_logic                    := 'X';             -- reset
+			hbm_cattrip       : out std_logic;                                       -- hbm_cattrip
+			hbm_cattrip_i     : in  std_logic                    := 'X';             -- conduit
+			hbm_temp          : out std_logic_vector(2 downto 0);                    -- hbm_temp
+			hbm_temp_i        : in  std_logic_vector(2 downto 0) := (others => 'X'); -- conduit
+			local_cal_success : out std_logic;                                       -- local_cal_success
+			local_cal_fail    : out std_logic;                                       -- local_cal_fail
+			uibpll_refclk     : in  std_logic                    := 'X';             -- clk
+			wmcrst_n          : out std_logic                                        -- reset_n
+		);
+	end component my_sys_hbm_fp_0;
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.12.14.06:27:43"
+ outputDirectory="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/my_sys_intel_noc_clock_ctrl_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="AGMF039R47A2E2VR0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REFCLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REFCLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REFCLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="refclk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="refclk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="pll_lock_o" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="pll_lock_o" direction="output" role="pll_lock_o" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="my_sys_intel_noc_clock_ctrl_0"
+   version="1.0"
+   name="my_sys_intel_noc_clock_ctrl_0">
+  <parameter name="AUTO_REFCLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_REFCLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_REFCLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/my_sys_intel_noc_clock_ctrl_0/synth/my_sys_intel_noc_clock_ctrl_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/my_sys_intel_noc_clock_ctrl_0/synth/my_sys_intel_noc_clock_ctrl_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/my_sys_intel_noc_clock_ctrl_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/iconnect/noc/ctrl/intel_noc_clock_ctrl_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="my_sys_intel_noc_clock_ctrl_0">"Generating: my_sys_intel_noc_clock_ctrl_0"</message>
+   <message level="Info" culprit="my_sys_intel_noc_clock_ctrl_0">"Generating: intel_noc_clock_ctrl"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="intel_noc_clock_ctrl"
+   version="1.0.0"
+   name="intel_noc_clock_ctrl">
+  <parameter name="DEVICE_SPEEDGRADE" value="2" />
+  <parameter name="DEVICE_FAMILY" value="Agilex" />
+  <parameter name="DEVICE" value="AGMF039R47A2E2VR0" />
+  <parameter name="REFCLK_FREQ" value="NOC_PLL_REFCLK_FREQ_100_MHZ" />
+  <parameter name="NOC_BIN" value="NOC_BIN_BIN2" />
+  <generatedFiles>
+   <file
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/my_sys_intel_noc_clock_ctrl_0/intel_noc_clock_ctrl_100/synth/intel_noc_clock_ctrl.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/ip/my_sys/my_sys_intel_noc_clock_ctrl_0/intel_noc_clock_ctrl_100/synth/intel_noc_clock_ctrl.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/iconnect/noc/ctrl/intel_noc_clock_ctrl_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="my_sys_intel_noc_clock_ctrl_0"
+     as="intel_noc_clock_ctrl_0" />
+  <messages>
+   <message level="Info" culprit="my_sys_intel_noc_clock_ctrl_0">"Generating: intel_noc_clock_ctrl"</message>
+  </messages>
+ </entity>
+</deploy>

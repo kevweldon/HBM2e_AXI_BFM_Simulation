@@ -1,0 +1,17 @@
+# system info my_sys_mgc_axi4_master_0 on 2023.01.09.10:44:13
+system_info:
+name,value
+DEVICE,AGMF039R47A2E2VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for my_sys_mgc_axi4_master_0 on 2023.01.09.10:44:13
+files:
+filepath,kind,attributes,module,is_top
+sim/my_sys_mgc_axi4_master_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys_mgc_axi4_master_0,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+my_sys_mgc_axi4_master_0.mgc_axi4_master_0,mgc_axi4_master

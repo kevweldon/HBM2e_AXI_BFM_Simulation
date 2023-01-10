@@ -1,0 +1,16 @@
+# system info noc_reset on 2023.01.09.10:44:20
+system_info:
+name,value
+DEVICE,AGMF039R47A2E2VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for noc_reset on 2023.01.09.10:44:20
+files:
+filepath,kind,attributes,module,is_top
+sim/noc_reset.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,noc_reset,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

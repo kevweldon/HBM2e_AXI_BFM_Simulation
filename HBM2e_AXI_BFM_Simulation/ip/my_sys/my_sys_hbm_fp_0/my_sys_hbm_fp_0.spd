@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="hbm_arch_fp_10/sim/my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa.sv"
+   type="SYSTEM_VERILOG"
+   library="hbm_arch_fp_10" />
+ <file
+   path="hbm_arch_fp_10/sim/my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa_seq_params_sim.hex"
+   type="HEX"
+   library="hbm_arch_fp_10" />
+ <file
+   path="hbm_arch_fp_10/sim/my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa_seq_params_sim.txt"
+   type="OTHER"
+   library="hbm_arch_fp_10" />
+ <file
+   path="hbm_arch_fp_10/sim/my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa_seq_params_synth.hex"
+   type="HEX"
+   library="hbm_arch_fp_10" />
+ <file
+   path="hbm_arch_fp_10/sim/my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa_seq_params_synth.txt"
+   type="OTHER"
+   library="hbm_arch_fp_10" />
+ <file
+   path="hbm_arch_fp_10/sim/altera_hbm2e_model.sv"
+   type="SYSTEM_VERILOG"
+   library="hbm_arch_fp_10" />
+ <file
+   path="hbm_arch_fp_10/sim/altera_hbm_mem.sv"
+   type="SYSTEM_VERILOG"
+   library="hbm_arch_fp_10" />
+ <file
+   path="hbm_arch_fp_10/sim/cadence/intel_hbmss_nossm_ph2.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="hbm_arch_fp_10"
+   simulator="ncsim" />
+ <file
+   path="hbm_arch_fp_10/sim/mentor/intel_hbmss_nossm_ph2.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="hbm_arch_fp_10"
+   simulator="modelsim" />
+ <file
+   path="hbm_arch_fp_10/sim/synopsys/intel_hbmss_nossm_ph2.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="hbm_arch_fp_10"
+   simulator="vcs, vcsmx" />
+ <file
+   path="hbm_arch_fp_10/sim/aldec/intel_hbmss_nossm_ph2.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="hbm_arch_fp_10"
+   simulator="riviera" />
+ <file
+   path="hbm_arch_fp_10/sim/my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa_top.sv"
+   type="SYSTEM_VERILOG"
+   library="hbm_arch_fp_10" />
+ <file
+   path="hbm_arch_fp_10/sim/my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa_uibssm.sv"
+   type="SYSTEM_VERILOG"
+   library="hbm_arch_fp_10" />
+ <file
+   path="altera_iopll_1931/sim/my_sys_hbm_fp_0_altera_iopll_1931_svvuvey.vo"
+   type="VERILOG"
+   library="altera_iopll_1931" />
+ <file
+   path="intel_noc_target_100/sim/my_sys_hbm_fp_0_intel_noc_target_100_waoigja.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_target_100" />
+ <file
+   path="intel_noc_target_100/sim/my_sys_hbm_fp_0_intel_noc_target_100_ysmzzri.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_target_100" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_controller.v"
+   type="VERILOG"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_controller.sdc"
+   type="SDC_ENTITY"
+   library="altera_reset_controller_1921" />
+ <file
+   path="hbm_fp_110/sim/my_sys_hbm_fp_0_hbm_fp_110_edhc4xy.v"
+   type="VERILOG"
+   library="hbm_fp_110"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/my_sys_hbm_fp_0.v"
+   type="VERILOG"
+   library="my_sys_hbm_fp_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="my_sys_hbm_fp_0.my_sys_hbm_fp_0" />
+ <deviceFamily name="agilex" />
+ <device name="AGMF039R47A2E2VR0" />
+</simPackage>

@@ -1,0 +1,159 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 368 568)
+	(text "my_sys_hbm_fp_0" (rect 122 0 205 12)(font "SansSerif" (font_size 11)))
+	(text "inst" (rect 8 552 20 564)(font "Arial" ))
+	(port
+		(pt 0 176)
+		(input)
+		(text "hbm_reset_in" (rect 0 0 55 12)(font "SansSerif" (font_size 8)))
+		(text "hbm_reset_in" (rect 4 165 76 176)(font "SansSerif" (font_size 8)))
+		(line (pt 0 176)(pt 119 176)(line_width 1))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "hbm_cattrip_i" (rect 0 0 54 12)(font "SansSerif" (font_size 8)))
+		(text "hbm_cattrip_i" (rect 4 265 82 276)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 376)
+		(input)
+		(text "hbm_temp_i[2..0]" (rect 0 0 70 12)(font "SansSerif" (font_size 8)))
+		(text "hbm_temp_i[2..0]" (rect 4 365 100 376)(font "SansSerif" (font_size 8)))
+		(line (pt 0 376)(pt 119 376)(line_width 3))
+	)
+	(port
+		(pt 0 520)
+		(input)
+		(text "uibpll_refclk" (rect 0 0 46 12)(font "SansSerif" (font_size 8)))
+		(text "uibpll_refclk" (rect 4 515 82 526)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 72)
+		(output)
+		(text "ch0_u0_wmc_intr" (rect 0 0 71 12)(font "SansSerif" (font_size 8)))
+		(text "ch0_u0_wmc_intr" (rect 4 65 94 76)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 120)
+		(output)
+		(text "ch0_u1_wmc_intr" (rect 0 0 70 12)(font "SansSerif" (font_size 8)))
+		(text "ch0_u1_wmc_intr" (rect 4 115 94 126)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 224)
+		(output)
+		(text "hbm_cattrip" (rect 0 0 47 12)(font "SansSerif" (font_size 8)))
+		(text "hbm_cattrip" (rect 4 215 70 226)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 320)
+		(output)
+		(text "hbm_temp[2..0]" (rect 0 0 63 12)(font "SansSerif" (font_size 8)))
+		(text "hbm_temp[2..0]" (rect 4 315 88 326)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 424)
+		(output)
+		(text "local_cal_success" (rect 0 0 71 12)(font "SansSerif" (font_size 8)))
+		(text "local_cal_success" (rect 4 415 106 426)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 472)
+		(output)
+		(text "local_cal_fail" (rect 0 0 49 12)(font "SansSerif" (font_size 8)))
+		(text "local_cal_fail" (rect 4 465 88 476)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 368 72)
+		(output)
+		(text "wmcrst_n" (rect 0 0 40 12)(font "SansSerif" (font_size 8)))
+		(text "wmcrst_n" (rect 322 65 370 76)(font "SansSerif" (font_size 8)))
+	)
+	(drawing
+		(text "ch0_u0_wmc_intr" (rect 16 46 122 105)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "conduit" (rect 124 71 290 152)(font "SansSerif" (color 0 0 0)))
+		(text "ch0_u1_wmc_intr" (rect 18 96 126 205)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "conduit" (rect 124 121 290 252)(font "SansSerif" (color 0 0 0)))
+		(text "hbm_reset_in" (rect 39 146 150 305)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "reset" (rect 124 171 278 352)(font "SansSerif" (color 0 0 0)))
+		(text "cattrip" (rect 84 196 210 405)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "hbm_cattrip" (rect 124 221 314 452)(font "SansSerif" (color 0 0 0)))
+		(text "cattrip_i" (rect 73 246 200 505)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "conduit" (rect 124 271 290 552)(font "SansSerif" (color 0 0 0)))
+		(text "temp" (rect 91 296 206 605)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "hbm_temp" (rect 124 321 296 652)(font "SansSerif" (color 0 0 0)))
+		(text "temp_i" (rect 80 346 196 705)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "conduit" (rect 124 371 290 752)(font "SansSerif" (color 0 0 0)))
+		(text "local_cal_success" (rect 15 396 132 805)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "local_cal_success" (rect 124 421 350 852)(font "SansSerif" (color 0 0 0)))
+		(text "local_cal_fail" (rect 44 446 172 905)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "local_cal_fail" (rect 124 471 332 952)(font "SansSerif" (color 0 0 0)))
+		(text "uibpll_refclk" (rect 49 496 176 1005)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 124 521 266 1052)(font "SansSerif" (color 0 0 0)))
+		(text "wmcrst_n" (rect 256 46 560 105)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 219 71 480 152)(font "SansSerif" (color 0 0 0)))
+		(text " my_sys_hbm_fp_0 " (rect 285 551 672 1112)(font "SansSerif" ))
+		(line (pt 119 34)(pt 255 34)(line_width 1))
+		(line (pt 255 34)(pt 255 551)(line_width 1))
+		(line (pt 119 551)(pt 255 551)(line_width 1))
+		(line (pt 119 34)(pt 119 551)(line_width 1))
+		(line (pt 0 76)(pt 119 76)(line_width 1))
+		(line (pt 120 55)(pt 120 80)(line_width 1))
+		(line (pt 121 55)(pt 121 80)(line_width 1))
+		(line (pt 0 126)(pt 119 126)(line_width 1))
+		(line (pt 120 105)(pt 120 130)(line_width 1))
+		(line (pt 121 105)(pt 121 130)(line_width 1))
+		(line (pt 120 155)(pt 120 180)(line_width 1))
+		(line (pt 121 155)(pt 121 180)(line_width 1))
+		(line (pt 0 226)(pt 119 226)(line_width 1))
+		(line (pt 120 205)(pt 120 230)(line_width 1))
+		(line (pt 121 205)(pt 121 230)(line_width 1))
+		(line (pt 0 276)(pt 119 276)(line_width 1))
+		(line (pt 120 255)(pt 120 280)(line_width 1))
+		(line (pt 121 255)(pt 121 280)(line_width 1))
+		(line (pt 0 326)(pt 119 326)(line_width 3))
+		(line (pt 120 305)(pt 120 330)(line_width 1))
+		(line (pt 121 305)(pt 121 330)(line_width 1))
+		(line (pt 120 355)(pt 120 380)(line_width 1))
+		(line (pt 121 355)(pt 121 380)(line_width 1))
+		(line (pt 0 426)(pt 119 426)(line_width 1))
+		(line (pt 120 405)(pt 120 430)(line_width 1))
+		(line (pt 121 405)(pt 121 430)(line_width 1))
+		(line (pt 0 476)(pt 119 476)(line_width 1))
+		(line (pt 120 455)(pt 120 480)(line_width 1))
+		(line (pt 121 455)(pt 121 480)(line_width 1))
+		(line (pt 0 526)(pt 119 526)(line_width 1))
+		(line (pt 120 505)(pt 120 530)(line_width 1))
+		(line (pt 121 505)(pt 121 530)(line_width 1))
+		(line (pt 374 76)(pt 255 76)(line_width 1))
+		(line (pt 254 55)(pt 254 80)(line_width 1))
+		(line (pt 253 55)(pt 253 80)(line_width 1))
+		(line (pt 0 0)(pt 374 0)(line_width 1))
+		(line (pt 374 0)(pt 374 568)(line_width 1))
+		(line (pt 0 568)(pt 374 568)(line_width 1))
+		(line (pt 0 0)(pt 0 568)(line_width 1))
+	)
+)

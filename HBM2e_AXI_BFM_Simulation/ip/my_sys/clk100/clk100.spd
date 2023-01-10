@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/clk100.v"
+   type="VERILOG"
+   library="clk100"
+   hasInlineConfiguration="true" />
+ <topLevel name="clk100.clk100" />
+ <deviceFamily name="agilex" />
+ <device name="AGMF039R47A2E2VR0" />
+</simPackage>
