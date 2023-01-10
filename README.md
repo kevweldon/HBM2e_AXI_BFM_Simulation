@@ -1,1 +1,1 @@
-Please see "HBM2e Simulation Using an AXI BFM.pptx" for all instructions.
+Please see "HBM2e Simulation Using an AXI BFM.pptx" for instructions.
