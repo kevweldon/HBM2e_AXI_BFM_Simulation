@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2023.01.09.10:44:22</td>
+    <td class="l">2023.05.02.17:10:51</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -149,19 +149,37 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <a name="module_hbm_fp_0"> </a>
   <div>
    <hr/>
-   <h2>hbm_fp_0</h2>hbm_fp v1.0.0
+   <h2>hbm_fp_0</h2>hbm_fp v1.2.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
-      <td class="neighbor" rowspan="2">
+      <td class="neighbor" rowspan="4">
        <a href="#module_iopll_0">iopll_0</a>
       </td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="main" rowspan="7">hbm_fp_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;fabric_clk</td>
+     </tr>
+     <tr>
       <td class="from">outclk1&#160;&#160;</td>
-      <td class="main" rowspan="2">hbm_fp_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;uibpll_refclk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_axi_reset">axi_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;hbm_reset_n</td>
      </tr>
     </table>
    </div>
@@ -190,7 +208,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <a name="module_intel_noc_clock_ctrl_0"> </a>
   <div>
    <hr/>
-   <h2>intel_noc_clock_ctrl_0</h2>intel_noc_clock_ctrl v1.0.0
+   <h2>intel_noc_clock_ctrl_0</h2>intel_noc_clock_ctrl v2.0.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
@@ -231,7 +249,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <a name="module_intel_noc_initiator_0"> </a>
   <div>
    <hr/>
-   <h2>intel_noc_initiator_0</h2>intel_noc_initiator v1.0.0
+   <h2>intel_noc_initiator_0</h2>intel_noc_initiator v1.1.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
@@ -317,7 +335,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk100">clk100</a>
       </td>
       <td class="from">out_clk&#160;&#160;</td>
-      <td class="main" rowspan="13">iopll_0</td>
+      <td class="main" rowspan="15">iopll_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;refclk</td>
@@ -358,6 +376,32 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="from">outclk0&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_hbm_fp_0">hbm_fp_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;fabric_clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">outclk1&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;uibpll_refclk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">outclk0&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_intel_noc_initiator_0">intel_noc_initiator_0</a>
       </td>
@@ -366,22 +410,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;s_axi4_aclk</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">outclk1&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
-       <a href="#module_hbm_fp_0">hbm_fp_0</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;uibpll_refclk</td>
      </tr>
     </table>
    </div>
@@ -569,7 +597,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.00 seconds</td>
-    <td class="r">rendering took 0.00 seconds</td>
+    <td class="r">rendering took 0.02 seconds</td>
    </tr>
   </table>
  </body>

@@ -6,6 +6,6 @@
    library="clk100"
    hasInlineConfiguration="true" />
  <topLevel name="clk100.clk100" />
- <deviceFamily name="agilex" />
+ <deviceFamily name="agilex7" />
  <device name="AGMF039R47A2E2VR0" />
 </simPackage>

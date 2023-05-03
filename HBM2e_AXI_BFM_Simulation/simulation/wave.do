@@ -2,12 +2,10 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /top_tb/axi_reset_in_reset
 add wave -noupdate /top_tb/clk100_in_clk
-add wave -noupdate /top_tb/hbm_reset_in_reset
 add wave -noupdate /top_tb/hbm_fp_0_cattrip_i_conduit
 add wave -noupdate /top_tb/hbm_fp_0_temp_i_conduit
 add wave -noupdate /top_tb/hbm_local_cal_success_local_cal_success
 add wave -noupdate /top_tb/hbm_local_cal_fail_local_cal_fail
-add wave -noupdate /top_tb/hbm_wmcrst_n_reset_n
 add wave -noupdate /top_tb/iopll_locked_export
 add wave -noupdate /top_tb/iopll_reset_reset
 add wave -noupdate /top_tb/noc_reset_in_reset

@@ -1,12 +1,12 @@
-# system info clk100 on 2023.01.09.10:44:13
+# system info clk100 on 2023.05.02.17:10:44
 system_info:
 name,value
 DEVICE,AGMF039R47A2E2VR0
-DEVICE_FAMILY,Agilex
+DEVICE_FAMILY,Agilex 7
 GENERATION_ID,0
 #
 #
-# Files generated for clk100 on 2023.01.09.10:44:13
+# Files generated for clk100 on 2023.05.02.17:10:44
 files:
 filepath,kind,attributes,module,is_top
 sim/clk100.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,clk100,true

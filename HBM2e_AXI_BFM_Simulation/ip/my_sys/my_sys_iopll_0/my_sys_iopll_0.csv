@@ -1,18 +1,18 @@
-# system info my_sys_iopll_0 on 2023.01.09.10:44:22
+# system info my_sys_iopll_0 on 2023.05.02.17:10:51
 system_info:
 name,value
 DEVICE,AGMF039R47A2E2VR0
-DEVICE_FAMILY,Agilex
+DEVICE_FAMILY,Agilex 7
 GENERATION_ID,0
 #
 #
-# Files generated for my_sys_iopll_0 on 2023.01.09.10:44:22
+# Files generated for my_sys_iopll_0 on 2023.05.02.17:10:51
 files:
 filepath,kind,attributes,module,is_top
 sim/my_sys_iopll_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys_iopll_0,true
-altera_iopll_1931/sim/my_sys_iopll_0_altera_iopll_1931_oz3cxky.vo,VERILOG,,my_sys_iopll_0_altera_iopll_1931_oz3cxky,false
+altera_iopll_1931/sim/my_sys_iopll_0_altera_iopll_1931_fisojzi.vo,VERILOG,,my_sys_iopll_0_altera_iopll_1931_fisojzi,false
 #
 # Map from instance-path to kind of module
 instances:
 instancePath,module
-my_sys_iopll_0.iopll_0,my_sys_iopll_0_altera_iopll_1931_oz3cxky
+my_sys_iopll_0.iopll_0,my_sys_iopll_0_altera_iopll_1931_fisojzi

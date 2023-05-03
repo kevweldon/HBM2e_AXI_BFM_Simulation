@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simPackage>
  <file
-   path="altera_iopll_1931/sim/my_sys_iopll_0_altera_iopll_1931_oz3cxky.vo"
+   path="altera_iopll_1931/sim/my_sys_iopll_0_altera_iopll_1931_fisojzi.vo"
    type="VERILOG"
    library="altera_iopll_1931" />
  <file
@@ -10,6 +10,6 @@
    library="my_sys_iopll_0"
    hasInlineConfiguration="true" />
  <topLevel name="my_sys_iopll_0.my_sys_iopll_0" />
- <deviceFamily name="agilex" />
+ <deviceFamily name="agilex7" />
  <device name="AGMF039R47A2E2VR0" />
 </simPackage>

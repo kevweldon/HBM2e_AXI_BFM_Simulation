@@ -6,6 +6,6 @@
    library="axi_reset"
    hasInlineConfiguration="true" />
  <topLevel name="axi_reset.axi_reset" />
- <deviceFamily name="agilex" />
+ <deviceFamily name="agilex7" />
  <device name="AGMF039R47A2E2VR0" />
 </simPackage>

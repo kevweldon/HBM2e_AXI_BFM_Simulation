@@ -1,12 +1,12 @@
-# system info axi_reset on 2023.01.09.10:44:21
+# system info axi_reset on 2023.05.02.17:10:50
 system_info:
 name,value
 DEVICE,AGMF039R47A2E2VR0
-DEVICE_FAMILY,Agilex
+DEVICE_FAMILY,Agilex 7
 GENERATION_ID,0
 #
 #
-# Files generated for axi_reset on 2023.01.09.10:44:21
+# Files generated for axi_reset on 2023.05.02.17:10:50
 files:
 filepath,kind,attributes,module,is_top
 sim/axi_reset.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,axi_reset,true

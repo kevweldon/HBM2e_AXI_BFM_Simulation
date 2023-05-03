@@ -813,8 +813,8 @@
             <value>Sequential_Medium</value>
           </parameter>
           <parameter>
-            <name>EX_DESIGN_FABRIC_NOC_EN</name>
-            <value>false</value>
+            <name>EX_DESIGN_FABRIC_NOC_MODE</name>
+            <value>FABRIC_NOC_MODE_NONE</value>
           </parameter>
           <parameter>
             <name>EX_DESIGN_GEN_SIM</name>
@@ -837,6 +837,14 @@
             <value>true</value>
           </parameter>
           <parameter>
+            <name>EX_DESIGN_LOCATION_ASSIGNMENTS</name>
+            <value>LOCATION_ASSIGNMENTS_NONE</value>
+          </parameter>
+          <parameter>
+            <name>EX_DESIGN_NOC_BRIDGE_CLK_FREQ_MHZ</name>
+            <value>550</value>
+          </parameter>
+          <parameter>
             <name>EX_DESIGN_NOC_PAIRING</name>
             <value>ONE_TO_ONE</value>
           </parameter>
@@ -857,12 +865,20 @@
             <value>true</value>
           </parameter>
           <parameter>
+            <name>EX_DESIGN_SECOND_CORE_PLL</name>
+            <value>false</value>
+          </parameter>
+          <parameter>
             <name>EX_DESIGN_SHARE_INIU_AXI4_AXI4LITE</name>
             <value>false</value>
           </parameter>
           <parameter>
+            <name>EX_DESIGN_USER_RO_CLK_FREQ_MHZ</name>
+            <value>400</value>
+          </parameter>
+          <parameter>
             <name>FPGA_FAMILY</name>
-            <value>FAMILY_AGILEX</value>
+            <value>FAMILY_AGILEX7</value>
           </parameter>
           <parameter>
             <name>FPGA_SPEEDGRADE</name>
@@ -878,7 +894,7 @@
           </parameter>
           <parameter>
             <name>PHY_DEVICE_SPEEDGRADE</name>
-            <value>2 - change device under 'View'-&gt;'Device Family'</value>
+            <value>2 - change device under 'System'-&gt;'System Settings'</value>
           </parameter>
           <parameter>
             <name>PHY_HBM_DEVICE_TYPE</name>
@@ -926,7 +942,7 @@
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE_FAMILY</name>
-            <value>Agilex</value>
+            <value>Agilex 7</value>
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE_POWER_MODEL</name>
@@ -947,9 +963,9 @@
         </parameters>
         <interconnectAssignments></interconnectAssignments>
         <className>hbm_fp</className>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
         <name>hbm_fp_0</name>
-        <uniqueName>my_sys_hbm_fp_0_hbm_fp_110_edhc4xy</uniqueName>
+        <uniqueName>my_sys_hbm_fp_0_hbm_fp_120_ovpbmoy</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>my_sys_hbm_fp_0.hbm_fp_0</path>
@@ -1688,8 +1704,8 @@
                 <value>Sequential_Medium</value>
               </parameter>
               <parameter>
-                <name>EX_DESIGN_FABRIC_NOC_EN</name>
-                <value>false</value>
+                <name>EX_DESIGN_FABRIC_NOC_MODE</name>
+                <value>FABRIC_NOC_MODE_NONE</value>
               </parameter>
               <parameter>
                 <name>EX_DESIGN_GEN_SIM</name>
@@ -1704,6 +1720,14 @@
                 <value>HDL_FORMAT_VERILOG</value>
               </parameter>
               <parameter>
+                <name>EX_DESIGN_LOCATION_ASSIGNMENTS</name>
+                <value>LOCATION_ASSIGNMENTS_NONE</value>
+              </parameter>
+              <parameter>
+                <name>EX_DESIGN_NOC_BRIDGE_CLK_FREQ_MHZ</name>
+                <value>550</value>
+              </parameter>
+              <parameter>
                 <name>EX_DESIGN_NOC_PAIRING</name>
                 <value>ONE_TO_ONE</value>
               </parameter>
@@ -1716,12 +1740,20 @@
                 <value>100</value>
               </parameter>
               <parameter>
+                <name>EX_DESIGN_SECOND_CORE_PLL</name>
+                <value>false</value>
+              </parameter>
+              <parameter>
                 <name>EX_DESIGN_SHARE_INIU_AXI4_AXI4LITE</name>
                 <value>false</value>
               </parameter>
               <parameter>
+                <name>EX_DESIGN_USER_RO_CLK_FREQ_MHZ</name>
+                <value>400</value>
+              </parameter>
+              <parameter>
                 <name>FPGA_FAMILY</name>
-                <value>FAMILY_AGILEX</value>
+                <value>FAMILY_AGILEX7</value>
               </parameter>
               <parameter>
                 <name>FPGA_SPEEDGRADE</name>
@@ -3861,7 +3893,7 @@
               </parameter>
               <parameter>
                 <name>PHY_DEVICE_SPEEDGRADE</name>
-                <value>2 - change device under 'View'-&gt;'Device Family'</value>
+                <value>2 - change device under 'System'-&gt;'System Settings'</value>
               </parameter>
               <parameter>
                 <name>PHY_HBM_DEVICE_TYPE</name>
@@ -3925,7 +3957,7 @@
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE_FAMILY</name>
-                <value>Agilex</value>
+                <value>Agilex 7</value>
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE_POWER_MODEL</name>
@@ -3948,7 +3980,7 @@
             <className>hbm_arch_fp</className>
             <version>1.0</version>
             <name>arch</name>
-            <uniqueName>my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa</uniqueName>
+            <uniqueName>my_sys_hbm_fp_0_hbm_arch_fp_10_5ygw4sq</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -3972,16 +4004,12 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller_003/clk</end>
                 <start>arch/ch0_ch1_sb_aclk</start>
               </incidentConnection>
               <incidentConnection>
                 <parameters>
-                  <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -3994,10 +4022,14 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.ch0_ch1_sb_aclk/tniu_ch0_ch1_sb.clk</name>
                 <end>tniu_ch0_ch1_sb/clk</end>
                 <start>arch/ch0_ch1_sb_aclk</start>
@@ -4023,16 +4055,12 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller/clk</end>
                 <start>arch/ch0_u0_aclk</start>
               </incidentConnection>
               <incidentConnection>
                 <parameters>
-                  <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -4045,10 +4073,14 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.ch0_u0_aclk/tniu_ch0_u0.clk</name>
                 <end>tniu_ch0_u0/clk</end>
                 <start>arch/ch0_u0_aclk</start>
@@ -4074,16 +4106,12 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller_001/clk</end>
                 <start>arch/ch0_u1_aclk</start>
               </incidentConnection>
               <incidentConnection>
                 <parameters>
-                  <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -4096,10 +4124,14 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.ch0_u1_aclk/tniu_ch0_u1.clk</name>
                 <end>tniu_ch0_u1/clk</end>
                 <start>arch/ch0_u1_aclk</start>
@@ -4107,9 +4139,26 @@
               <incidentConnection>
                 <parameters>
                   <parameter>
-                    <name>clockRateSysInfo</name>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.1</version>
+                <end>rst_controller/reset_in0</end>
+                <start>arch/fake_reset_o</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -4124,8 +4173,75 @@
                   </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.1</version>
+                <end>rst_controller_001/reset_in0</end>
+                <start>arch/fake_reset_o</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.1</version>
+                <end>rst_controller_002/reset_in0</end>
+                <start>arch/fake_reset_o</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.1</version>
+                <end>rst_controller_003/reset_in0</end>
+                <start>arch/fake_reset_o</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.uibpll_refclk_buffered/uib_pll.refclk</name>
                 <end>uib_pll/refclk</end>
                 <start>arch/uibpll_refclk_buffered</start>
@@ -4151,17 +4267,13 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller_002/clk</end>
                 <start>arch/uibssm_sb_aclk</start>
               </incidentConnection>
               <incidentConnection>
                 <parameters>
                   <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
-                  <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
                   </parameter>
@@ -4172,120 +4284,18 @@
                   <parameter>
                     <name>clockResetSysInfo</name>
                     <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
                   </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.uibssm_sb_aclk/tniu_uibssm_sb.clk</name>
                 <end>tniu_uibssm_sb/clk</end>
                 <start>arch/uibssm_sb_aclk</start>
-              </incidentConnection>
-              <incidentConnection>
-                <parameters>
-                  <parameter>
-                    <name>resetDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockResetSysInfo</name>
-                    <value></value>
-                  </parameter>
-                </parameters>
-                <interconnectAssignments></interconnectAssignments>
-                <className>reset</className>
-                <version>22.4</version>
-                <name>arch.wmcrst_n/rst_bridge.in_reset</name>
-                <end>rst_bridge/in_reset</end>
-                <start>arch/wmcrst_n</start>
-              </incidentConnection>
-              <incidentConnection>
-                <parameters>
-                  <parameter>
-                    <name>resetDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockResetSysInfo</name>
-                    <value></value>
-                  </parameter>
-                </parameters>
-                <interconnectAssignments></interconnectAssignments>
-                <className>reset</className>
-                <version>22.4</version>
-                <end>rst_controller/reset_in0</end>
-                <start>arch/wmcrst_n</start>
-              </incidentConnection>
-              <incidentConnection>
-                <parameters>
-                  <parameter>
-                    <name>resetDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockResetSysInfo</name>
-                    <value></value>
-                  </parameter>
-                </parameters>
-                <interconnectAssignments></interconnectAssignments>
-                <className>reset</className>
-                <version>22.4</version>
-                <end>rst_controller_001/reset_in0</end>
-                <start>arch/wmcrst_n</start>
-              </incidentConnection>
-              <incidentConnection>
-                <parameters>
-                  <parameter>
-                    <name>resetDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockResetSysInfo</name>
-                    <value></value>
-                  </parameter>
-                </parameters>
-                <interconnectAssignments></interconnectAssignments>
-                <className>reset</className>
-                <version>22.4</version>
-                <end>rst_controller_002/reset_in0</end>
-                <start>arch/wmcrst_n</start>
-              </incidentConnection>
-              <incidentConnection>
-                <parameters>
-                  <parameter>
-                    <name>resetDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockResetSysInfo</name>
-                    <value></value>
-                  </parameter>
-                </parameters>
-                <interconnectAssignments></interconnectAssignments>
-                <className>reset</className>
-                <version>22.4</version>
-                <end>rst_controller_003/reset_in0</end>
-                <start>arch/wmcrst_n</start>
               </incidentConnection>
               <incidentConnection>
                 <parameters>
@@ -4299,6 +4309,10 @@
                   </parameter>
                   <parameter>
                     <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
                     <value>FALSE</value>
                   </parameter>
                   <parameter>
@@ -4376,7 +4390,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>tniu_ch0_ch1_sb.altera_axi_master/arch.ch0_ch1_sb_axi4_lite</name>
                 <end>arch/ch0_ch1_sb_axi4_lite</end>
                 <start>tniu_ch0_ch1_sb/altera_axi_master</start>
@@ -4396,6 +4410,10 @@
                     <value>FALSE</value>
                   </parameter>
                   <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
                     <name>qsys_mm.enableInstrumentation</name>
                     <value>FALSE</value>
                   </parameter>
@@ -4470,7 +4488,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>tniu_ch0_u0.altera_axi_master/arch.ch0_u0_axi4</name>
                 <end>arch/ch0_u0_axi4</end>
                 <start>tniu_ch0_u0/altera_axi_master</start>
@@ -4490,6 +4508,10 @@
                     <value>FALSE</value>
                   </parameter>
                   <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
                     <name>qsys_mm.enableInstrumentation</name>
                     <value>FALSE</value>
                   </parameter>
@@ -4564,7 +4586,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>tniu_ch0_u1.altera_axi_master/arch.ch0_u1_axi4</name>
                 <end>arch/ch0_u1_axi4</end>
                 <start>tniu_ch0_u1/altera_axi_master</start>
@@ -4584,6 +4606,10 @@
                     <value>FALSE</value>
                   </parameter>
                   <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
                     <name>qsys_mm.enableInstrumentation</name>
                     <value>FALSE</value>
                   </parameter>
@@ -4658,7 +4684,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>tniu_uibssm_sb.altera_axi_master/arch.uibssm_sb_axi4_lite</name>
                 <end>arch/uibssm_sb_axi4_lite</end>
                 <start>tniu_uibssm_sb/altera_axi_master</start>
@@ -4688,7 +4714,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>conduit</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>uib_pll.locked/arch.uibpll_locked</name>
                 <end>arch/uibpll_locked</end>
                 <start>uib_pll/locked</start>
@@ -4718,72 +4744,13 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>conduit</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>uib_pll.phout/arch.uibpll_phout</name>
                 <end>arch/uibpll_phout</end>
                 <start>uib_pll/phout</start>
               </incidentConnection>
             </incidentConnections>
             <path>my_sys_hbm_fp_0.hbm_fp_0.arch</path>
-          </instanceData>
-          <children></children>
-        </node>
-        <node>
-          <instanceKey xsi:type="xs:string">rst_bridge</instanceKey>
-          <instanceData xsi:type="data">
-            <parameters>
-              <parameter>
-                <name>ACTIVE_LOW_RESET</name>
-                <value>1</value>
-              </parameter>
-              <parameter>
-                <name>NUM_RESET_OUTPUTS</name>
-                <value>1</value>
-              </parameter>
-              <parameter>
-                <name>SYNCHRONOUS_EDGES</name>
-                <value>none</value>
-              </parameter>
-              <parameter>
-                <name>SYNC_RESET</name>
-                <value>0</value>
-              </parameter>
-              <parameter>
-                <name>USE_RESET_REQUEST</name>
-                <value>0</value>
-              </parameter>
-            </parameters>
-            <interconnectAssignments></interconnectAssignments>
-            <className>altera_reset_bridge</className>
-            <version>19.2.0</version>
-            <name>rst_bridge</name>
-            <uniqueName>my_sys_hbm_fp_0_altera_reset_bridge_1920_t4e2nri</uniqueName>
-            <nonce>0</nonce>
-            <incidentConnections>
-              <incidentConnection>
-                <parameters>
-                  <parameter>
-                    <name>resetDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockResetSysInfo</name>
-                    <value></value>
-                  </parameter>
-                </parameters>
-                <interconnectAssignments></interconnectAssignments>
-                <className>reset</className>
-                <version>22.4</version>
-                <name>arch.wmcrst_n/rst_bridge.in_reset</name>
-                <end>rst_bridge/in_reset</end>
-                <start>arch/wmcrst_n</start>
-              </incidentConnection>
-            </incidentConnections>
-            <path>my_sys_hbm_fp_0.hbm_fp_0.rst_bridge</path>
           </instanceData>
           <children></children>
         </node>
@@ -4921,7 +4888,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller/clk</end>
                 <start>arch/ch0_u0_aclk</start>
               </incidentConnection>
@@ -4942,9 +4909,9 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller/reset_in0</end>
-                <start>arch/wmcrst_n</start>
+                <start>arch/fake_reset_o</start>
               </incidentConnection>
               <incidentConnection>
                 <parameters>
@@ -4963,7 +4930,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>tniu_ch0_u0/reset</end>
                 <start>rst_controller/reset_out</start>
               </incidentConnection>
@@ -5106,7 +5073,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller_001/clk</end>
                 <start>arch/ch0_u1_aclk</start>
               </incidentConnection>
@@ -5127,9 +5094,9 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller_001/reset_in0</end>
-                <start>arch/wmcrst_n</start>
+                <start>arch/fake_reset_o</start>
               </incidentConnection>
               <incidentConnection>
                 <parameters>
@@ -5148,7 +5115,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>tniu_ch0_u1/reset</end>
                 <start>rst_controller_001/reset_out</start>
               </incidentConnection>
@@ -5284,6 +5251,27 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.1</version>
+                <end>rst_controller_002/reset_in0</end>
+                <start>arch/fake_reset_o</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
                   <parameter>
                     <name>clockRateSysInfo</name>
                     <value>-1</value>
@@ -5291,7 +5279,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller_002/clk</end>
                 <start>arch/uibssm_sb_aclk</start>
               </incidentConnection>
@@ -5312,28 +5300,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
-                <end>rst_controller_002/reset_in0</end>
-                <start>arch/wmcrst_n</start>
-              </incidentConnection>
-              <incidentConnection>
-                <parameters>
-                  <parameter>
-                    <name>resetDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockDomainSysInfo</name>
-                    <value>-1</value>
-                  </parameter>
-                  <parameter>
-                    <name>clockResetSysInfo</name>
-                    <value></value>
-                  </parameter>
-                </parameters>
-                <interconnectAssignments></interconnectAssignments>
-                <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>tniu_uibssm_sb/reset</end>
                 <start>rst_controller_002/reset_out</start>
               </incidentConnection>
@@ -5476,7 +5443,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller_003/clk</end>
                 <start>arch/ch0_ch1_sb_aclk</start>
               </incidentConnection>
@@ -5497,9 +5464,9 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>rst_controller_003/reset_in0</end>
-                <start>arch/wmcrst_n</start>
+                <start>arch/fake_reset_o</start>
               </incidentConnection>
               <incidentConnection>
                 <parameters>
@@ -5518,7 +5485,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>tniu_ch0_ch1_sb/reset</end>
                 <start>rst_controller_003/reset_out</start>
               </incidentConnection>
@@ -5745,7 +5712,7 @@
               </parameter>
               <parameter>
                 <name>NOC_TARGET_SIZE</name>
-                <value>512_MB</value>
+                <value>128_MB</value>
               </parameter>
               <parameter>
                 <name>NUM_READ_INITIATOR_PRIVILEGE_0</name>
@@ -6558,17 +6525,13 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>intel_noc_target</className>
-            <version>1.0.0</version>
+            <version>2.0.0</version>
             <name>tniu_ch0_ch1_sb</name>
-            <uniqueName>my_sys_hbm_fp_0_intel_noc_target_100_ysmzzri</uniqueName>
+            <uniqueName>my_sys_hbm_fp_0_intel_noc_target_200_k6aooua</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
                 <parameters>
-                  <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -6581,10 +6544,14 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.ch0_ch1_sb_aclk/tniu_ch0_ch1_sb.clk</name>
                 <end>tniu_ch0_ch1_sb/clk</end>
                 <start>arch/ch0_ch1_sb_aclk</start>
@@ -6606,7 +6573,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>tniu_ch0_ch1_sb/reset</end>
                 <start>rst_controller_003/reset_out</start>
               </incidentConnection>
@@ -6622,6 +6589,10 @@
                   </parameter>
                   <parameter>
                     <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
                     <value>FALSE</value>
                   </parameter>
                   <parameter>
@@ -6699,7 +6670,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>tniu_ch0_ch1_sb.altera_axi_master/arch.ch0_ch1_sb_axi4_lite</name>
                 <end>arch/ch0_ch1_sb_axi4_lite</end>
                 <start>tniu_ch0_ch1_sb/altera_axi_master</start>
@@ -6927,7 +6898,7 @@
               </parameter>
               <parameter>
                 <name>NOC_TARGET_SIZE</name>
-                <value>512_MB</value>
+                <value>1_GB</value>
               </parameter>
               <parameter>
                 <name>NUM_READ_INITIATOR_PRIVILEGE_0</name>
@@ -7740,17 +7711,13 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>intel_noc_target</className>
-            <version>1.0.0</version>
+            <version>2.0.0</version>
             <name>tniu_ch0_u0</name>
-            <uniqueName>my_sys_hbm_fp_0_intel_noc_target_100_waoigja</uniqueName>
+            <uniqueName>my_sys_hbm_fp_0_intel_noc_target_200_atrax2a</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
                 <parameters>
-                  <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -7763,10 +7730,14 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.ch0_u0_aclk/tniu_ch0_u0.clk</name>
                 <end>tniu_ch0_u0/clk</end>
                 <start>arch/ch0_u0_aclk</start>
@@ -7788,7 +7759,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>tniu_ch0_u0/reset</end>
                 <start>rst_controller/reset_out</start>
               </incidentConnection>
@@ -7804,6 +7775,10 @@
                   </parameter>
                   <parameter>
                     <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
                     <value>FALSE</value>
                   </parameter>
                   <parameter>
@@ -7881,7 +7856,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>tniu_ch0_u0.altera_axi_master/arch.ch0_u0_axi4</name>
                 <end>arch/ch0_u0_axi4</end>
                 <start>tniu_ch0_u0/altera_axi_master</start>
@@ -8109,7 +8084,7 @@
               </parameter>
               <parameter>
                 <name>NOC_TARGET_SIZE</name>
-                <value>512_MB</value>
+                <value>1_GB</value>
               </parameter>
               <parameter>
                 <name>NUM_READ_INITIATOR_PRIVILEGE_0</name>
@@ -8922,17 +8897,13 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>intel_noc_target</className>
-            <version>1.0.0</version>
+            <version>2.0.0</version>
             <name>tniu_ch0_u1</name>
-            <uniqueName>my_sys_hbm_fp_0_intel_noc_target_100_waoigja</uniqueName>
+            <uniqueName>my_sys_hbm_fp_0_intel_noc_target_200_atrax2a</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
                 <parameters>
-                  <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -8945,10 +8916,14 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.ch0_u1_aclk/tniu_ch0_u1.clk</name>
                 <end>tniu_ch0_u1/clk</end>
                 <start>arch/ch0_u1_aclk</start>
@@ -8970,7 +8945,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>tniu_ch0_u1/reset</end>
                 <start>rst_controller_001/reset_out</start>
               </incidentConnection>
@@ -8986,6 +8961,10 @@
                   </parameter>
                   <parameter>
                     <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
                     <value>FALSE</value>
                   </parameter>
                   <parameter>
@@ -9063,7 +9042,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>tniu_ch0_u1.altera_axi_master/arch.ch0_u1_axi4</name>
                 <end>arch/ch0_u1_axi4</end>
                 <start>tniu_ch0_u1/altera_axi_master</start>
@@ -9291,7 +9270,7 @@
               </parameter>
               <parameter>
                 <name>NOC_TARGET_SIZE</name>
-                <value>512_MB</value>
+                <value>128_MB</value>
               </parameter>
               <parameter>
                 <name>NUM_READ_INITIATOR_PRIVILEGE_0</name>
@@ -10104,17 +10083,13 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>intel_noc_target</className>
-            <version>1.0.0</version>
+            <version>2.0.0</version>
             <name>tniu_uibssm_sb</name>
-            <uniqueName>my_sys_hbm_fp_0_intel_noc_target_100_ysmzzri</uniqueName>
+            <uniqueName>my_sys_hbm_fp_0_intel_noc_target_200_k6aooua</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
                 <parameters>
-                  <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -10127,10 +10102,14 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.uibssm_sb_aclk/tniu_uibssm_sb.clk</name>
                 <end>tniu_uibssm_sb/clk</end>
                 <start>arch/uibssm_sb_aclk</start>
@@ -10152,7 +10131,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <end>tniu_uibssm_sb/reset</end>
                 <start>rst_controller_002/reset_out</start>
               </incidentConnection>
@@ -10168,6 +10147,10 @@
                   </parameter>
                   <parameter>
                     <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
                     <value>FALSE</value>
                   </parameter>
                   <parameter>
@@ -10245,7 +10228,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>tniu_uibssm_sb.altera_axi_master/arch.uibssm_sb_axi4_lite</name>
                 <end>arch/uibssm_sb_axi4_lite</end>
                 <start>tniu_uibssm_sb/altera_axi_master</start>
@@ -11813,7 +11796,7 @@
               </parameter>
               <parameter>
                 <name>gui_device_family</name>
-                <value>Agilex</value>
+                <value>Agilex 7</value>
               </parameter>
               <parameter>
                 <name>gui_device_iobank_rev</name>
@@ -13449,7 +13432,7 @@
               </parameter>
               <parameter>
                 <name>pll_type</name>
-                <value>Agilex</value>
+                <value>Agilex 7</value>
               </parameter>
               <parameter>
                 <name>pll_unlock_fltr_cfg</name>
@@ -13525,7 +13508,7 @@
               </parameter>
               <parameter>
                 <name>system_info_device_family</name>
-                <value>Agilex</value>
+                <value>Agilex 7</value>
               </parameter>
               <parameter>
                 <name>system_info_device_iobank_rev</name>
@@ -13556,15 +13539,11 @@
             <className>altera_iopll</className>
             <version>19.3.1</version>
             <name>uib_pll</name>
-            <uniqueName>my_sys_hbm_fp_0_altera_iopll_1931_svvuvey</uniqueName>
+            <uniqueName>my_sys_hbm_fp_0_altera_iopll_1931_q6c4wgi</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
                 <parameters>
-                  <parameter>
-                    <name>clockRateSysInfo</name>
-                    <value></value>
-                  </parameter>
                   <parameter>
                     <name>resetDomainSysInfo</name>
                     <value>-1</value>
@@ -13577,10 +13556,14 @@
                     <name>clockResetSysInfo</name>
                     <value></value>
                   </parameter>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>arch.uibpll_refclk_buffered/uib_pll.refclk</name>
                 <end>uib_pll/refclk</end>
                 <start>arch/uibpll_refclk_buffered</start>
@@ -13610,7 +13593,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>conduit</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>uib_pll.locked/arch.uibpll_locked</name>
                 <end>arch/uibpll_locked</end>
                 <start>uib_pll/locked</start>
@@ -13640,7 +13623,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>conduit</className>
-                <version>22.4</version>
+                <version>23.1</version>
                 <name>uib_pll.phout/arch.uibpll_phout</name>
                 <end>arch/uibpll_phout</end>
                 <start>uib_pll/phout</start>

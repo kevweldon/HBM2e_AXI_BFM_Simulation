@@ -9,12 +9,10 @@ module top_tb;
 
    logic       axi_reset_in_reset;
    logic       clk100_in_clk;
-   logic       hbm_reset_in_reset;
    logic       hbm_fp_0_cattrip_i_conduit;
    logic [2:0] hbm_fp_0_temp_i_conduit;
    logic       hbm_local_cal_success_local_cal_success;
    logic       hbm_local_cal_fail_local_cal_fail;
-   logic       hbm_wmcrst_n_reset_n;
    logic       iopll_locked_export;
    logic       iopll_reset_reset;
    logic       noc_reset_in_reset;
@@ -63,7 +61,6 @@ module top_tb;
 	$display("top_tb:Starting the simulation");
 	$timeformat(-9, 2, "ns", 1);
 	axi_reset_in_reset = 1;
-	hbm_reset_in_reset = 1;
 	hbm_fp_0_cattrip_i_conduit = 0;
 	hbm_fp_0_temp_i_conduit = {2{1'b0}};
 	iopll_reset_reset = 1;
@@ -71,7 +68,6 @@ module top_tb;
 
 	repeat (20) @(posedge clk100_in_clk);
 	iopll_reset_reset = 0;
-	hbm_reset_in_reset = 0;
 	$display("top_tb: Waiting for hbm_local_cal_success");
 	wait (hbm_local_cal_success_local_cal_success);
 	$display("top_tb: Found hbm_local_cal_success");
@@ -145,20 +141,19 @@ module top_tb;
        .verbose(1'b0)
        );
 
-   my_sys dut 
+   my_sys dut
      (
-      .axi_reset_in_reset (axi_reset_in_reset),
-      .clk100_in_clk (clk100_in_clk),
-      .hbm_reset_in_reset (hbm_reset_in_reset),
-      .hbm_fp_0_cattrip_i_conduit (hbm_fp_0_cattrip_i_conduit),
-      .hbm_fp_0_temp_i_conduit (hbm_fp_0_temp_i_conduit),
+      .axi_reset_in_reset                      (axi_reset_in_reset),
+      .clk100_in_clk                           (clk100_in_clk),
+      .hbm_fp_0_cattrip_i_conduit              (hbm_fp_0_cattrip_i_conduit),
+      .hbm_fp_0_temp_i_conduit                 (hbm_fp_0_temp_i_conduit),
       .hbm_local_cal_success_local_cal_success (hbm_local_cal_success_local_cal_success),
-      .hbm_local_cal_fail_local_cal_fail (hbm_local_cal_fail_local_cal_fail),
-      .hbm_wmcrst_n_reset_n (hbm_wmcrst_n_reset_n),
-      .iopll_locked_export (iopll_locked_export),
-      .iopll_reset_reset (iopll_reset_reset),
-      .noc_reset_in_reset (noc_reset_in_reset)
+      .hbm_local_cal_fail_local_cal_fail       (hbm_local_cal_fail_local_cal_fail),
+      .iopll_locked_export                     (iopll_locked_export),
+      .iopll_reset_reset                       (iopll_reset_reset),
+      .noc_reset_in_reset                      (noc_reset_in_reset)
       );
+
 
    task initiator0_sim;
       logic [DATA_WIDTH-1:0] write_data [256];

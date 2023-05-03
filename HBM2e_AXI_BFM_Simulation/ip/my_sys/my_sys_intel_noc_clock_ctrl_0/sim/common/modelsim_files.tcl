@@ -2,7 +2,7 @@
 namespace eval my_sys_intel_noc_clock_ctrl_0 {
   proc get_design_libraries {} {
     set libraries [dict create]
-    dict set libraries intel_noc_clock_ctrl_100      1
+    dict set libraries intel_noc_clock_ctrl_200      1
     dict set libraries my_sys_intel_noc_clock_ctrl_0 1
     return $libraries
   }
@@ -19,7 +19,7 @@ namespace eval my_sys_intel_noc_clock_ctrl_0 {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../intel_noc_clock_ctrl_100/sim/intel_noc_clock_ctrl.sv"]\"  -work intel_noc_clock_ctrl_100"
+    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../intel_noc_clock_ctrl_200/sim/intel_noc_clock_ctrl.sv"]\"  -work intel_noc_clock_ctrl_200"
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/my_sys_intel_noc_clock_ctrl_0.v"]\"  -work my_sys_intel_noc_clock_ctrl_0"                       
     return $design_files
   }
@@ -63,4 +63,18 @@ namespace eval my_sys_intel_noc_clock_ctrl_0 {
       } 
       return $path 
   } 
+  proc get_mg_bfm_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR QUARTUS_INSTALL_DIR} {
+    set design_files [dict create]
+    return $design_files
+  }
+  
+  proc use_mg_bfm {} {
+    return 0
+  }
+  
+  proc get_mg_bfm_libraries {} {
+    set libraries [dict create]
+    return $libraries
+  }
+  
 }

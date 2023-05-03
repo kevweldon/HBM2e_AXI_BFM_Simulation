@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <preferences>
  <debug showDebugMenu="0" />
- <window width="1575" height="966" x="89" y="63" />
+ <window width="1575" height="966" x="52" y="64" />
  <systemtable filter="All Interfaces" />
- <library expandedCategories="Library,Existing IP Variants,Project" />
+ <library expandedCategories="Existing IP Variants,Library,Project" />
  <generation
    path=""
    synthesis="NONE"

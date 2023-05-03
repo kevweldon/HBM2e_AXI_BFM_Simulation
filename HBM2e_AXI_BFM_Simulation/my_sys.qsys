@@ -128,7 +128,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
           <ipxact:displayName>Device family</ipxact:displayName>
-          <ipxact:value>Agilex</ipxact:value>
+          <ipxact:value>Agilex 7</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
           <ipxact:name>deviceSpeedGrade</ipxact:name>
@@ -168,11 +168,6 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="lockedInterfaceDefinition" type="string">
           <ipxact:name>lockedInterfaceDefinition</ipxact:name>
           <ipxact:displayName>lockedInterfaceDefinition</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="pinAssignmentListDefinition" type="string">
-          <ipxact:name>pinAssignmentListDefinition</ipxact:name>
-          <ipxact:displayName>pinAssignmentListDefinition</ipxact:displayName>
           <ipxact:value></ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="sopcBorderPoints" type="bit">
@@ -449,7 +444,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -744,7 +738,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -859,14 +852,79 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;/parameters&gt;
             &lt;/interface&gt;
             &lt;interface&gt;
-                &lt;name&gt;hbm_reset_in&lt;/name&gt;
+                &lt;name&gt;fabric_clk&lt;/name&gt;
+                &lt;type&gt;clock&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;fabric_clk&lt;/name&gt;
+                        &lt;role&gt;clk&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;clockRate&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;externallyDriven&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;hbm_reset_n&lt;/name&gt;
                 &lt;type&gt;reset&lt;/type&gt;
                 &lt;isStart&gt;false&lt;/isStart&gt;
                 &lt;ports&gt;
                     &lt;port&gt;
-                        &lt;name&gt;hbm_reset_in&lt;/name&gt;
-                        &lt;role&gt;reset&lt;/role&gt;
+                        &lt;name&gt;hbm_reset_n&lt;/name&gt;
+                        &lt;role&gt;reset_n&lt;/role&gt;
                         &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedClock&lt;/key&gt;
+                            &lt;value&gt;fabric_clk&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;synchronousEdges&lt;/key&gt;
+                            &lt;value&gt;DEASSERT&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;hbm_reset_in_prog&lt;/name&gt;
+                &lt;type&gt;conduit&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;hbm_reset_in_prog&lt;/name&gt;
+                        &lt;role&gt;hbm_reset_in_prog&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
                         &lt;width&gt;1&lt;/width&gt;
                         &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                         &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
@@ -882,8 +940,11 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;key&gt;associatedClock&lt;/key&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;synchronousEdges&lt;/key&gt;
-                            &lt;value&gt;NONE&lt;/value&gt;
+                            &lt;key&gt;associatedReset&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;prSafe&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -1102,18 +1163,13 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/port&gt;
                 &lt;/ports&gt;
                 &lt;assignments&gt;
-                    &lt;assignmentValueMap&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
-                            &lt;value&gt;input&lt;/value&gt;
-                        &lt;/entry&gt;
-                    &lt;/assignmentValueMap&gt;
+                    &lt;assignmentValueMap/&gt;
                 &lt;/assignments&gt;
                 &lt;parameters&gt;
                     &lt;parameterValueMap&gt;
                         &lt;entry&gt;
                             &lt;key&gt;clockRate&lt;/key&gt;
-                            &lt;value&gt;100000000&lt;/value&gt;
+                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;externallyDriven&lt;/key&gt;
@@ -1126,38 +1182,101 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;/parameters&gt;
             &lt;/interface&gt;
             &lt;interface&gt;
-                &lt;name&gt;wmcrst_n&lt;/name&gt;
-                &lt;type&gt;reset&lt;/type&gt;
-                &lt;isStart&gt;true&lt;/isStart&gt;
-                &lt;ports&gt;
-                    &lt;port&gt;
-                        &lt;name&gt;wmcrst_n&lt;/name&gt;
-                        &lt;role&gt;reset_n&lt;/role&gt;
-                        &lt;direction&gt;Output&lt;/direction&gt;
-                        &lt;width&gt;1&lt;/width&gt;
-                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                    &lt;/port&gt;
-                &lt;/ports&gt;
+                &lt;name&gt;t_ch0_u0_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
                 &lt;assignments&gt;
                     &lt;assignmentValueMap/&gt;
                 &lt;/assignments&gt;
                 &lt;parameters&gt;
                     &lt;parameterValueMap&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;associatedClock&lt;/key&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;associatedDirectReset&lt;/key&gt;
+                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;value&gt;0x40000000&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;associatedResetSinks&lt;/key&gt;
-                            &lt;value&gt;none&lt;/value&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_u0.target_0.target_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;t_ch0_u1_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;synchronousEdges&lt;/key&gt;
-                            &lt;value&gt;NONE&lt;/value&gt;
+                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;value&gt;0x40000000&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;t_uibssm_sb_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_uibssm_sb|target_0.target_lite_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;value&gt;0x40000000&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;t_ch0_ch1_sb_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;value&gt;0x40000000&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_ch1_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -1166,8 +1285,8 @@ https://fpgasoftware.intel.com/eula.-->
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;hbm_fp&lt;/className&gt;
-        &lt;version&gt;1.0.0&lt;/version&gt;
-        &lt;displayName&gt;High Bandwidth Memory (HBM2E) Interface Intel Agilex FPGA IP &lt;/displayName&gt;
+        &lt;version&gt;1.2.0&lt;/version&gt;
+        &lt;displayName&gt;High Bandwidth Memory (HBM2E) Interface Intel Agilex 7 FPGA IP &lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
         &lt;descriptors&gt;
@@ -1295,14 +1414,79 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;/parameters&gt;
         &lt;/interface&gt;
         &lt;interface&gt;
-            &lt;name&gt;hbm_reset_in&lt;/name&gt;
+            &lt;name&gt;fabric_clk&lt;/name&gt;
+            &lt;type&gt;clock&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;fabric_clk&lt;/name&gt;
+                    &lt;role&gt;clk&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;clockRate&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;externallyDriven&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;hbm_reset_n&lt;/name&gt;
             &lt;type&gt;reset&lt;/type&gt;
             &lt;isStart&gt;false&lt;/isStart&gt;
             &lt;ports&gt;
                 &lt;port&gt;
-                    &lt;name&gt;hbm_reset_in&lt;/name&gt;
-                    &lt;role&gt;reset&lt;/role&gt;
+                    &lt;name&gt;hbm_reset_n&lt;/name&gt;
+                    &lt;role&gt;reset_n&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;value&gt;fabric_clk&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;synchronousEdges&lt;/key&gt;
+                        &lt;value&gt;DEASSERT&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;hbm_reset_in_prog&lt;/name&gt;
+            &lt;type&gt;conduit&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;hbm_reset_in_prog&lt;/name&gt;
+                    &lt;role&gt;hbm_reset_in_prog&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
@@ -1318,8 +1502,11 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;key&gt;associatedClock&lt;/key&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;synchronousEdges&lt;/key&gt;
-                        &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;key&gt;associatedReset&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;prSafe&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -1538,18 +1725,13 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;/port&gt;
             &lt;/ports&gt;
             &lt;assignments&gt;
-                &lt;assignmentValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
-                        &lt;value&gt;input&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/assignmentValueMap&gt;
+                &lt;assignmentValueMap/&gt;
             &lt;/assignments&gt;
             &lt;parameters&gt;
                 &lt;parameterValueMap&gt;
                     &lt;entry&gt;
                         &lt;key&gt;clockRate&lt;/key&gt;
-                        &lt;value&gt;100000000&lt;/value&gt;
+                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;externallyDriven&lt;/key&gt;
@@ -1562,38 +1744,101 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;/parameters&gt;
         &lt;/interface&gt;
         &lt;interface&gt;
-            &lt;name&gt;wmcrst_n&lt;/name&gt;
-            &lt;type&gt;reset&lt;/type&gt;
-            &lt;isStart&gt;true&lt;/isStart&gt;
-            &lt;ports&gt;
-                &lt;port&gt;
-                    &lt;name&gt;wmcrst_n&lt;/name&gt;
-                    &lt;role&gt;reset_n&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-            &lt;/ports&gt;
+            &lt;name&gt;t_ch0_u0_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
             &lt;assignments&gt;
                 &lt;assignmentValueMap/&gt;
             &lt;/assignments&gt;
             &lt;parameters&gt;
                 &lt;parameterValueMap&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;associatedDirectReset&lt;/key&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x40000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;associatedResetSinks&lt;/key&gt;
-                        &lt;value&gt;none&lt;/value&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_u0.target_0.target_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;t_ch0_u1_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;synchronousEdges&lt;/key&gt;
-                        &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x40000000&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;t_uibssm_sb_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_uibssm_sb|target_0.target_lite_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x40000000&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;t_ch0_ch1_sb_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x40000000&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_ch1_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -1638,7 +1883,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -1753,11 +1997,36 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
             &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;target_inst_0&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;ssm_inst&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;value&gt;0x7400&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;ssm_inst.target_lite_mon_inst_0.target_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
         &lt;/interfaces&gt;
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;intel_noc_clock_ctrl&lt;/className&gt;
-        &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;version&gt;2.0.0&lt;/version&gt;
         &lt;displayName&gt;NoC Clock Control Intel FPGA IP&lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
@@ -1859,6 +2128,31 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
         &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;target_inst_0&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;ssm_inst&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x7400&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;ssm_inst.target_lite_mon_inst_0.target_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
     &lt;/interfaces&gt;
 &lt;/boundaryDefinition&gt;</ipxact:value>
             </ipxact:parameter>
@@ -1899,7 +2193,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -1947,6 +2240,31 @@ https://fpgasoftware.intel.com/eula.-->
               <ipxact:value>&lt;componentDefinition&gt;
     &lt;boundary&gt;
         &lt;interfaces&gt;
+            &lt;interface&gt;
+                &lt;name&gt;i0_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;true&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;value&gt;0x0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;iniu_0.initiator_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
             &lt;interface&gt;
                 &lt;name&gt;s0_axi4&lt;/name&gt;
                 &lt;type&gt;axi4&lt;/type&gt;
@@ -2351,6 +2669,31 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;i1_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;true&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;value&gt;0x0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;iniu_1.initiator_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -2819,10 +3162,11 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;parameterValueMap&gt;
                         &lt;entry&gt;
                             &lt;key&gt;associatedClock&lt;/key&gt;
+                            &lt;value&gt;s_axi4_aclk&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;synchronousEdges&lt;/key&gt;
-                            &lt;value&gt;NONE&lt;/value&gt;
+                            &lt;value&gt;DEASSERT&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -2831,7 +3175,7 @@ https://fpgasoftware.intel.com/eula.-->
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;intel_noc_initiator&lt;/className&gt;
-        &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;version&gt;1.1.0&lt;/version&gt;
         &lt;displayName&gt;NoC Initiator Intel FPGA IP&lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
@@ -2936,6 +3280,31 @@ https://fpgasoftware.intel.com/eula.-->
               <ipxact:displayName>Default boundary</ipxact:displayName>
               <ipxact:value>&lt;boundaryDefinition&gt;
     &lt;interfaces&gt;
+        &lt;interface&gt;
+            &lt;name&gt;i0_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_0.initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
         &lt;interface&gt;
             &lt;name&gt;s0_axi4&lt;/name&gt;
             &lt;type&gt;axi4&lt;/type&gt;
@@ -3340,6 +3709,31 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;i1_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_1.initiator_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -3808,10 +4202,11 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;parameterValueMap&gt;
                     &lt;entry&gt;
                         &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;value&gt;s_axi4_aclk&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;synchronousEdges&lt;/key&gt;
-                        &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;value&gt;DEASSERT&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -3823,40 +4218,39 @@ https://fpgasoftware.intel.com/eula.-->
               <ipxact:name>generationInfoDefinition</ipxact:name>
               <ipxact:displayName>Generation Behavior</ipxact:displayName>
               <ipxact:value>&lt;generationInfoDefinition&gt;
-    &lt;hdlLibraryName&gt;my_sys_intel_noc_initiator_0&lt;/hdlLibraryName&gt;
+    &lt;hdlLibraryName&gt;my_sys_intel_noc_initiator_1&lt;/hdlLibraryName&gt;
     &lt;fileSets&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;QUARTUS_SYNTH&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;SIM_VERILOG&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;SIM_VHDL&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;CDC&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;CDC_VHDL&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -3872,7 +4266,7 @@ https://fpgasoftware.intel.com/eula.-->
             <ipxact:parameter parameterId="logicalView" type="string">
               <ipxact:name>logicalView</ipxact:name>
               <ipxact:displayName>Logical view</ipxact:displayName>
-              <ipxact:value>ip/my_sys/my_sys_intel_noc_initiator_0.ip</ipxact:value>
+              <ipxact:value>ip/my_sys/my_sys_intel_noc_initiator_1.ip</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="moduleAssignmentDefinition" type="string">
               <ipxact:name>moduleAssignmentDefinition</ipxact:name>
@@ -4432,7 +4826,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -4908,6 +5301,14 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;entry&gt;
                             &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                             &lt;value&gt;16&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -5426,6 +5827,14 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;16&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;issuesINCRBursts&lt;/key&gt;
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
@@ -5545,7 +5954,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -6371,6 +6779,14 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;16&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;issuesINCRBursts&lt;/key&gt;
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
@@ -6887,6 +7303,14 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;16&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;issuesINCRBursts&lt;/key&gt;
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
@@ -7006,7 +7430,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -7619,7 +8042,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hdlParameters" type="string">
@@ -7654,7 +8076,7 @@ https://fpgasoftware.intel.com/eula.-->
       </altera:module>
     </altera:modules>
     <altera:connections>
-      <altera:connection altera:kind="avalon" altera:version="22.3" altera:start="mgc_axi4_master_0.altera_axi4_master" altera:end="intel_noc_initiator_0.s0_axi4">
+      <altera:connection altera:kind="avalon" altera:version="23.1" altera:start="mgc_axi4_master_0.altera_axi4_master" altera:end="intel_noc_initiator_0.s0_axi4">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -7664,6 +8086,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableEccProtection" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableInstrumentation" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableOutOfOrderSupport" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.insertDefaultSlave" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectResetSource" altera:parameter_value="DEFAULT"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectType" altera:parameter_value="STANDARD"></altera:connection_parameter>
@@ -7674,7 +8097,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="TRUE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="22.3" altera:start="mgc_axi4_master_1.altera_axi4_master" altera:end="intel_noc_initiator_0.s1_axi4">
+      <altera:connection altera:kind="avalon" altera:version="23.1" altera:start="mgc_axi4_master_1.altera_axi4_master" altera:end="intel_noc_initiator_0.s1_axi4">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -7684,6 +8107,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableEccProtection" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableInstrumentation" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableOutOfOrderSupport" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.insertDefaultSlave" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectResetSource" altera:parameter_value="DEFAULT"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectType" altera:parameter_value="STANDARD"></altera:connection_parameter>
@@ -7694,15 +8118,17 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="TRUE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.3" altera:start="clk100.out_clk" altera:end="iopll_0.refclk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.3" altera:start="clk100.out_clk" altera:end="intel_noc_clock_ctrl_0.refclk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.3" altera:start="iopll_0.outclk0" altera:end="mgc_axi4_master_0.clock_sink"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.3" altera:start="iopll_0.outclk0" altera:end="mgc_axi4_master_1.clock_sink"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.3" altera:start="iopll_0.outclk0" altera:end="intel_noc_initiator_0.s_axi4_aclk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.3" altera:start="iopll_0.outclk1" altera:end="hbm_fp_0.uibpll_refclk"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="22.3" altera:start="axi_reset.out_reset" altera:end="mgc_axi4_master_0.reset_sink"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="22.3" altera:start="axi_reset.out_reset" altera:end="mgc_axi4_master_1.reset_sink"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="22.3" altera:start="noc_reset.out_reset" altera:end="intel_noc_initiator_0.s_axi4_aresetn"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="clk100.out_clk" altera:end="iopll_0.refclk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="clk100.out_clk" altera:end="intel_noc_clock_ctrl_0.refclk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk0" altera:end="mgc_axi4_master_0.clock_sink"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk0" altera:end="mgc_axi4_master_1.clock_sink"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk0" altera:end="hbm_fp_0.fabric_clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk0" altera:end="intel_noc_initiator_0.s_axi4_aclk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk1" altera:end="hbm_fp_0.uibpll_refclk"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="axi_reset.out_reset" altera:end="hbm_fp_0.hbm_reset_n"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="axi_reset.out_reset" altera:end="mgc_axi4_master_0.reset_sink"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="axi_reset.out_reset" altera:end="mgc_axi4_master_1.reset_sink"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="noc_reset.out_reset" altera:end="intel_noc_initiator_0.s_axi4_aresetn"></altera:connection>
     </altera:connections>
     <altera:interconnect_requirements></altera:interconnect_requirements>
     <altera:wire_level_connections></altera:wire_level_connections>
@@ -7716,8 +8142,8 @@ https://fpgasoftware.intel.com/eula.-->
       <altera:interface_mapping altera:name="hbm_fp_0_temp_i" altera:internal="hbm_fp_0.temp_i" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="hbm_local_cal_fail" altera:internal="hbm_fp_0.local_cal_fail" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="hbm_local_cal_success" altera:internal="hbm_fp_0.local_cal_success" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="hbm_reset_in" altera:internal="hbm_fp_0.hbm_reset_in" altera:type="reset" altera:dir="end"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="hbm_wmcrst_n" altera:internal="hbm_fp_0.wmcrst_n" altera:type="reset" altera:dir="start"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="hbm_reset_in" altera:internal="hbm_fp_0.hbm_reset_in"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="hbm_wmcrst_n" altera:internal="hbm_fp_0.wmcrst_n"></altera:interface_mapping>
       <altera:interface_mapping altera:name="iopll_locked" altera:internal="iopll_0.locked" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="iopll_reset" altera:internal="iopll_0.reset" altera:type="reset" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="noc_reset_in" altera:internal="noc_reset.in_reset" altera:type="reset" altera:dir="end"></altera:interface_mapping>
@@ -7731,11 +8157,11 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:busInterfaces>
           <ipxact:busInterface>
             <ipxact:name>intel_noc_initiator_0.s0_axi4</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4" version="22.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mgc_axi4_master_0.altera_axi4_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4" version="22.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="mgc_axi4_master_0.altera_axi4_master">
                 <ipxact:baseAddress>0x0000_0000_0000_0000</ipxact:baseAddress>
@@ -7744,16 +8170,26 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>intel_noc_initiator_0.s1_axi4</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4" version="22.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mgc_axi4_master_1.altera_axi4_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4" version="22.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="mgc_axi4_master_1.altera_axi4_master">
                 <ipxact:baseAddress>0x0000_0000_0000_0000</ipxact:baseAddress>
               </ipxact:addressSpaceRef>
             </ipxact:master>
+          </ipxact:busInterface>
+          <ipxact:busInterface>
+            <ipxact:name>intel_noc_initiator_0.i0_axi4noc</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
+            <ipxact:master></ipxact:master>
+          </ipxact:busInterface>
+          <ipxact:busInterface>
+            <ipxact:name>intel_noc_initiator_0.i1_axi4noc</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
+            <ipxact:master></ipxact:master>
           </ipxact:busInterface>
         </ipxact:busInterfaces>
         <ipxact:addressSpaces>

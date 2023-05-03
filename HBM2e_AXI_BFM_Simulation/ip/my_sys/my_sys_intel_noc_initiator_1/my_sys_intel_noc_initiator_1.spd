@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="intel_noc_internal_initiator_200/sim/top_ready_latency_adp.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_internal_initiator_200/sim/ff_macro_init.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_internal_initiator_200/sim/ready_latency_adapter.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_internal_initiator_200/sim/scfifo_s.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_internal_initiator_200/sim/scfifo_s_normal.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_internal_initiator_200/sim/scfifo_s_showahead.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_internal_initiator_200/sim/add_a_b_s0_s1.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_internal_initiator_200/sim/generic_mlab_sc.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_internal_initiator_200/sim/my_sys_intel_noc_initiator_1_intel_noc_internal_initiator_200_aw74cea.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_noc_internal_initiator_200" />
+ <file
+   path="intel_noc_initiator_110/sim/my_sys_intel_noc_initiator_1_intel_noc_initiator_110_qshnowy.v"
+   type="VERILOG"
+   library="intel_noc_initiator_110"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/my_sys_intel_noc_initiator_1.v"
+   type="VERILOG"
+   library="my_sys_intel_noc_initiator_1"
+   hasInlineConfiguration="true" />
+ <topLevel name="my_sys_intel_noc_initiator_1.my_sys_intel_noc_initiator_1" />
+ <deviceFamily name="agilex7" />
+ <device name="AGMF039R47A2E2VR0" />
+</simPackage>

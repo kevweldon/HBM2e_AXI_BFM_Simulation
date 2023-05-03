@@ -19,11 +19,39 @@ https://fpgasoftware.intel.com/eula.-->
   <ipxact:version>1.1.0</ipxact:version>
   <ipxact:busInterfaces>
     <ipxact:busInterface>
-      <ipxact:name>s0_axi4</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="axi4" version="22.4"></ipxact:busType>
+      <ipxact:name>i0_axi4noc</ipxact:name>
+      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4" version="22.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:abstractionRef>
+          <ipxact:portMaps></ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:master></ipxact:master>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="internalHPath" type="string">
+          <ipxact:name>internalHPath</ipxact:name>
+          <ipxact:displayName>Internal HPath</ipxact:displayName>
+          <ipxact:value>iniu_0|initiator_inst_0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="memorySpanInGB" type="string">
+          <ipxact:name>memorySpanInGB</ipxact:name>
+          <ipxact:displayName>memorySpanInGB</ipxact:displayName>
+          <ipxact:value>0x0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="regFunctionHPath" type="string">
+          <ipxact:name>regFunctionHPath</ipxact:name>
+          <ipxact:displayName>regFunctionHPath</ipxact:displayName>
+          <ipxact:value>iniu_0.initiator_inst_0</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+    </ipxact:busInterface>
+    <ipxact:busInterface>
+      <ipxact:name>s0_axi4</ipxact:name>
+      <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -400,11 +428,39 @@ https://fpgasoftware.intel.com/eula.-->
       </ipxact:parameters>
     </ipxact:busInterface>
     <ipxact:busInterface>
-      <ipxact:name>s1_axi4</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="axi4" version="22.4"></ipxact:busType>
+      <ipxact:name>i1_axi4noc</ipxact:name>
+      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4" version="22.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:abstractionRef>
+          <ipxact:portMaps></ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:master></ipxact:master>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="internalHPath" type="string">
+          <ipxact:name>internalHPath</ipxact:name>
+          <ipxact:displayName>Internal HPath</ipxact:displayName>
+          <ipxact:value>iniu_1|initiator_inst_0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="memorySpanInGB" type="string">
+          <ipxact:name>memorySpanInGB</ipxact:name>
+          <ipxact:displayName>memorySpanInGB</ipxact:displayName>
+          <ipxact:value>0x0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="regFunctionHPath" type="string">
+          <ipxact:name>regFunctionHPath</ipxact:name>
+          <ipxact:displayName>regFunctionHPath</ipxact:displayName>
+          <ipxact:value>iniu_1.initiator_inst_0</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+    </ipxact:busInterface>
+    <ipxact:busInterface>
+      <ipxact:name>s1_axi4</ipxact:name>
+      <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -782,10 +838,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>s_axi4_aclk</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="clock" version="22.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="clock" version="23.1"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="22.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="23.1"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -819,10 +875,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>s_axi4_aresetn</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="reset" version="22.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="reset" version="23.1"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="22.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="23.1"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -2142,7 +2198,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="SYS_INFO_DEVICE_FAMILY" type="string">
           <ipxact:name>SYS_INFO_DEVICE_FAMILY</ipxact:name>
           <ipxact:displayName>SYS_INFO_DEVICE_FAMILY</ipxact:displayName>
-          <ipxact:value>Agilex</ipxact:value>
+          <ipxact:value>Agilex 7</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SYS_INFO_DEVICE" type="string">
           <ipxact:name>SYS_INFO_DEVICE</ipxact:name>
@@ -2189,6 +2245,11 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>AXI4 Data Mode</ipxact:displayName>
           <ipxact:value>AXI4_DATA_MODE_256</ipxact:value>
         </ipxact:parameter>
+        <ipxact:parameter parameterId="INDEPENDENT_WIDE_INTERFACE_CLOCK" type="bit">
+          <ipxact:name>INDEPENDENT_WIDE_INTERFACE_CLOCK</ipxact:name>
+          <ipxact:displayName>Clock(s) of wide read and write AXI channels are independent from the NoC initiator hardware clock</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
         <ipxact:parameter parameterId="AXI4_HANDSHAKE" type="string">
           <ipxact:name>AXI4_HANDSHAKE</ipxact:name>
           <ipxact:displayName>AXI4 interface handshaking</ipxact:displayName>
@@ -2201,17 +2262,17 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:parameter>
         <ipxact:parameter parameterId="NOC_QOS_MODE" type="string">
           <ipxact:name>NOC_QOS_MODE</ipxact:name>
-          <ipxact:displayName>NOC QoS Mode</ipxact:displayName>
+          <ipxact:displayName>NoC QoS Mode</ipxact:displayName>
           <ipxact:value>NOC_QOS_MODE_SOCKET</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="NOC_QOS_READ_PRIORITY" type="int">
           <ipxact:name>NOC_QOS_READ_PRIORITY</ipxact:name>
-          <ipxact:displayName>NOC bridge generated Read Priority</ipxact:displayName>
+          <ipxact:displayName>NoC priority for Reads</ipxact:displayName>
           <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="NOC_QOS_WRITE_PRIORITY" type="int">
           <ipxact:name>NOC_QOS_WRITE_PRIORITY</ipxact:name>
-          <ipxact:displayName>NOC bridge generated Write Priority</ipxact:displayName>
+          <ipxact:displayName>NoC priority for Writes</ipxact:displayName>
           <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
@@ -2231,7 +2292,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
           <ipxact:displayName>Device family</ipxact:displayName>
-          <ipxact:value>Agilex</ipxact:value>
+          <ipxact:value>Agilex 7</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
           <ipxact:name>deviceSpeedGrade</ipxact:name>
@@ -2248,6 +2309,14 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>bonusData</ipxact:displayName>
           <ipxact:value>bonusData 
 {
+   element $system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Agilex 7";
+         type = "String";
+      }
+   }
    element intel_noc_initiator_0
    {
       datum _sortIndex
@@ -2269,6 +2338,31 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>lockedInterfaceDefinition</ipxact:displayName>
           <ipxact:value>&lt;boundaryDefinition&gt;
     &lt;interfaces&gt;
+        &lt;interface&gt;
+            &lt;name&gt;i0_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_0.initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
         &lt;interface&gt;
             &lt;name&gt;s0_axi4&lt;/name&gt;
             &lt;type&gt;axi4&lt;/type&gt;
@@ -2673,6 +2767,31 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;i1_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;value&gt;0x0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_1.initiator_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -3141,10 +3260,11 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;parameterValueMap&gt;
                     &lt;entry&gt;
                         &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;value&gt;s_axi4_aclk&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;synchronousEdges&lt;/key&gt;
-                        &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;value&gt;DEASSERT&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -3205,6 +3325,8 @@ https://fpgasoftware.intel.com/eula.-->
       </ipxact:parameters>
     </altera:altera_system_parameters>
     <altera:altera_interface_boundary>
+      <altera:interface_mapping altera:name="i0_axi4noc" altera:internal="intel_noc_initiator_0.i0_axi4noc" altera:type="axi4noc" altera:dir="start"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="i1_axi4noc" altera:internal="intel_noc_initiator_0.i1_axi4noc" altera:type="axi4noc" altera:dir="start"></altera:interface_mapping>
       <altera:interface_mapping altera:name="s0_axi4" altera:internal="intel_noc_initiator_0.s0_axi4" altera:type="axi4" altera:dir="end">
         <altera:port_mapping altera:name="s0_axi4_araddr" altera:internal="s0_axi4_araddr"></altera:port_mapping>
         <altera:port_mapping altera:name="s0_axi4_arburst" altera:internal="s0_axi4_arburst"></altera:port_mapping>

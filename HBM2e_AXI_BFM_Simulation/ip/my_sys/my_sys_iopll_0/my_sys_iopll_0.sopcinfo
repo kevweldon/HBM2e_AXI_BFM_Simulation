@@ -4,8 +4,8 @@
  kind="my_sys_iopll_0"
  version="1.0"
  fabric="QSYS">
- <!-- Format version 22.4 94 (Future versions may contain additional information.) -->
- <!-- 2023.01.09.10:44:22 -->
+ <!-- Format version 23.1 115 (Future versions may contain additional information.) -->
+ <!-- 2023.05.02.17:10:51 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -27,7 +27,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE_FAMILY">
   <type>java.lang.String</type>
-  <value>Agilex</value>
+  <value>Agilex 7</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -84,7 +84,7 @@
  </parameter>
  <parameter name="deviceFamily">
   <type>java.lang.String</type>
-  <value>Agilex</value>
+  <value>Agilex 7</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -103,7 +103,7 @@
    name="iopll_0"
    kind="altera_iopll"
    version="19.3.1"
-   entity="my_sys_iopll_0_altera_iopll_1931_oz3cxky"
+   entity="my_sys_iopll_0_altera_iopll_1931_fisojzi"
    library="altera_iopll_1931"
    path="iopll_0"
    hpath="iopll_0"
@@ -124,7 +124,7 @@ the requested settings for a module instance. -->
   </assignment>
   <parameter name="gui_device_family">
    <type>java.lang.String</type>
-   <value>Agilex</value>
+   <value>Agilex 7</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -356,7 +356,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="system_info_device_family">
    <type>java.lang.String</type>
-   <value>Agilex</value>
+   <value>Agilex 7</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3603,7 +3603,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pll_type">
    <type>java.lang.String</type>
-   <value>Agilex</value>
+   <value>Agilex 7</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -6729,7 +6729,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="refclk" kind="clock_sink" version="22.4">
+  <interface name="refclk" kind="clock_sink" version="23.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -6794,7 +6794,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="locked" kind="conduit_end" version="22.4">
+  <interface name="locked" kind="conduit_end" version="23.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -6851,7 +6851,7 @@ parameters are a RESULT of the module parameters. -->
     <role>export</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="22.4">
+  <interface name="reset" kind="reset_sink" version="23.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -6900,7 +6900,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="outclk0" kind="clock_source" version="22.4">
+  <interface name="outclk0" kind="clock_source" version="23.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -6973,7 +6973,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="outclk1" kind="clock_source" version="22.4">
+  <interface name="outclk1" kind="clock_source" version="23.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7061,7 +7061,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>22.4</version>
+  <version>23.1</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -7069,7 +7069,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>22.4</version>
+  <version>23.1</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -7077,7 +7077,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>22.4</version>
+  <version>23.1</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -7085,8 +7085,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Output</displayName>
-  <version>22.4</version>
+  <version>23.1</version>
  </plugin>
- <reportVersion>22.4 94</reportVersion>
+ <reportVersion>23.1 115</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

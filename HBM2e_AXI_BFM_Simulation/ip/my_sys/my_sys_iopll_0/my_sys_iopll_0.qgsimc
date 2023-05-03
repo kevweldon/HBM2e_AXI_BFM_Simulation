@@ -1570,7 +1570,7 @@
           </parameter>
           <parameter>
             <name>gui_device_family</name>
-            <value>Agilex</value>
+            <value>Agilex 7</value>
           </parameter>
           <parameter>
             <name>gui_device_iobank_rev</name>
@@ -3206,7 +3206,7 @@
           </parameter>
           <parameter>
             <name>pll_type</name>
-            <value>Agilex</value>
+            <value>Agilex 7</value>
           </parameter>
           <parameter>
             <name>pll_unlock_fltr_cfg</name>
@@ -3282,7 +3282,7 @@
           </parameter>
           <parameter>
             <name>system_info_device_family</name>
-            <value>Agilex</value>
+            <value>Agilex 7</value>
           </parameter>
           <parameter>
             <name>system_info_device_iobank_rev</name>
@@ -3313,7 +3313,7 @@
         <className>altera_iopll</className>
         <version>19.3.1</version>
         <name>iopll_0</name>
-        <uniqueName>my_sys_iopll_0_altera_iopll_1931_oz3cxky</uniqueName>
+        <uniqueName>my_sys_iopll_0_altera_iopll_1931_fisojzi</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>my_sys_iopll_0.iopll_0</path>
