@@ -34,7 +34,7 @@
           </parameter>
           <parameter>
             <name>FPGA_FAMILY</name>
-            <value>FAMILY_AGILEX7</value>
+            <value>FAMILY_FALCONPARK</value>
           </parameter>
           <parameter>
             <name>FPGA_SPEEDGRADE</name>
@@ -93,6 +93,14 @@
             <value>Agilex 7</value>
           </parameter>
           <parameter>
+            <name>SYS_INFO_DEVICE_FAMILY_VARIANT</name>
+            <value>M-Series with both HPS and 32GB HBM</value>
+          </parameter>
+          <parameter>
+            <name>SYS_INFO_DEVICE_GROUP</name>
+            <value></value>
+          </parameter>
+          <parameter>
             <name>SYS_INFO_DEVICE_POWER_MODEL</name>
             <value>STANDARD_POWER</value>
           </parameter>
@@ -113,7 +121,7 @@
         <className>intel_noc_initiator</className>
         <version>1.1.0</version>
         <name>intel_noc_initiator_0</name>
-        <uniqueName>my_sys_intel_noc_initiator_1_intel_noc_initiator_110_qshnowy</uniqueName>
+        <uniqueName>my_sys_intel_noc_initiator_1_intel_noc_initiator_110_kv2wdqq</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>my_sys_intel_noc_initiator_1.intel_noc_initiator_0</path>
@@ -164,7 +172,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>clk_bridge.out_clk/iniu_0.clk</name>
                 <end>iniu_0/clk</end>
                 <start>clk_bridge/out_clk</start>
@@ -190,7 +198,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>clk_bridge.out_clk/iniu_1.clk</name>
                 <end>iniu_1/clk</end>
                 <start>clk_bridge/out_clk</start>
@@ -216,9 +224,113 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>clk_bridge.out_clk/rst_bridge.clk</name>
                 <end>rst_bridge/clk</end>
+                <start>clk_bridge/out_clk</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>clock</className>
+                <version>23.3</version>
+                <name>clk_bridge.out_clk/user_adapter_0.m_axi4_aclk</name>
+                <end>user_adapter_0/m_axi4_aclk</end>
+                <start>clk_bridge/out_clk</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>clock</className>
+                <version>23.3</version>
+                <name>clk_bridge.out_clk/user_adapter_0.s_axi4_aclk</name>
+                <end>user_adapter_0/s_axi4_aclk</end>
+                <start>clk_bridge/out_clk</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>clock</className>
+                <version>23.3</version>
+                <name>clk_bridge.out_clk/user_adapter_1.m_axi4_aclk</name>
+                <end>user_adapter_1/m_axi4_aclk</end>
+                <start>clk_bridge/out_clk</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>clock</className>
+                <version>23.3</version>
+                <name>clk_bridge.out_clk/user_adapter_1.s_axi4_aclk</name>
+                <end>user_adapter_1/s_axi4_aclk</end>
                 <start>clk_bridge/out_clk</start>
               </incidentConnection>
             </incidentConnections>
@@ -231,6 +343,10 @@
           <instanceData xsi:type="data">
             <parameters>
               <parameter>
+                <name>AXI4_NOC_INTERFACE_TYPE</name>
+                <value>AXI4_NOC_INTERFACE</value>
+              </parameter>
+              <parameter>
                 <name>AXI_ADDR_WIDTH</name>
                 <value>44</value>
               </parameter>
@@ -299,6 +415,14 @@
                 <value>64</value>
               </parameter>
               <parameter>
+                <name>NOC_INIU_THROTTLE_MODE_RD</name>
+                <value>NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100</value>
+              </parameter>
+              <parameter>
+                <name>NOC_INIU_THROTTLE_MODE_WR</name>
+                <value>NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100</value>
+              </parameter>
+              <parameter>
                 <name>NOC_INIU_UNOC_CLK_SEL</name>
                 <value>NOC_INIU_UNOC_CLK_SEL_VIO_CLK</value>
               </parameter>
@@ -313,6 +437,10 @@
               <parameter>
                 <name>NOC_INIU_WUSER_ECC_EN</name>
                 <value>NOC_INIU_WUSER_ECC_EN_DISABLE</value>
+              </parameter>
+              <parameter>
+                <name>NOC_ISOLATION_GROUP</name>
+                <value>DEFAULT</value>
               </parameter>
               <parameter>
                 <name>NOC_QOS_MODE</name>
@@ -2633,6 +2761,10 @@
               <parameter>
                 <name>NUM_UNOC_GROUPS</name>
                 <value>0</value>
+              </parameter>
+              <parameter>
+                <name>READY_LATENCY_FIFO_LOG_DEPTH</name>
+                <value>5</value>
               </parameter>
               <parameter>
                 <name>SELECT_NOC</name>
@@ -27509,9 +27641,9 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>intel_noc_internal_initiator</className>
-            <version>2.0.0</version>
+            <version>2.0.2</version>
             <name>iniu_0</name>
-            <uniqueName>my_sys_intel_noc_initiator_1_intel_noc_internal_initiator_200_aw74cea</uniqueName>
+            <uniqueName>my_sys_intel_noc_initiator_1_intel_noc_internal_initiator_202_ikpwkgy</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -27535,7 +27667,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>clk_bridge.out_clk/iniu_0.clk</name>
                 <end>iniu_0/clk</end>
                 <start>clk_bridge/out_clk</start>
@@ -27557,10 +27689,108 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>rst_bridge.out_reset/iniu_0.reset</name>
                 <end>iniu_0/reset</end>
                 <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>defaultConnection</name>
+                    <value>false</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.piplineType</name>
+                    <value>PIPELINE_STAGE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableInstrumentation</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>domainAlias</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.widthAdapterImplementation</name>
+                    <value>GENERIC_CONVERTER</value>
+                  </parameter>
+                  <parameter>
+                    <name>addressWidthSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.interconnectResetSource</name>
+                    <value>DEFAULT</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.burstAdapterImplementation</name>
+                    <value>GENERIC_CONVERTER</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.optimizeRdFifoSize</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>baseAddress</name>
+                    <value>0x0000</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.responseFifoType</name>
+                    <value>REGISTER_BASED</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.clockCrossingAdapter</name>
+                    <value>HANDSHAKE</value>
+                  </parameter>
+                  <parameter>
+                    <name>arbitrationPriority</name>
+                    <value>1</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.maxAdditionalLatency</name>
+                    <value>1</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.syncResets</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>slaveDataWidthSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>addressMapSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableAllPipelines</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableEccProtection</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.interconnectType</name>
+                    <value>STANDARD</value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>avalon</className>
+                <version>23.3</version>
+                <name>user_adapter_0.m_axi4/iniu_0.altera_axi_slave</name>
+                <end>iniu_0/altera_axi_slave</end>
+                <start>user_adapter_0/m_axi4</start>
               </incidentConnection>
             </incidentConnections>
             <path>my_sys_intel_noc_initiator_1.intel_noc_initiator_0.iniu_0</path>
@@ -27571,6 +27801,10 @@
           <instanceKey xsi:type="xs:string">iniu_1</instanceKey>
           <instanceData xsi:type="data">
             <parameters>
+              <parameter>
+                <name>AXI4_NOC_INTERFACE_TYPE</name>
+                <value>AXI4_NOC_INTERFACE</value>
+              </parameter>
               <parameter>
                 <name>AXI_ADDR_WIDTH</name>
                 <value>44</value>
@@ -27640,6 +27874,14 @@
                 <value>64</value>
               </parameter>
               <parameter>
+                <name>NOC_INIU_THROTTLE_MODE_RD</name>
+                <value>NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100</value>
+              </parameter>
+              <parameter>
+                <name>NOC_INIU_THROTTLE_MODE_WR</name>
+                <value>NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100</value>
+              </parameter>
+              <parameter>
                 <name>NOC_INIU_UNOC_CLK_SEL</name>
                 <value>NOC_INIU_UNOC_CLK_SEL_VIO_CLK</value>
               </parameter>
@@ -27654,6 +27896,10 @@
               <parameter>
                 <name>NOC_INIU_WUSER_ECC_EN</name>
                 <value>NOC_INIU_WUSER_ECC_EN_DISABLE</value>
+              </parameter>
+              <parameter>
+                <name>NOC_ISOLATION_GROUP</name>
+                <value>DEFAULT</value>
               </parameter>
               <parameter>
                 <name>NOC_QOS_MODE</name>
@@ -29974,6 +30220,10 @@
               <parameter>
                 <name>NUM_UNOC_GROUPS</name>
                 <value>0</value>
+              </parameter>
+              <parameter>
+                <name>READY_LATENCY_FIFO_LOG_DEPTH</name>
+                <value>5</value>
               </parameter>
               <parameter>
                 <name>SELECT_NOC</name>
@@ -54850,9 +55100,9 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>intel_noc_internal_initiator</className>
-            <version>2.0.0</version>
+            <version>2.0.2</version>
             <name>iniu_1</name>
-            <uniqueName>my_sys_intel_noc_initiator_1_intel_noc_internal_initiator_200_aw74cea</uniqueName>
+            <uniqueName>my_sys_intel_noc_initiator_1_intel_noc_internal_initiator_202_ikpwkgy</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -54876,7 +55126,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>clk_bridge.out_clk/iniu_1.clk</name>
                 <end>iniu_1/clk</end>
                 <start>clk_bridge/out_clk</start>
@@ -54898,10 +55148,108 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>rst_bridge.out_reset/iniu_1.reset</name>
                 <end>iniu_1/reset</end>
                 <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>defaultConnection</name>
+                    <value>false</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.piplineType</name>
+                    <value>PIPELINE_STAGE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableInstrumentation</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>domainAlias</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.widthAdapterImplementation</name>
+                    <value>GENERIC_CONVERTER</value>
+                  </parameter>
+                  <parameter>
+                    <name>addressWidthSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.interconnectResetSource</name>
+                    <value>DEFAULT</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.burstAdapterImplementation</name>
+                    <value>GENERIC_CONVERTER</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.optimizeRdFifoSize</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>baseAddress</name>
+                    <value>0x0000</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.responseFifoType</name>
+                    <value>REGISTER_BASED</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.clockCrossingAdapter</name>
+                    <value>HANDSHAKE</value>
+                  </parameter>
+                  <parameter>
+                    <name>arbitrationPriority</name>
+                    <value>1</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.maxAdditionalLatency</name>
+                    <value>1</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.syncResets</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>slaveDataWidthSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>addressMapSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableAllPipelines</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableEccProtection</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.interconnectType</name>
+                    <value>STANDARD</value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>avalon</className>
+                <version>23.3</version>
+                <name>user_adapter_1.m_axi4/iniu_1.altera_axi_slave</name>
+                <end>iniu_1/altera_axi_slave</end>
+                <start>user_adapter_1/m_axi4</start>
               </incidentConnection>
             </incidentConnections>
             <path>my_sys_intel_noc_initiator_1.intel_noc_initiator_0.iniu_1</path>
@@ -54961,7 +55309,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>clk_bridge.out_clk/rst_bridge.clk</name>
                 <end>rst_bridge/clk</end>
                 <start>clk_bridge/out_clk</start>
@@ -54983,7 +55331,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>rst_bridge.out_reset/iniu_0.reset</name>
                 <end>iniu_0/reset</end>
                 <start>rst_bridge/out_reset</start>
@@ -55005,13 +55353,803 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>rst_bridge.out_reset/iniu_1.reset</name>
                 <end>iniu_1/reset</end>
                 <start>rst_bridge/out_reset</start>
               </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.3</version>
+                <name>rst_bridge.out_reset/user_adapter_0.m_axi4_aresetn</name>
+                <end>user_adapter_0/m_axi4_aresetn</end>
+                <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.3</version>
+                <name>rst_bridge.out_reset/user_adapter_0.s_axi4_aresetn</name>
+                <end>user_adapter_0/s_axi4_aresetn</end>
+                <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.3</version>
+                <name>rst_bridge.out_reset/user_adapter_1.m_axi4_aresetn</name>
+                <end>user_adapter_1/m_axi4_aresetn</end>
+                <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.3</version>
+                <name>rst_bridge.out_reset/user_adapter_1.s_axi4_aresetn</name>
+                <end>user_adapter_1/s_axi4_aresetn</end>
+                <start>rst_bridge/out_reset</start>
+              </incidentConnection>
             </incidentConnections>
             <path>my_sys_intel_noc_initiator_1.intel_noc_initiator_0.rst_bridge</path>
+          </instanceData>
+          <children></children>
+        </node>
+        <node>
+          <instanceKey xsi:type="xs:string">user_adapter_0</instanceKey>
+          <instanceData xsi:type="data">
+            <parameters>
+              <parameter>
+                <name>AXI4_ADDR_WIDTH</name>
+                <value>44</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_AXUSER_WIDTH</name>
+                <value>11</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_DATA_MODE</name>
+                <value>AXI4_DATA_MODE_256</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_DATA_WIDTH</name>
+                <value>256</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_HANDSHAKE</name>
+                <value>AXI4_HANDSHAKE_STANDARD</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_ID_WIDTH</name>
+                <value>7</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_USER_DATA_EN</name>
+                <value>false</value>
+              </parameter>
+              <parameter>
+                <name>ENABLE_SECURITY</name>
+                <value>OFF</value>
+              </parameter>
+              <parameter>
+                <name>FPGA_FAMILY</name>
+                <value>FAMILY_INVALID</value>
+              </parameter>
+              <parameter>
+                <name>FPGA_SPEEDGRADE</name>
+                <value>-1</value>
+              </parameter>
+              <parameter>
+                <name>INDEPENDENT_WIDE_INTERFACE_CLOCK</name>
+                <value>true</value>
+              </parameter>
+              <parameter>
+                <name>INDIVIDUAL_AXI_CLKRESET</name>
+                <value>true</value>
+              </parameter>
+              <parameter>
+                <name>NOC_AXI_PIPELINE_CNT</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>NOC_INIU_ADAPTER_DATA_WIDTH</name>
+                <value>NOC_INIU_ADAPTER_DATA_WIDTH_256_BITS</value>
+              </parameter>
+              <parameter>
+                <name>NOC_QOS_MODE</name>
+                <value>NOC_QOS_MODE_SOCKET</value>
+              </parameter>
+              <parameter>
+                <name>NOC_QOS_READ_PRIORITY</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>NOC_QOS_WRITE_PRIORITY</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>NUM_AXI4LITE_IF</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>NUM_AXI4_IF</name>
+                <value>1</value>
+              </parameter>
+              <parameter>
+                <name>READ_DRAIN_CYC</name>
+                <value>5</value>
+              </parameter>
+              <parameter>
+                <name>READ_FENCE_CYC</name>
+                <value>5</value>
+              </parameter>
+              <parameter>
+                <name>READ_FENCE_DRAIN_EN</name>
+                <value>true</value>
+              </parameter>
+              <parameter>
+                <name>SELECT_NOC</name>
+                <value>Fabric</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE</name>
+                <value>AGMF039R47A2E2VR0</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
+                <value>HSSI_GDR_REVB,HSSI_RNR_REVB,MAIN_FP8_REVA,UIB_HBM_REVA</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_FAMILY</name>
+                <value>Agilex 7</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_FAMILY_VARIANT</name>
+                <value>M-Series with both HPS and 32GB HBM</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_GROUP</name>
+                <value></value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_POWER_MODEL</name>
+                <value>STANDARD_POWER</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_SPEEDGRADE</name>
+                <value>2</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_SUPPORTS_VID</name>
+                <value>1</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
+                <value>EXTENDED</value>
+              </parameter>
+              <parameter>
+                <name>WRITE_DRAIN_CYC</name>
+                <value>5</value>
+              </parameter>
+              <parameter>
+                <name>WRITE_FENCE_CYC</name>
+                <value>5</value>
+              </parameter>
+              <parameter>
+                <name>WRITE_FENCE_DRAIN_EN</name>
+                <value>true</value>
+              </parameter>
+            </parameters>
+            <interconnectAssignments></interconnectAssignments>
+            <className>intel_axi4_user_adapter</className>
+            <version>1.1.0</version>
+            <name>user_adapter_0</name>
+            <uniqueName>my_sys_intel_noc_initiator_1_intel_axi4_user_adapter_110_ierbsva</uniqueName>
+            <nonce>0</nonce>
+            <incidentConnections>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>clock</className>
+                <version>23.3</version>
+                <name>clk_bridge.out_clk/user_adapter_0.m_axi4_aclk</name>
+                <end>user_adapter_0/m_axi4_aclk</end>
+                <start>clk_bridge/out_clk</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>clock</className>
+                <version>23.3</version>
+                <name>clk_bridge.out_clk/user_adapter_0.s_axi4_aclk</name>
+                <end>user_adapter_0/s_axi4_aclk</end>
+                <start>clk_bridge/out_clk</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.3</version>
+                <name>rst_bridge.out_reset/user_adapter_0.m_axi4_aresetn</name>
+                <end>user_adapter_0/m_axi4_aresetn</end>
+                <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.3</version>
+                <name>rst_bridge.out_reset/user_adapter_0.s_axi4_aresetn</name>
+                <end>user_adapter_0/s_axi4_aresetn</end>
+                <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>defaultConnection</name>
+                    <value>false</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.piplineType</name>
+                    <value>PIPELINE_STAGE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableInstrumentation</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>domainAlias</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.widthAdapterImplementation</name>
+                    <value>GENERIC_CONVERTER</value>
+                  </parameter>
+                  <parameter>
+                    <name>addressWidthSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.interconnectResetSource</name>
+                    <value>DEFAULT</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.burstAdapterImplementation</name>
+                    <value>GENERIC_CONVERTER</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.optimizeRdFifoSize</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>baseAddress</name>
+                    <value>0x0000</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.responseFifoType</name>
+                    <value>REGISTER_BASED</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.clockCrossingAdapter</name>
+                    <value>HANDSHAKE</value>
+                  </parameter>
+                  <parameter>
+                    <name>arbitrationPriority</name>
+                    <value>1</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.maxAdditionalLatency</name>
+                    <value>1</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.syncResets</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>slaveDataWidthSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>addressMapSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableAllPipelines</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableEccProtection</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.interconnectType</name>
+                    <value>STANDARD</value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>avalon</className>
+                <version>23.3</version>
+                <name>user_adapter_0.m_axi4/iniu_0.altera_axi_slave</name>
+                <end>iniu_0/altera_axi_slave</end>
+                <start>user_adapter_0/m_axi4</start>
+              </incidentConnection>
+            </incidentConnections>
+            <path>my_sys_intel_noc_initiator_1.intel_noc_initiator_0.user_adapter_0</path>
+          </instanceData>
+          <children></children>
+        </node>
+        <node>
+          <instanceKey xsi:type="xs:string">user_adapter_1</instanceKey>
+          <instanceData xsi:type="data">
+            <parameters>
+              <parameter>
+                <name>AXI4_ADDR_WIDTH</name>
+                <value>44</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_AXUSER_WIDTH</name>
+                <value>11</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_DATA_MODE</name>
+                <value>AXI4_DATA_MODE_256</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_DATA_WIDTH</name>
+                <value>256</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_HANDSHAKE</name>
+                <value>AXI4_HANDSHAKE_STANDARD</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_ID_WIDTH</name>
+                <value>7</value>
+              </parameter>
+              <parameter>
+                <name>AXI4_USER_DATA_EN</name>
+                <value>false</value>
+              </parameter>
+              <parameter>
+                <name>ENABLE_SECURITY</name>
+                <value>OFF</value>
+              </parameter>
+              <parameter>
+                <name>FPGA_FAMILY</name>
+                <value>FAMILY_INVALID</value>
+              </parameter>
+              <parameter>
+                <name>FPGA_SPEEDGRADE</name>
+                <value>-1</value>
+              </parameter>
+              <parameter>
+                <name>INDEPENDENT_WIDE_INTERFACE_CLOCK</name>
+                <value>true</value>
+              </parameter>
+              <parameter>
+                <name>INDIVIDUAL_AXI_CLKRESET</name>
+                <value>true</value>
+              </parameter>
+              <parameter>
+                <name>NOC_AXI_PIPELINE_CNT</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>NOC_INIU_ADAPTER_DATA_WIDTH</name>
+                <value>NOC_INIU_ADAPTER_DATA_WIDTH_256_BITS</value>
+              </parameter>
+              <parameter>
+                <name>NOC_QOS_MODE</name>
+                <value>NOC_QOS_MODE_SOCKET</value>
+              </parameter>
+              <parameter>
+                <name>NOC_QOS_READ_PRIORITY</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>NOC_QOS_WRITE_PRIORITY</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>NUM_AXI4LITE_IF</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>NUM_AXI4_IF</name>
+                <value>1</value>
+              </parameter>
+              <parameter>
+                <name>READ_DRAIN_CYC</name>
+                <value>5</value>
+              </parameter>
+              <parameter>
+                <name>READ_FENCE_CYC</name>
+                <value>5</value>
+              </parameter>
+              <parameter>
+                <name>READ_FENCE_DRAIN_EN</name>
+                <value>true</value>
+              </parameter>
+              <parameter>
+                <name>SELECT_NOC</name>
+                <value>Fabric</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE</name>
+                <value>AGMF039R47A2E2VR0</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
+                <value>HSSI_GDR_REVB,HSSI_RNR_REVB,MAIN_FP8_REVA,UIB_HBM_REVA</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_FAMILY</name>
+                <value>Agilex 7</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_FAMILY_VARIANT</name>
+                <value>M-Series with both HPS and 32GB HBM</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_GROUP</name>
+                <value></value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_POWER_MODEL</name>
+                <value>STANDARD_POWER</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_SPEEDGRADE</name>
+                <value>2</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_SUPPORTS_VID</name>
+                <value>1</value>
+              </parameter>
+              <parameter>
+                <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
+                <value>EXTENDED</value>
+              </parameter>
+              <parameter>
+                <name>WRITE_DRAIN_CYC</name>
+                <value>5</value>
+              </parameter>
+              <parameter>
+                <name>WRITE_FENCE_CYC</name>
+                <value>5</value>
+              </parameter>
+              <parameter>
+                <name>WRITE_FENCE_DRAIN_EN</name>
+                <value>true</value>
+              </parameter>
+            </parameters>
+            <interconnectAssignments></interconnectAssignments>
+            <className>intel_axi4_user_adapter</className>
+            <version>1.1.0</version>
+            <name>user_adapter_1</name>
+            <uniqueName>my_sys_intel_noc_initiator_1_intel_axi4_user_adapter_110_ierbsva</uniqueName>
+            <nonce>0</nonce>
+            <incidentConnections>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>clock</className>
+                <version>23.3</version>
+                <name>clk_bridge.out_clk/user_adapter_1.m_axi4_aclk</name>
+                <end>user_adapter_1/m_axi4_aclk</end>
+                <start>clk_bridge/out_clk</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>clockRateSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>clock</className>
+                <version>23.3</version>
+                <name>clk_bridge.out_clk/user_adapter_1.s_axi4_aclk</name>
+                <end>user_adapter_1/s_axi4_aclk</end>
+                <start>clk_bridge/out_clk</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.3</version>
+                <name>rst_bridge.out_reset/user_adapter_1.m_axi4_aresetn</name>
+                <end>user_adapter_1/m_axi4_aresetn</end>
+                <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>resetDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockDomainSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>clockResetSysInfo</name>
+                    <value></value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>reset</className>
+                <version>23.3</version>
+                <name>rst_bridge.out_reset/user_adapter_1.s_axi4_aresetn</name>
+                <end>user_adapter_1/s_axi4_aresetn</end>
+                <start>rst_bridge/out_reset</start>
+              </incidentConnection>
+              <incidentConnection>
+                <parameters>
+                  <parameter>
+                    <name>defaultConnection</name>
+                    <value>false</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.piplineType</name>
+                    <value>PIPELINE_STAGE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.insertDefaultSlave</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableOutOfOrderSupport</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableInstrumentation</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>domainAlias</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.widthAdapterImplementation</name>
+                    <value>GENERIC_CONVERTER</value>
+                  </parameter>
+                  <parameter>
+                    <name>addressWidthSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.interconnectResetSource</name>
+                    <value>DEFAULT</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.burstAdapterImplementation</name>
+                    <value>GENERIC_CONVERTER</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.optimizeRdFifoSize</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>baseAddress</name>
+                    <value>0x0000</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.responseFifoType</name>
+                    <value>REGISTER_BASED</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.clockCrossingAdapter</name>
+                    <value>HANDSHAKE</value>
+                  </parameter>
+                  <parameter>
+                    <name>arbitrationPriority</name>
+                    <value>1</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.maxAdditionalLatency</name>
+                    <value>1</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.syncResets</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>slaveDataWidthSysInfo</name>
+                    <value>-1</value>
+                  </parameter>
+                  <parameter>
+                    <name>addressMapSysInfo</name>
+                    <value></value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableAllPipelines</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.enableEccProtection</name>
+                    <value>FALSE</value>
+                  </parameter>
+                  <parameter>
+                    <name>qsys_mm.interconnectType</name>
+                    <value>STANDARD</value>
+                  </parameter>
+                </parameters>
+                <interconnectAssignments></interconnectAssignments>
+                <className>avalon</className>
+                <version>23.3</version>
+                <name>user_adapter_1.m_axi4/iniu_1.altera_axi_slave</name>
+                <end>iniu_1/altera_axi_slave</end>
+                <start>user_adapter_1/m_axi4</start>
+              </incidentConnection>
+            </incidentConnections>
+            <path>my_sys_intel_noc_initiator_1.intel_noc_initiator_0.user_adapter_1</path>
           </instanceData>
           <children></children>
         </node>

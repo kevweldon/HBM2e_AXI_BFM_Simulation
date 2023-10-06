@@ -4,8 +4,8 @@
  kind="my_sys_hbm_fp_0"
  version="1.0"
  fabric="QSYS">
- <!-- Format version 23.1 115 (Future versions may contain additional information.) -->
- <!-- 2023.05.02.17:10:50 -->
+ <!-- Format version 23.3 104 (Future versions may contain additional information.) -->
+ <!-- 2023.10.06.15:24:04 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -132,9 +132,9 @@
  <module
    name="hbm_fp_0"
    kind="hbm_fp"
-   version="1.2.0"
-   entity="my_sys_hbm_fp_0_hbm_fp_120_ovpbmoy"
-   library="hbm_fp_120"
+   version="2.0.0"
+   entity="my_sys_hbm_fp_0_hbm_fp_200_eqrofqy"
+   library="hbm_fp_200"
    path="hbm_fp_0"
    hpath="hbm_fp_0"
    className="hbm_fp">
@@ -157,6 +157,26 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
    <sysinfo_type>DEVICE</sysinfo_type>
+  </parameter>
+  <parameter name="SYS_INFO_DEVICE_FAMILY_VARIANT">
+   <type>[Ljava.lang.String;</type>
+   <value>M-Series with both HPS and 32GB HBM</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_INFO</sysinfo_type>
+   <sysinfo_arg>FAMILY_VARIANT</sysinfo_arg>
+  </parameter>
+  <parameter name="SYS_INFO_DEVICE_GROUP">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_INFO</sysinfo_type>
+   <sysinfo_arg>DEVICE_GROUP</sysinfo_arg>
   </parameter>
   <parameter name="SYS_INFO_DEVICE_SPEEDGRADE">
    <type>java.lang.String</type>
@@ -208,7 +228,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="FPGA_FAMILY">
    <type>java.lang.String</type>
-   <value>FAMILY_AGILEX7</value>
+   <value>FAMILY_FALCONPARK</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -307,7 +327,7 @@ the requested settings for a module instance. -->
    <value>HBM_ONLY_RESET</value>
    <derived>false</derived>
    <enabled>true</enabled>
-   <visible>false</visible>
+   <visible>true</visible>
    <valid>true</valid>
   </parameter>
   <parameter name="PHY_CTRL_CH_IRQ_O_EN">
@@ -1918,6 +1938,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="EX_DESIGN_USE_PD_NOC_FLOW">
+   <type>boolean</type>
+   <value>true</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="EX_DESIGN_AXI4LITE_INJECTOR_EN">
    <type>boolean</type>
    <value>false</value>
@@ -2006,6 +2034,38 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="EX_DESIGN_NOC_READ_BANDWIDTH">
+   <type>int</type>
+   <value>7200</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="EX_DESIGN_NOC_WRITE_BANDWIDTH">
+   <type>int</type>
+   <value>7200</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="EX_DESIGN_NOC_READ_TRANSACTION_SIZE">
+   <type>int</type>
+   <value>64</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="EX_DESIGN_NOC_WRITE_TRANSACTION_SIZE">
+   <type>int</type>
+   <value>64</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="EX_DESIGN_HDL_FORMAT_AUTO_BOOL">
    <type>boolean</type>
    <value>true</value>
@@ -2054,7 +2114,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="ch0_u0_wmc_intr" kind="conduit_end" version="23.1">
+  <interface name="ch0_u0_wmc_intr" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2107,7 +2167,7 @@ parameters are a RESULT of the module parameters. -->
     <role>conduit</role>
    </port>
   </interface>
-  <interface name="ch0_u1_wmc_intr" kind="conduit_end" version="23.1">
+  <interface name="ch0_u1_wmc_intr" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2160,7 +2220,7 @@ parameters are a RESULT of the module parameters. -->
     <role>conduit</role>
    </port>
   </interface>
-  <interface name="fabric_clk" kind="clock_sink" version="23.1">
+  <interface name="fabric_clk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2205,7 +2265,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="hbm_reset_n" kind="reset_sink" version="23.1">
+  <interface name="hbm_reset_n" kind="reset_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2250,7 +2310,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset_n</role>
    </port>
   </interface>
-  <interface name="hbm_reset_in_prog" kind="conduit_end" version="23.1">
+  <interface name="hbm_reset_in_prog" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2303,7 +2363,7 @@ parameters are a RESULT of the module parameters. -->
     <role>hbm_reset_in_prog</role>
    </port>
   </interface>
-  <interface name="cattrip" kind="conduit_end" version="23.1">
+  <interface name="cattrip" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2356,7 +2416,7 @@ parameters are a RESULT of the module parameters. -->
     <role>hbm_cattrip</role>
    </port>
   </interface>
-  <interface name="cattrip_i" kind="conduit_end" version="23.1">
+  <interface name="cattrip_i" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2409,7 +2469,7 @@ parameters are a RESULT of the module parameters. -->
     <role>conduit</role>
    </port>
   </interface>
-  <interface name="temp" kind="conduit_end" version="23.1">
+  <interface name="temp" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2462,7 +2522,7 @@ parameters are a RESULT of the module parameters. -->
     <role>hbm_temp</role>
    </port>
   </interface>
-  <interface name="temp_i" kind="conduit_end" version="23.1">
+  <interface name="temp_i" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2515,7 +2575,7 @@ parameters are a RESULT of the module parameters. -->
     <role>conduit</role>
    </port>
   </interface>
-  <interface name="local_cal_success" kind="conduit_end" version="23.1">
+  <interface name="local_cal_success" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2568,7 +2628,7 @@ parameters are a RESULT of the module parameters. -->
     <role>local_cal_success</role>
    </port>
   </interface>
-  <interface name="local_cal_fail" kind="conduit_end" version="23.1">
+  <interface name="local_cal_fail" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2621,7 +2681,7 @@ parameters are a RESULT of the module parameters. -->
     <role>local_cal_fail</role>
    </port>
   </interface>
-  <interface name="uibpll_refclk" kind="clock_sink" version="23.1">
+  <interface name="uibpll_refclk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2666,7 +2726,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="t_ch0_u0_axi4noc" kind="axi4noc_subordinate" version="23.1">
+  <interface name="t_ch0_u0_axi4noc" kind="axi4noc_subordinate" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2678,7 +2738,7 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
     <value>0x40000000</value>
     <derived>false</derived>
@@ -2721,7 +2781,7 @@ parameters are a RESULT of the module parameters. -->
    <type>axi4noc</type>
    <isStart>false</isStart>
   </interface>
-  <interface name="t_ch0_u1_axi4noc" kind="axi4noc_subordinate" version="23.1">
+  <interface name="t_ch0_u1_axi4noc" kind="axi4noc_subordinate" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2733,7 +2793,7 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
     <value>0x40000000</value>
     <derived>false</derived>
@@ -2776,62 +2836,7 @@ parameters are a RESULT of the module parameters. -->
    <type>axi4noc</type>
    <isStart>false</isStart>
   </interface>
-  <interface name="t_uibssm_sb_axi4noc" kind="axi4noc_subordinate" version="23.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="internalHPath">
-    <type>java.lang.String</type>
-    <value>tniu_uibssm_sb|target_0.target_lite_inst_0</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="memorySpanInGB">
-    <type>java.lang.String</type>
-    <value>0x40000000</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="regFunctionHPath">
-    <type>java.lang.String</type>
-    <value>tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="addressSpan">
-    <type>java.math.BigInteger</type>
-    <value>1073741824</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>axi4noc</type>
-   <isStart>false</isStart>
-  </interface>
-  <interface name="t_ch0_ch1_sb_axi4noc" kind="axi4noc_subordinate" version="23.1">
+  <interface name="t_ch0_ch1_sb_axi4noc" kind="axi4noc_subordinate" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2843,9 +2848,9 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
-    <value>0x40000000</value>
+    <value>0x8000000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -2877,7 +2882,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>1073741824</value>
+    <value>134217728</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -2893,7 +2898,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>High Bandwidth Memory (HBM2E) Interface Intel Agilex 7 FPGA IP </displayName>
-  <version>1.2.0</version>
+  <version>2.0.0</version>
  </plugin>
  <plugin>
   <instanceCount>9</instanceCount>
@@ -2901,7 +2906,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -2909,7 +2914,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -2917,16 +2922,16 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
-  <instanceCount>4</instanceCount>
+  <instanceCount>3</instanceCount>
   <name>axi4noc_subordinate</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>AXI4 NoC Subordinate</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
- <reportVersion>23.1 115</reportVersion>
+ <reportVersion>23.3 104</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

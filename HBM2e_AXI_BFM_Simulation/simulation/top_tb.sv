@@ -99,11 +99,11 @@ module top_tb;
 	 for (int i=0; i<8; i++)
 	   begin
 	      if (read_data[i] == i)
-		$display ( "top_tb:initiator1: %t: Read correct data 0x%h at address 0x%h", 
-			   $time, read_data[i], INITIATOR1_CH0_BASE + (i * (DATA_WIDTH/8)));
+		$display ( "top_tb:initiator1: %t: Read correct data 0x%h at address 0x%h",
+			   $time, read_data[i], {{20{1'b0}},INITIATOR1_CH0_BASE} + (i * (DATA_WIDTH/8)));
 	      else
 		$display ( "top_tb:initiator1: %t: Error: Expected data 0x%h at address 0x%h, recieved 0x%h",
-			   $time, i, INITIATOR1_CH0_BASE + (i * (DATA_WIDTH/8)), read_data[i]);
+			   $time, i, {{20{1'b0}},INITIATOR1_CH0_BASE} + (i * (DATA_WIDTH/8)), read_data[i]);
 	   end
 
 	$display("top_tb: Simulation stopped at %t", $time);

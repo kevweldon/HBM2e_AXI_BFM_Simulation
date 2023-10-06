@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simPackage>
  <file
-   path="altera_merlin_axi_translator_1921/sim/my_sys_altera_merlin_axi_translator_1921_uetfduq.sv"
+   path="altera_merlin_axi_translator_1930/sim/my_sys_altera_merlin_axi_translator_1930_ivia3ca.sv"
    type="SYSTEM_VERILOG"
-   library="altera_merlin_axi_translator_1921" />
+   library="altera_merlin_axi_translator_1930" />
  <file
-   path="altera_mm_interconnect_1920/sim/my_sys_altera_mm_interconnect_1920_shrp3yq.v"
+   path="altera_mm_interconnect_1920/sim/my_sys_altera_mm_interconnect_1920_ma2jqha.v"
    type="VERILOG"
    library="altera_mm_interconnect_1920"
    hasInlineConfiguration="true" />
  <file
-   path="altera_mm_interconnect_1920/sim/my_sys_altera_mm_interconnect_1920_ddk3qei.v"
+   path="altera_mm_interconnect_1920/sim/my_sys_altera_mm_interconnect_1920_5277t4i.v"
    type="VERILOG"
    library="altera_mm_interconnect_1920"
    hasInlineConfiguration="true" />
  <file
-   path="altera_reset_controller_1921/sim/altera_reset_controller.v"
+   path="altera_reset_controller_1922/sim/altera_reset_controller.v"
    type="VERILOG"
-   library="altera_reset_controller_1921" />
+   library="altera_reset_controller_1922" />
  <file
-   path="altera_reset_controller_1921/sim/altera_reset_synchronizer.v"
+   path="altera_reset_controller_1922/sim/altera_reset_synchronizer.v"
    type="VERILOG"
-   library="altera_reset_controller_1921" />
+   library="altera_reset_controller_1922" />
  <file
-   path="altera_reset_controller_1921/sim/altera_reset_controller.sdc"
+   path="altera_reset_controller_1922/sim/altera_reset_controller.sdc"
    type="SDC_ENTITY"
-   library="altera_reset_controller_1921" />
+   library="altera_reset_controller_1922" />
  <file
    path="sim/my_sys.v"
    type="VERILOG"

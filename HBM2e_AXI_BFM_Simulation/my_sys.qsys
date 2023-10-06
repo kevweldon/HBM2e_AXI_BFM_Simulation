@@ -135,6 +135,11 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>Device Speed Grade</ipxact:displayName>
           <ipxact:value>2</ipxact:value>
         </ipxact:parameter>
+        <ipxact:parameter parameterId="dflBitArray" type="string">
+          <ipxact:name>dflBitArray</ipxact:name>
+          <ipxact:displayName>dflBitArray</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
         <ipxact:parameter parameterId="fabricMode" type="string">
           <ipxact:name>fabricMode</ipxact:name>
           <ipxact:displayName>fabricMode</ipxact:displayName>
@@ -234,6 +239,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -485,6 +495,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -779,6 +794,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -1196,7 +1216,7 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x40000000&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
@@ -1221,37 +1241,12 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x40000000&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;regFunctionHPath&lt;/key&gt;
                             &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
-                        &lt;/entry&gt;
-                    &lt;/parameterValueMap&gt;
-                &lt;/parameters&gt;
-            &lt;/interface&gt;
-            &lt;interface&gt;
-                &lt;name&gt;t_uibssm_sb_axi4noc&lt;/name&gt;
-                &lt;type&gt;axi4noc&lt;/type&gt;
-                &lt;isStart&gt;false&lt;/isStart&gt;
-                &lt;ports/&gt;
-                &lt;assignments&gt;
-                    &lt;assignmentValueMap/&gt;
-                &lt;/assignments&gt;
-                &lt;parameters&gt;
-                    &lt;parameterValueMap&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;internalHPath&lt;/key&gt;
-                            &lt;value&gt;tniu_uibssm_sb|target_0.target_lite_inst_0&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                            &lt;value&gt;0x40000000&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
-                            &lt;value&gt;tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -1271,8 +1266,8 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                            &lt;value&gt;0x40000000&lt;/value&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
+                            &lt;value&gt;0x8000000&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;regFunctionHPath&lt;/key&gt;
@@ -1285,7 +1280,7 @@ https://fpgasoftware.intel.com/eula.-->
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;hbm_fp&lt;/className&gt;
-        &lt;version&gt;1.2.0&lt;/version&gt;
+        &lt;version&gt;2.0.0&lt;/version&gt;
         &lt;displayName&gt;High Bandwidth Memory (HBM2E) Interface Intel Agilex 7 FPGA IP &lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
@@ -1307,6 +1302,20 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY&lt;/parameterName&gt;
                 &lt;parameterType&gt;java.lang.String&lt;/parameterType&gt;
                 &lt;systemInfotype&gt;DEVICE_FAMILY&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY_VARIANT&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;FAMILY_VARIANT&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_GROUP&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;DEVICE_GROUP&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
             &lt;/descriptor&gt;
             &lt;descriptor&gt;
                 &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
@@ -1758,7 +1767,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x40000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -1783,37 +1792,12 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x40000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;regFunctionHPath&lt;/key&gt;
                         &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
-        &lt;interface&gt;
-            &lt;name&gt;t_uibssm_sb_axi4noc&lt;/name&gt;
-            &lt;type&gt;axi4noc&lt;/type&gt;
-            &lt;isStart&gt;false&lt;/isStart&gt;
-            &lt;ports/&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap/&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;internalHPath&lt;/key&gt;
-                        &lt;value&gt;tniu_uibssm_sb|target_0.target_lite_inst_0&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                        &lt;value&gt;0x40000000&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
-                        &lt;value&gt;tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -1833,8 +1817,8 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                        &lt;value&gt;0x40000000&lt;/value&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x8000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;regFunctionHPath&lt;/key&gt;
@@ -1924,6 +1908,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -2012,7 +2001,7 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;ssm_inst&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x7400&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
@@ -2143,7 +2132,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;ssm_inst&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x7400&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -2234,6 +2223,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -2255,7 +2249,7 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
@@ -2640,6 +2634,22 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -2670,6 +2680,41 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;entry&gt;
                             &lt;key&gt;bridgesToMaster&lt;/key&gt;
                         &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhGroupId&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterId&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterName&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterData&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                            &lt;value&gt;35&lt;/value&gt;
+                        &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
             &lt;/interface&gt;
@@ -2688,7 +2733,7 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
@@ -3073,6 +3118,22 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -3102,6 +3163,41 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhGroupId&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterId&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterName&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterData&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                            &lt;value&gt;35&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -3200,6 +3296,20 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;/descriptor&gt;
             &lt;descriptor&gt;
                 &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY_VARIANT&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;FAMILY_VARIANT&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_GROUP&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;DEVICE_GROUP&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
                 &lt;parameterName&gt;SYS_INFO_DEVICE_POWER_MODEL&lt;/parameterName&gt;
                 &lt;parameterType&gt;java.lang.String&lt;/parameterType&gt;
                 &lt;systemInfoArgs&gt;DEVICE_POWER_MODEL&lt;/systemInfoArgs&gt;
@@ -3295,7 +3405,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -3680,6 +3790,22 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -3710,6 +3836,41 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;entry&gt;
                         &lt;key&gt;bridgesToMaster&lt;/key&gt;
                     &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhGroupId&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterId&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterName&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterData&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                        &lt;value&gt;35&lt;/value&gt;
+                    &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
         &lt;/interface&gt;
@@ -3728,7 +3889,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -4113,6 +4274,22 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -4142,6 +4319,41 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhGroupId&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterId&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterName&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterData&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                        &lt;value&gt;35&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -4292,6 +4504,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -4880,6 +5097,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -5279,6 +5501,22 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -5301,14 +5539,6 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;entry&gt;
                             &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                             &lt;value&gt;16&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -5803,6 +6033,22 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -5825,14 +6071,6 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;entry&gt;
                         &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                         &lt;value&gt;16&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -6356,6 +6594,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -6755,6 +6998,22 @@ https://fpgasoftware.intel.com/eula.-->
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -6777,14 +7036,6 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;entry&gt;
                             &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                             &lt;value&gt;16&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -7279,6 +7530,22 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -7301,14 +7568,6 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;entry&gt;
                         &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                         &lt;value&gt;16&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -7832,6 +8091,11 @@ https://fpgasoftware.intel.com/eula.-->
         </altera:entity_info>
         <altera:altera_module_parameters>
           <ipxact:parameters>
+            <ipxact:parameter parameterId="bspCpu" type="bit">
+              <ipxact:name>bspCpu</ipxact:name>
+              <ipxact:displayName>BSP CPU</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
             <ipxact:parameter parameterId="componentDefinition" type="string">
               <ipxact:name>componentDefinition</ipxact:name>
               <ipxact:displayName>Component definition</ipxact:displayName>
@@ -8076,7 +8340,7 @@ https://fpgasoftware.intel.com/eula.-->
       </altera:module>
     </altera:modules>
     <altera:connections>
-      <altera:connection altera:kind="avalon" altera:version="23.1" altera:start="mgc_axi4_master_0.altera_axi4_master" altera:end="intel_noc_initiator_0.s0_axi4">
+      <altera:connection altera:kind="avalon" altera:version="23.3" altera:start="mgc_axi4_master_0.altera_axi4_master" altera:end="intel_noc_initiator_0.s0_axi4">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -8097,7 +8361,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="TRUE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="23.1" altera:start="mgc_axi4_master_1.altera_axi4_master" altera:end="intel_noc_initiator_0.s1_axi4">
+      <altera:connection altera:kind="avalon" altera:version="23.3" altera:start="mgc_axi4_master_1.altera_axi4_master" altera:end="intel_noc_initiator_0.s1_axi4">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -8118,17 +8382,17 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="TRUE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="clk100.out_clk" altera:end="iopll_0.refclk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="clk100.out_clk" altera:end="intel_noc_clock_ctrl_0.refclk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk0" altera:end="mgc_axi4_master_0.clock_sink"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk0" altera:end="mgc_axi4_master_1.clock_sink"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk0" altera:end="hbm_fp_0.fabric_clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk0" altera:end="intel_noc_initiator_0.s_axi4_aclk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="iopll_0.outclk1" altera:end="hbm_fp_0.uibpll_refclk"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="axi_reset.out_reset" altera:end="hbm_fp_0.hbm_reset_n"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="axi_reset.out_reset" altera:end="mgc_axi4_master_0.reset_sink"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="axi_reset.out_reset" altera:end="mgc_axi4_master_1.reset_sink"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="noc_reset.out_reset" altera:end="intel_noc_initiator_0.s_axi4_aresetn"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.3" altera:start="clk100.out_clk" altera:end="iopll_0.refclk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.3" altera:start="clk100.out_clk" altera:end="intel_noc_clock_ctrl_0.refclk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.3" altera:start="iopll_0.outclk0" altera:end="mgc_axi4_master_0.clock_sink"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.3" altera:start="iopll_0.outclk0" altera:end="mgc_axi4_master_1.clock_sink"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.3" altera:start="iopll_0.outclk0" altera:end="hbm_fp_0.fabric_clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.3" altera:start="iopll_0.outclk0" altera:end="intel_noc_initiator_0.s_axi4_aclk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.3" altera:start="iopll_0.outclk1" altera:end="hbm_fp_0.uibpll_refclk"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.3" altera:start="axi_reset.out_reset" altera:end="hbm_fp_0.hbm_reset_n"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.3" altera:start="axi_reset.out_reset" altera:end="mgc_axi4_master_0.reset_sink"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.3" altera:start="axi_reset.out_reset" altera:end="mgc_axi4_master_1.reset_sink"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.3" altera:start="noc_reset.out_reset" altera:end="intel_noc_initiator_0.s_axi4_aresetn"></altera:connection>
     </altera:connections>
     <altera:interconnect_requirements></altera:interconnect_requirements>
     <altera:wire_level_connections></altera:wire_level_connections>
@@ -8156,12 +8420,22 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:version>1.0</ipxact:version>
         <ipxact:busInterfaces>
           <ipxact:busInterface>
+            <ipxact:name>intel_noc_initiator_0.i0_axi4noc</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.3"></ipxact:busType>
+            <ipxact:master></ipxact:master>
+          </ipxact:busInterface>
+          <ipxact:busInterface>
+            <ipxact:name>intel_noc_initiator_0.i1_axi4noc</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.3"></ipxact:busType>
+            <ipxact:master></ipxact:master>
+          </ipxact:busInterface>
+          <ipxact:busInterface>
             <ipxact:name>intel_noc_initiator_0.s0_axi4</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.3"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mgc_axi4_master_0.altera_axi4_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.3"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="mgc_axi4_master_0.altera_axi4_master">
                 <ipxact:baseAddress>0x0000_0000_0000_0000</ipxact:baseAddress>
@@ -8170,26 +8444,16 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>intel_noc_initiator_0.s1_axi4</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.3"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mgc_axi4_master_1.altera_axi4_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.1"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="axi4" version="23.3"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="mgc_axi4_master_1.altera_axi4_master">
                 <ipxact:baseAddress>0x0000_0000_0000_0000</ipxact:baseAddress>
               </ipxact:addressSpaceRef>
             </ipxact:master>
-          </ipxact:busInterface>
-          <ipxact:busInterface>
-            <ipxact:name>intel_noc_initiator_0.i0_axi4noc</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
-            <ipxact:master></ipxact:master>
-          </ipxact:busInterface>
-          <ipxact:busInterface>
-            <ipxact:name>intel_noc_initiator_0.i1_axi4noc</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
-            <ipxact:master></ipxact:master>
           </ipxact:busInterface>
         </ipxact:busInterfaces>
         <ipxact:addressSpaces>

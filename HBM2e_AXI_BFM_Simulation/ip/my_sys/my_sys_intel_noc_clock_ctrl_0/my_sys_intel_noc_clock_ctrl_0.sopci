@@ -4,8 +4,8 @@
  kind="my_sys_intel_noc_clock_ctrl_0"
  version="1.0"
  fabric="QSYS">
- <!-- Format version 22.4 94 (Future versions may contain additional information.) -->
- <!-- 2023.01.09.10:44:20 -->
+ <!-- Format version 23.3 104 (Future versions may contain additional information.) -->
+ <!-- 2023.10.06.15:24:06 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -27,7 +27,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE_FAMILY">
   <type>java.lang.String</type>
-  <value>Agilex</value>
+  <value>Agilex 7</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -84,7 +84,7 @@
  </parameter>
  <parameter name="deviceFamily">
   <type>java.lang.String</type>
-  <value>Agilex</value>
+  <value>Agilex 7</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -102,9 +102,9 @@
  <module
    name="intel_noc_clock_ctrl_0"
    kind="intel_noc_clock_ctrl"
-   version="1.0.0"
+   version="2.0.0"
    entity="intel_noc_clock_ctrl"
-   library="intel_noc_clock_ctrl_100"
+   library="intel_noc_clock_ctrl_200"
    path="intel_noc_clock_ctrl_0"
    hpath="intel_noc_clock_ctrl_0"
    className="intel_noc_clock_ctrl">
@@ -121,7 +121,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DEVICE_FAMILY">
    <type>java.lang.String</type>
-   <value>Agilex</value>
+   <value>Agilex 7</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -169,7 +169,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="refclk" kind="clock_sink" version="22.4">
+  <interface name="refclk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -214,7 +214,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="pll_lock_o" kind="conduit_end" version="22.4">
+  <interface name="pll_lock_o" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -267,6 +267,61 @@ parameters are a RESULT of the module parameters. -->
     <role>pll_lock_o</role>
    </port>
   </interface>
+  <interface name="target_inst_0" kind="axi4noc_subordinate" version="23.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="internalHPath">
+    <type>java.lang.String</type>
+    <value>ssm_inst</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="memorySpan">
+    <type>java.lang.String</type>
+    <value>0x7400</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="regFunctionHPath">
+    <type>java.lang.String</type>
+    <value>ssm_inst.target_lite_mon_inst_0.target_inst_0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="addressSpan">
+    <type>java.math.BigInteger</type>
+    <value>29696</value>
+    <derived>true</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>axi4noc</type>
+   <isStart>false</isStart>
+  </interface>
  </module>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -274,7 +329,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>NoC Clock Control Intel FPGA IP</displayName>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -282,7 +337,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>22.4</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -290,8 +345,16 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>22.4</version>
+  <version>23.3</version>
  </plugin>
- <reportVersion>22.4 94</reportVersion>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>axi4noc_subordinate</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>AXI4 NoC Subordinate</displayName>
+  <version>23.3</version>
+ </plugin>
+ <reportVersion>23.3 104</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

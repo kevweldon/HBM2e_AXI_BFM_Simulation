@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.12.14.06:27:46"
+ date="2023.10.06.07:29:04"
  outputDirectory="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/">
  <perimeter>
   <parameter
@@ -18,7 +18,7 @@
   <parameter
      name="AUTO_DEVICE_FAMILY"
      type="String"
-     defaultValue="Agilex"
+     defaultValue="Agilex 7"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -62,11 +62,6 @@
    <property name="ptfSchematicName" value="" />
    <port name="clk100_in_clk" direction="input" role="clk" width="1" />
   </interface>
-  <interface name="hbm_reset_in" kind="reset" start="0">
-   <property name="associatedClock" value="" />
-   <property name="synchronousEdges" value="NONE" />
-   <port name="hbm_reset_in_reset" direction="input" role="reset" width="1" />
-  </interface>
   <interface name="hbm_fp_0_cattrip_i" kind="conduit" start="0">
    <property name="associatedClock" value="" />
    <property name="associatedReset" value="" />
@@ -107,17 +102,6 @@
        role="local_cal_fail"
        width="1" />
   </interface>
-  <interface name="hbm_wmcrst_n" kind="reset" start="1">
-   <property name="associatedClock" value="" />
-   <property name="associatedDirectReset" value="" />
-   <property name="associatedResetSinks" value="none" />
-   <property name="synchronousEdges" value="NONE" />
-   <port
-       name="hbm_wmcrst_n_reset_n"
-       direction="output"
-       role="reset_n"
-       width="1" />
-  </interface>
   <interface name="iopll_locked" kind="conduit" start="0">
    <property name="associatedClock" value="" />
    <property name="associatedReset" value="" />
@@ -138,7 +122,7 @@
  <entity kind="my_sys" version="1.0" name="my_sys">
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter name="AUTO_CLK100_IN_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLK100_IN_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_CLK100_IN_CLOCK_RATE" value="-1" />
@@ -160,15 +144,15 @@
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="my_sys">"Generating: my_sys"</message>
@@ -176,14 +160,14 @@
    <message level="Info" culprit="my_sys">"Generating: clk100"</message>
    <message level="Info" culprit="my_sys">"Generating: my_sys_hbm_fp_0"</message>
    <message level="Info" culprit="my_sys">"Generating: my_sys_intel_noc_clock_ctrl_0"</message>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_intel_noc_initiator_0"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_intel_noc_initiator_1"</message>
    <message level="Info" culprit="my_sys">"Generating: my_sys_iopll_0"</message>
    <message level="Info" culprit="my_sys">"Generating: my_sys_mgc_axi4_master_0"</message>
    <message level="Info" culprit="my_sys">"Generating: noc_reset"</message>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_mm_interconnect_1920_5ioayuq"</message>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1921_uetfduq"</message>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_mm_interconnect_1920_dxipmqi"</message>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1921_uetfduq"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_mm_interconnect_1920_ma2jqha"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1930_ivia3ca"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_mm_interconnect_1920_5277t4i"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1930_ivia3ca"</message>
    <message level="Info" culprit="my_sys">"Generating: altera_reset_controller"</message>
   </messages>
  </entity>
@@ -192,7 +176,7 @@
   <parameter name="hlsFile" value="" />
   <parameter name="svInterfaceDefinition" value="" />
   <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter
      name="defaultBoundary"
      value="&lt;boundaryDefinition&gt;
@@ -267,6 +251,7 @@
         &lt;/interface&gt;
     &lt;/interfaces&gt;
 &lt;/boundaryDefinition&gt;" />
+  <parameter name="bspCpu" value="" />
   <parameter
      name="componentDefinition"
      value="&lt;componentDefinition&gt;
@@ -401,7 +386,6 @@
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;" />
   <parameter name="logicalView" value="ip/my_sys/axi_reset.ip" />
   <parameter
@@ -422,7 +406,7 @@
   <parameter name="hlsFile" value="" />
   <parameter name="svInterfaceDefinition" value="" />
   <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter
      name="defaultBoundary"
      value="&lt;boundaryDefinition&gt;
@@ -505,6 +489,7 @@
         &lt;/interface&gt;
     &lt;/interfaces&gt;
 &lt;/boundaryDefinition&gt;" />
+  <parameter name="bspCpu" value="" />
   <parameter
      name="componentDefinition"
      value="&lt;componentDefinition&gt;
@@ -675,7 +660,6 @@
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;" />
   <parameter name="logicalView" value="ip/my_sys/clk100.ip" />
   <parameter
@@ -694,7 +678,10 @@
  </entity>
  <entity kind="altera_generic_component" version="1.0" name="my_sys_hbm_fp_0">
   <parameter name="hlsFile" value="" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter
+     name="SYS_INFO_DEVICE_FAMILY_VARIANT"
+     value="M-Series with both HPS and 32GB HBM" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter
      name="defaultBoundary"
      value="&lt;boundaryDefinition&gt;
@@ -766,14 +753,79 @@
             &lt;/parameters&gt;
         &lt;/interface&gt;
         &lt;interface&gt;
-            &lt;name&gt;hbm_reset_in&lt;/name&gt;
+            &lt;name&gt;fabric_clk&lt;/name&gt;
+            &lt;type&gt;clock&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;fabric_clk&lt;/name&gt;
+                    &lt;role&gt;clk&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;clockRate&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;externallyDriven&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;hbm_reset_n&lt;/name&gt;
             &lt;type&gt;reset&lt;/type&gt;
             &lt;isStart&gt;false&lt;/isStart&gt;
             &lt;ports&gt;
                 &lt;port&gt;
-                    &lt;name&gt;hbm_reset_in&lt;/name&gt;
-                    &lt;role&gt;reset&lt;/role&gt;
+                    &lt;name&gt;hbm_reset_n&lt;/name&gt;
+                    &lt;role&gt;reset_n&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;value&gt;fabric_clk&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;synchronousEdges&lt;/key&gt;
+                        &lt;value&gt;DEASSERT&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;hbm_reset_in_prog&lt;/name&gt;
+            &lt;type&gt;conduit&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;hbm_reset_in_prog&lt;/name&gt;
+                    &lt;role&gt;hbm_reset_in_prog&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
@@ -789,8 +841,11 @@
                         &lt;key&gt;associatedClock&lt;/key&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;synchronousEdges&lt;/key&gt;
-                        &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;key&gt;associatedReset&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;prSafe&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -1009,18 +1064,13 @@
                 &lt;/port&gt;
             &lt;/ports&gt;
             &lt;assignments&gt;
-                &lt;assignmentValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
-                        &lt;value&gt;input&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/assignmentValueMap&gt;
+                &lt;assignmentValueMap/&gt;
             &lt;/assignments&gt;
             &lt;parameters&gt;
                 &lt;parameterValueMap&gt;
                     &lt;entry&gt;
                         &lt;key&gt;clockRate&lt;/key&gt;
-                        &lt;value&gt;100000000&lt;/value&gt;
+                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;externallyDriven&lt;/key&gt;
@@ -1033,38 +1083,76 @@
             &lt;/parameters&gt;
         &lt;/interface&gt;
         &lt;interface&gt;
-            &lt;name&gt;wmcrst_n&lt;/name&gt;
-            &lt;type&gt;reset&lt;/type&gt;
-            &lt;isStart&gt;true&lt;/isStart&gt;
-            &lt;ports&gt;
-                &lt;port&gt;
-                    &lt;name&gt;wmcrst_n&lt;/name&gt;
-                    &lt;role&gt;reset_n&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-            &lt;/ports&gt;
+            &lt;name&gt;t_ch0_u0_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
             &lt;assignments&gt;
                 &lt;assignmentValueMap/&gt;
             &lt;/assignments&gt;
             &lt;parameters&gt;
                 &lt;parameterValueMap&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;associatedDirectReset&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x40000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;associatedResetSinks&lt;/key&gt;
-                        &lt;value&gt;none&lt;/value&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_u0.target_0.target_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;t_ch0_u1_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;synchronousEdges&lt;/key&gt;
-                        &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x40000000&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;t_ch0_ch1_sb_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x8000000&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;tniu_ch0_ch1_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -1074,7 +1162,8 @@
   <parameter
      name="SYS_INFO_DEVICE_DIE_REVISIONS"
      value="HSSI_GDR_REVB,HSSI_RNR_REVB,MAIN_FP8_REVA,UIB_HBM_REVA" />
-  <parameter name="SYS_INFO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="SYS_INFO_DEVICE_FAMILY" value="Agilex 7" />
+  <parameter name="bspCpu" value="" />
   <parameter
      name="componentDefinition"
      value="&lt;componentDefinition&gt;
@@ -1147,14 +1236,79 @@
                 &lt;/parameters&gt;
             &lt;/interface&gt;
             &lt;interface&gt;
-                &lt;name&gt;hbm_reset_in&lt;/name&gt;
+                &lt;name&gt;fabric_clk&lt;/name&gt;
+                &lt;type&gt;clock&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;fabric_clk&lt;/name&gt;
+                        &lt;role&gt;clk&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;clockRate&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;externallyDriven&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;hbm_reset_n&lt;/name&gt;
                 &lt;type&gt;reset&lt;/type&gt;
                 &lt;isStart&gt;false&lt;/isStart&gt;
                 &lt;ports&gt;
                     &lt;port&gt;
-                        &lt;name&gt;hbm_reset_in&lt;/name&gt;
-                        &lt;role&gt;reset&lt;/role&gt;
+                        &lt;name&gt;hbm_reset_n&lt;/name&gt;
+                        &lt;role&gt;reset_n&lt;/role&gt;
                         &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedClock&lt;/key&gt;
+                            &lt;value&gt;fabric_clk&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;synchronousEdges&lt;/key&gt;
+                            &lt;value&gt;DEASSERT&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;hbm_reset_in_prog&lt;/name&gt;
+                &lt;type&gt;conduit&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;hbm_reset_in_prog&lt;/name&gt;
+                        &lt;role&gt;hbm_reset_in_prog&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
                         &lt;width&gt;1&lt;/width&gt;
                         &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                         &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
@@ -1170,8 +1324,11 @@
                             &lt;key&gt;associatedClock&lt;/key&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;synchronousEdges&lt;/key&gt;
-                            &lt;value&gt;NONE&lt;/value&gt;
+                            &lt;key&gt;associatedReset&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;prSafe&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -1390,18 +1547,13 @@
                     &lt;/port&gt;
                 &lt;/ports&gt;
                 &lt;assignments&gt;
-                    &lt;assignmentValueMap&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
-                            &lt;value&gt;input&lt;/value&gt;
-                        &lt;/entry&gt;
-                    &lt;/assignmentValueMap&gt;
+                    &lt;assignmentValueMap/&gt;
                 &lt;/assignments&gt;
                 &lt;parameters&gt;
                     &lt;parameterValueMap&gt;
                         &lt;entry&gt;
                             &lt;key&gt;clockRate&lt;/key&gt;
-                            &lt;value&gt;100000000&lt;/value&gt;
+                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;externallyDriven&lt;/key&gt;
@@ -1414,38 +1566,76 @@
                 &lt;/parameters&gt;
             &lt;/interface&gt;
             &lt;interface&gt;
-                &lt;name&gt;wmcrst_n&lt;/name&gt;
-                &lt;type&gt;reset&lt;/type&gt;
-                &lt;isStart&gt;true&lt;/isStart&gt;
-                &lt;ports&gt;
-                    &lt;port&gt;
-                        &lt;name&gt;wmcrst_n&lt;/name&gt;
-                        &lt;role&gt;reset_n&lt;/role&gt;
-                        &lt;direction&gt;Output&lt;/direction&gt;
-                        &lt;width&gt;1&lt;/width&gt;
-                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                    &lt;/port&gt;
-                &lt;/ports&gt;
+                &lt;name&gt;t_ch0_u0_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
                 &lt;assignments&gt;
                     &lt;assignmentValueMap/&gt;
                 &lt;/assignments&gt;
                 &lt;parameters&gt;
                     &lt;parameterValueMap&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;associatedClock&lt;/key&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;associatedDirectReset&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
+                            &lt;value&gt;0x40000000&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;associatedResetSinks&lt;/key&gt;
-                            &lt;value&gt;none&lt;/value&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_u0.target_0.target_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;t_ch0_u1_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;synchronousEdges&lt;/key&gt;
-                            &lt;value&gt;NONE&lt;/value&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
+                            &lt;value&gt;0x40000000&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;t_ch0_ch1_sb_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
+                            &lt;value&gt;0x8000000&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;tniu_ch0_ch1_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -1454,8 +1644,8 @@
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;hbm_fp&lt;/className&gt;
-        &lt;version&gt;1.0.0&lt;/version&gt;
-        &lt;displayName&gt;High Bandwidth Memory (HBM2E) Interface Intel Agilex FPGA IP &lt;/displayName&gt;
+        &lt;version&gt;2.0.0&lt;/version&gt;
+        &lt;displayName&gt;High Bandwidth Memory (HBM2E) Interface Intel Agilex 7 FPGA IP &lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
         &lt;descriptors&gt;
@@ -1476,6 +1666,20 @@
                 &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY&lt;/parameterName&gt;
                 &lt;parameterType&gt;java.lang.String&lt;/parameterType&gt;
                 &lt;systemInfotype&gt;DEVICE_FAMILY&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY_VARIANT&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;FAMILY_VARIANT&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_GROUP&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;DEVICE_GROUP&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
             &lt;/descriptor&gt;
             &lt;descriptor&gt;
                 &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
@@ -1511,6 +1715,7 @@
     &lt;/systemInfos&gt;
 &lt;/componentDefinition&gt;" />
   <parameter name="SYS_INFO_DEVICE" value="AGMF039R47A2E2VR0" />
+  <parameter name="SYS_INFO_DEVICE_GROUP" value="" />
   <parameter name="SYS_INFO_DEVICE_SPEEDGRADE" value="2" />
   <parameter name="SYS_INFO_DEVICE_POWER_MODEL" value="STANDARD_POWER" />
   <parameter name="logicalView" value="ip/my_sys/my_sys_hbm_fp_0.ip" />
@@ -1562,7 +1767,6 @@
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;" />
   <generatedFiles/>
   <childGeneratedFiles/>
@@ -1579,8 +1783,8 @@
    name="my_sys_intel_noc_clock_ctrl_0">
   <parameter name="DEVICE_SPEEDGRADE" value="2" />
   <parameter name="hlsFile" value="" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
-  <parameter name="DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
+  <parameter name="DEVICE_FAMILY" value="Agilex 7" />
   <parameter
      name="defaultBoundary"
      value="&lt;boundaryDefinition&gt;
@@ -1652,9 +1856,35 @@
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
         &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;target_inst_0&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;ssm_inst&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x7400&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;ssm_inst.target_lite_mon_inst_0.target_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
     &lt;/interfaces&gt;
 &lt;/boundaryDefinition&gt;" />
   <parameter name="DEVICE" value="AGMF039R47A2E2VR0" />
+  <parameter name="bspCpu" value="" />
   <parameter
      name="componentDefinition"
      value="&lt;componentDefinition&gt;
@@ -1727,11 +1957,36 @@
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
             &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;target_inst_0&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;ssm_inst&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
+                            &lt;value&gt;0x7400&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;ssm_inst.target_lite_mon_inst_0.target_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
         &lt;/interfaces&gt;
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;intel_noc_clock_ctrl&lt;/className&gt;
-        &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;version&gt;2.0.0&lt;/version&gt;
         &lt;displayName&gt;NoC Clock Control Intel FPGA IP&lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
@@ -1807,7 +2062,6 @@
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;" />
   <generatedFiles/>
   <childGeneratedFiles/>
@@ -1821,13 +2075,41 @@
  <entity
    kind="altera_generic_component"
    version="1.0"
-   name="my_sys_intel_noc_initiator_0">
+   name="my_sys_intel_noc_initiator_1">
   <parameter name="hlsFile" value="" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter
+     name="SYS_INFO_DEVICE_FAMILY_VARIANT"
+     value="M-Series with both HPS and 32GB HBM" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter
      name="defaultBoundary"
      value="&lt;boundaryDefinition&gt;
     &lt;interfaces&gt;
+        &lt;interface&gt;
+            &lt;name&gt;i0_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_0.initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
         &lt;interface&gt;
             &lt;name&gt;s0_axi4&lt;/name&gt;
             &lt;type&gt;axi4&lt;/type&gt;
@@ -2203,6 +2485,22 @@
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -2232,6 +2530,66 @@
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhGroupId&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterId&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterName&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterData&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                        &lt;value&gt;35&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;i1_axi4noc&lt;/name&gt;
+            &lt;type&gt;axi4noc&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports/&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;internalHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                        &lt;value&gt;iniu_1.initiator_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -2611,6 +2969,22 @@
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -2640,6 +3014,41 @@
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhGroupId&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterId&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterName&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterData&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                        &lt;value&gt;35&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -2700,10 +3109,11 @@
                 &lt;parameterValueMap&gt;
                     &lt;entry&gt;
                         &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;value&gt;s_axi4_aclk&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;synchronousEdges&lt;/key&gt;
-                        &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;value&gt;DEASSERT&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -2713,12 +3123,38 @@
   <parameter
      name="SYS_INFO_DEVICE_DIE_REVISIONS"
      value="HSSI_GDR_REVB,HSSI_RNR_REVB,MAIN_FP8_REVA,UIB_HBM_REVA" />
-  <parameter name="SYS_INFO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="SYS_INFO_DEVICE_FAMILY" value="Agilex 7" />
+  <parameter name="bspCpu" value="" />
   <parameter
      name="componentDefinition"
      value="&lt;componentDefinition&gt;
     &lt;boundary&gt;
         &lt;interfaces&gt;
+            &lt;interface&gt;
+                &lt;name&gt;i0_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;true&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
+                            &lt;value&gt;0x0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;iniu_0.initiator_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
             &lt;interface&gt;
                 &lt;name&gt;s0_axi4&lt;/name&gt;
                 &lt;type&gt;axi4&lt;/type&gt;
@@ -3094,6 +3530,22 @@
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -3123,6 +3575,66 @@
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhGroupId&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterId&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterName&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterData&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                            &lt;value&gt;35&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;i1_axi4noc&lt;/name&gt;
+                &lt;type&gt;axi4noc&lt;/type&gt;
+                &lt;isStart&gt;true&lt;/isStart&gt;
+                &lt;ports/&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;internalHPath&lt;/key&gt;
+                            &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
+                            &lt;value&gt;0x0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
+                            &lt;value&gt;iniu_1.initiator_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -3502,6 +4014,22 @@
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -3531,6 +4059,41 @@
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhGroupId&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterId&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterName&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterData&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                            &lt;value&gt;35&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -3591,10 +4154,11 @@
                     &lt;parameterValueMap&gt;
                         &lt;entry&gt;
                             &lt;key&gt;associatedClock&lt;/key&gt;
+                            &lt;value&gt;s_axi4_aclk&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;synchronousEdges&lt;/key&gt;
-                            &lt;value&gt;NONE&lt;/value&gt;
+                            &lt;value&gt;DEASSERT&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -3603,7 +4167,7 @@
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;intel_noc_initiator&lt;/className&gt;
-        &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;version&gt;1.1.0&lt;/version&gt;
         &lt;displayName&gt;NoC Initiator Intel FPGA IP&lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
@@ -3625,6 +4189,20 @@
                 &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY&lt;/parameterName&gt;
                 &lt;parameterType&gt;java.lang.String&lt;/parameterType&gt;
                 &lt;systemInfotype&gt;DEVICE_FAMILY&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY_VARIANT&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;FAMILY_VARIANT&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_GROUP&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;DEVICE_GROUP&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
             &lt;/descriptor&gt;
             &lt;descriptor&gt;
                 &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
@@ -3703,9 +4281,10 @@
     &lt;/systemInfos&gt;
 &lt;/componentDefinition&gt;" />
   <parameter name="SYS_INFO_DEVICE" value="AGMF039R47A2E2VR0" />
+  <parameter name="SYS_INFO_DEVICE_GROUP" value="" />
   <parameter name="SYS_INFO_DEVICE_SPEEDGRADE" value="2" />
   <parameter name="SYS_INFO_DEVICE_POWER_MODEL" value="STANDARD_POWER" />
-  <parameter name="logicalView" value="ip/my_sys/my_sys_intel_noc_initiator_0.ip" />
+  <parameter name="logicalView" value="ip/my_sys/my_sys_intel_noc_initiator_1.ip" />
   <parameter
      name="moduleAssignmentDefinition"
      value="&lt;assignmentDefinition&gt;
@@ -3721,40 +4300,39 @@
   <parameter
      name="generationInfoDefinition"
      value="&lt;generationInfoDefinition&gt;
-    &lt;hdlLibraryName&gt;my_sys_intel_noc_initiator_0&lt;/hdlLibraryName&gt;
+    &lt;hdlLibraryName&gt;my_sys_intel_noc_initiator_1&lt;/hdlLibraryName&gt;
     &lt;fileSets&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;QUARTUS_SYNTH&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;SIM_VERILOG&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;SIM_VHDL&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;CDC&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
         &lt;fileSet&gt;
-            &lt;fileSetName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetName&gt;
-            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_0&lt;/fileSetFixedName&gt;
+            &lt;fileSetName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;my_sys_intel_noc_initiator_1&lt;/fileSetFixedName&gt;
             &lt;fileSetKind&gt;CDC_VHDL&lt;/fileSetKind&gt;
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;" />
   <generatedFiles/>
   <childGeneratedFiles/>
@@ -3762,12 +4340,12 @@
   <childSourceFiles/>
   <instantiator instantiator="my_sys" as="intel_noc_initiator_0" />
   <messages>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_intel_noc_initiator_0"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_intel_noc_initiator_1"</message>
   </messages>
  </entity>
  <entity kind="altera_generic_component" version="1.0" name="my_sys_iopll_0">
   <parameter name="hlsFile" value="" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter
      name="defaultBoundary"
      value="&lt;boundaryDefinition&gt;
@@ -3978,6 +4556,7 @@
         &lt;/interface&gt;
     &lt;/interfaces&gt;
 &lt;/boundaryDefinition&gt;" />
+  <parameter name="bspCpu" value="" />
   <parameter name="system_info_device_speed_grade" value="2" />
   <parameter
      name="componentDefinition"
@@ -4286,7 +4865,7 @@
   <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
   <parameter name="system_info_device_component" value="AGMF039R47A2E2VR0" />
   <parameter name="system_part_trait_iobank_rev" value="IO96B" />
-  <parameter name="system_info_device_family" value="Agilex" />
+  <parameter name="system_info_device_family" value="Agilex 7" />
   <parameter
      name="hdlParameters"
      value="&lt;hdlParameterDescriptorDefinitionList/&gt;" />
@@ -4326,7 +4905,6 @@
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;" />
   <generatedFiles/>
   <childGeneratedFiles/>
@@ -4344,7 +4922,7 @@
   <parameter name="hlsFile" value="" />
   <parameter name="svInterfaceDefinition" value="" />
   <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter
      name="defaultBoundary"
      value="&lt;boundaryDefinition&gt;
@@ -4742,6 +5320,22 @@
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -4847,6 +5441,7 @@
         &lt;/interface&gt;
     &lt;/interfaces&gt;
 &lt;/boundaryDefinition&gt;" />
+  <parameter name="bspCpu" value="" />
   <parameter
      name="componentDefinition"
      value="&lt;componentDefinition&gt;
@@ -5243,6 +5838,22 @@
                         &lt;entry&gt;
                             &lt;key&gt;trustzoneAware&lt;/key&gt;
                             &lt;value&gt;true&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
@@ -5762,7 +6373,6 @@
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;" />
   <parameter name="logicalView" value="ip/my_sys/my_sys_mgc_axi4_master_0.ip" />
   <parameter
@@ -5784,7 +6394,7 @@
   <parameter name="hlsFile" value="" />
   <parameter name="svInterfaceDefinition" value="" />
   <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter
      name="defaultBoundary"
      value="&lt;boundaryDefinition&gt;
@@ -5859,6 +6469,7 @@
         &lt;/interface&gt;
     &lt;/interfaces&gt;
 &lt;/boundaryDefinition&gt;" />
+  <parameter name="bspCpu" value="" />
   <parameter
      name="componentDefinition"
      value="&lt;componentDefinition&gt;
@@ -5993,7 +6604,6 @@
             &lt;fileSetFiles/&gt;
         &lt;/fileSet&gt;
     &lt;/fileSets&gt;
-    &lt;pinAssignments/&gt;
 &lt;/generationInfoDefinition&gt;" />
   <parameter name="logicalView" value="ip/my_sys/noc_reset.ip" />
   <parameter
@@ -6013,140 +6623,140 @@
  <entity
    kind="altera_mm_interconnect"
    version="19.2.0"
-   name="my_sys_altera_mm_interconnect_1920_5ioayuq">
+   name="my_sys_altera_mm_interconnect_1920_ma2jqha">
   <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="" />
   <parameter
      name="COMPOSE_CONTENTS"
-     value="add_instance {mgc_axi4_master_0_altera_axi4_master_translator} {altera_merlin_axi_translator};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWCACHE} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWCACHE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARCACHE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARCACHE} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {DATA_WIDTH} {256};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_READ_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_READ_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BUSER} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_BUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {WRITE_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s0_axi4_translator} {altera_merlin_axi_translator};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {DATA_WIDTH} {256};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_ADDR_WIDTH} {44};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_BUSER} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {WRITE_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {SYNC_RESET} {1};add_instance {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {iopll_0_outclk0_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {EXPLICIT_CLOCK_RATE} {250000000};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mgc_axi4_master_0_altera_axi4_master_translator.m0} {intel_noc_initiator_0_s0_axi4_translator.s0} {avalon};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {arbitrationPriority} {1};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {baseAddress} {0x0000};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {defaultConnection} {false};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {domainAlias} {};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.piplineType} {PIPELINE_STAGE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableAllPipelines} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.syncResets} {TRUE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.optimizeRdFifoSize} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.responseFifoType} {REGISTER_BASED};add_connection {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset} {mgc_axi4_master_0_altera_axi4_master_translator.clk_reset} {reset};add_connection {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.out_reset} {intel_noc_initiator_0_s0_axi4_translator.clk_reset} {reset};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_0_altera_axi4_master_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s0_axi4_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.clk} {clock};add_interface {mgc_axi4_master_0_altera_axi4_master} {axi4} {slave};set_interface_property {mgc_axi4_master_0_altera_axi4_master} {EXPORT_OF} {mgc_axi4_master_0_altera_axi4_master_translator.s0};add_interface {intel_noc_initiator_0_s0_axi4} {axi4} {master};set_interface_property {intel_noc_initiator_0_s0_axi4} {EXPORT_OF} {intel_noc_initiator_0_s0_axi4_translator.m0};add_interface {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.in_reset};add_interface {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.in_reset};add_interface {iopll_0_outclk0} {clock} {slave};set_interface_property {iopll_0_outclk0} {EXPORT_OF} {iopll_0_outclk0_clock_bridge.in_clk};set_module_assignment {interconnect_id.intel_noc_initiator_0.s0_axi4} {0};set_module_assignment {interconnect_id.mgc_axi4_master_0.altera_axi4_master} {0};" />
+     value="add_instance {mgc_axi4_master_0_altera_axi4_master_translator} {altera_merlin_axi_translator};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWCACHE} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWCACHE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARCACHE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARCACHE} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {DATA_WIDTH} {256};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_SAI_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_SAI_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_READ_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_READ_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BUSER} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_BUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {WRITE_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {SYNC_RESET} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {ROLE_BASED_USER} {0};add_instance {intel_noc_initiator_0_s0_axi4_translator} {altera_merlin_axi_translator};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {DATA_WIDTH} {256};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_SAI_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_SAI_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_ADDR_WIDTH} {44};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_BUSER} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {WRITE_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {SYNC_RESET} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {ROLE_BASED_USER} {0};add_instance {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {iopll_0_outclk0_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {EXPLICIT_CLOCK_RATE} {250000000};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mgc_axi4_master_0_altera_axi4_master_translator.m0} {intel_noc_initiator_0_s0_axi4_translator.s0} {avalon};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {arbitrationPriority} {1};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {baseAddress} {0x0000};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {defaultConnection} {false};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {domainAlias} {};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.piplineType} {PIPELINE_STAGE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableAllPipelines} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.syncResets} {TRUE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.optimizeRdFifoSize} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.responseFifoType} {REGISTER_BASED};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableOutOfOrderSupport} {FALSE};add_connection {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset} {mgc_axi4_master_0_altera_axi4_master_translator.clk_reset} {reset};add_connection {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.out_reset} {intel_noc_initiator_0_s0_axi4_translator.clk_reset} {reset};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_0_altera_axi4_master_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s0_axi4_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.clk} {clock};add_interface {mgc_axi4_master_0_altera_axi4_master} {axi4} {slave};set_interface_property {mgc_axi4_master_0_altera_axi4_master} {EXPORT_OF} {mgc_axi4_master_0_altera_axi4_master_translator.s0};add_interface {intel_noc_initiator_0_s0_axi4} {axi4} {master};set_interface_property {intel_noc_initiator_0_s0_axi4} {EXPORT_OF} {intel_noc_initiator_0_s0_axi4_translator.m0};add_interface {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.in_reset};add_interface {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.in_reset};add_interface {iopll_0_outclk0} {clock} {slave};set_interface_property {iopll_0_outclk0} {EXPORT_OF} {iopll_0_outclk0_clock_bridge.in_clk};set_module_assignment {interconnect_id.intel_noc_initiator_0.s0_axi4} {0};set_module_assignment {interconnect_id.mgc_axi4_master_0.altera_axi4_master} {0};" />
   <generatedFiles>
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_mm_interconnect_1920/synth/my_sys_altera_mm_interconnect_1920_5ioayuq.v"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_mm_interconnect_1920/synth/my_sys_altera_mm_interconnect_1920_ma2jqha.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_mm_interconnect_1920/synth/my_sys_altera_mm_interconnect_1920_5ioayuq.v"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_mm_interconnect_1920/synth/my_sys_altera_mm_interconnect_1920_ma2jqha.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
   </childSourceFiles>
   <instantiator instantiator="my_sys" as="mm_interconnect_0" />
   <messages>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_mm_interconnect_1920_5ioayuq"</message>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1921_uetfduq"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_mm_interconnect_1920_ma2jqha"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1930_ivia3ca"</message>
   </messages>
  </entity>
  <entity
    kind="altera_mm_interconnect"
    version="19.2.0"
-   name="my_sys_altera_mm_interconnect_1920_dxipmqi">
+   name="my_sys_altera_mm_interconnect_1920_5277t4i">
   <parameter name="AUTO_DEVICE" value="AGMF039R47A2E2VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="" />
   <parameter
      name="COMPOSE_CONTENTS"
-     value="add_instance {mgc_axi4_master_1_altera_axi4_master_translator} {altera_merlin_axi_translator};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWCACHE} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWCACHE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARCACHE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARCACHE} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {DATA_WIDTH} {256};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_READ_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_READ_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BUSER} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_BUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {WRITE_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s1_axi4_translator} {altera_merlin_axi_translator};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {DATA_WIDTH} {256};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_ADDR_WIDTH} {44};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_BUSER} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {WRITE_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {SYNC_RESET} {1};add_instance {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {iopll_0_outclk0_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {EXPLICIT_CLOCK_RATE} {250000000};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mgc_axi4_master_1_altera_axi4_master_translator.m0} {intel_noc_initiator_0_s1_axi4_translator.s0} {avalon};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {arbitrationPriority} {1};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {baseAddress} {0x0000};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {defaultConnection} {false};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {domainAlias} {};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.piplineType} {PIPELINE_STAGE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableAllPipelines} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.syncResets} {TRUE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.optimizeRdFifoSize} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.responseFifoType} {REGISTER_BASED};add_connection {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset} {mgc_axi4_master_1_altera_axi4_master_translator.clk_reset} {reset};add_connection {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.out_reset} {intel_noc_initiator_0_s1_axi4_translator.clk_reset} {reset};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_1_altera_axi4_master_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s1_axi4_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.clk} {clock};add_interface {mgc_axi4_master_1_altera_axi4_master} {axi4} {slave};set_interface_property {mgc_axi4_master_1_altera_axi4_master} {EXPORT_OF} {mgc_axi4_master_1_altera_axi4_master_translator.s0};add_interface {intel_noc_initiator_0_s1_axi4} {axi4} {master};set_interface_property {intel_noc_initiator_0_s1_axi4} {EXPORT_OF} {intel_noc_initiator_0_s1_axi4_translator.m0};add_interface {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.in_reset};add_interface {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.in_reset};add_interface {iopll_0_outclk0} {clock} {slave};set_interface_property {iopll_0_outclk0} {EXPORT_OF} {iopll_0_outclk0_clock_bridge.in_clk};set_module_assignment {interconnect_id.intel_noc_initiator_0.s1_axi4} {0};set_module_assignment {interconnect_id.mgc_axi4_master_1.altera_axi4_master} {0};" />
+     value="add_instance {mgc_axi4_master_1_altera_axi4_master_translator} {altera_merlin_axi_translator};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWCACHE} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWCACHE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARCACHE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARCACHE} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {DATA_WIDTH} {256};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_SAI_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_SAI_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_READ_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_READ_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BUSER} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_BUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {WRITE_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {SYNC_RESET} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {ROLE_BASED_USER} {0};add_instance {intel_noc_initiator_0_s1_axi4_translator} {altera_merlin_axi_translator};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {DATA_WIDTH} {256};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_SAI_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_SAI_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_ADDR_WIDTH} {44};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_BUSER} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {WRITE_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {SYNC_RESET} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {ROLE_BASED_USER} {0};add_instance {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {iopll_0_outclk0_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {EXPLICIT_CLOCK_RATE} {250000000};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mgc_axi4_master_1_altera_axi4_master_translator.m0} {intel_noc_initiator_0_s1_axi4_translator.s0} {avalon};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {arbitrationPriority} {1};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {baseAddress} {0x0000};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {defaultConnection} {false};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {domainAlias} {};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.piplineType} {PIPELINE_STAGE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableAllPipelines} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.syncResets} {TRUE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.optimizeRdFifoSize} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.responseFifoType} {REGISTER_BASED};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableOutOfOrderSupport} {FALSE};add_connection {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset} {mgc_axi4_master_1_altera_axi4_master_translator.clk_reset} {reset};add_connection {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.out_reset} {intel_noc_initiator_0_s1_axi4_translator.clk_reset} {reset};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_1_altera_axi4_master_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s1_axi4_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.clk} {clock};add_interface {mgc_axi4_master_1_altera_axi4_master} {axi4} {slave};set_interface_property {mgc_axi4_master_1_altera_axi4_master} {EXPORT_OF} {mgc_axi4_master_1_altera_axi4_master_translator.s0};add_interface {intel_noc_initiator_0_s1_axi4} {axi4} {master};set_interface_property {intel_noc_initiator_0_s1_axi4} {EXPORT_OF} {intel_noc_initiator_0_s1_axi4_translator.m0};add_interface {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.in_reset};add_interface {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.in_reset};add_interface {iopll_0_outclk0} {clock} {slave};set_interface_property {iopll_0_outclk0} {EXPORT_OF} {iopll_0_outclk0_clock_bridge.in_clk};set_module_assignment {interconnect_id.intel_noc_initiator_0.s1_axi4} {0};set_module_assignment {interconnect_id.mgc_axi4_master_1.altera_axi4_master} {0};" />
   <generatedFiles>
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_mm_interconnect_1920/synth/my_sys_altera_mm_interconnect_1920_dxipmqi.v"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_mm_interconnect_1920/synth/my_sys_altera_mm_interconnect_1920_5277t4i.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_mm_interconnect_1920/synth/my_sys_altera_mm_interconnect_1920_dxipmqi.v"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_mm_interconnect_1920/synth/my_sys_altera_mm_interconnect_1920_5277t4i.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
   </childSourceFiles>
   <instantiator instantiator="my_sys" as="mm_interconnect_1" />
   <messages>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_mm_interconnect_1920_dxipmqi"</message>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1921_uetfduq"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_mm_interconnect_1920_5277t4i"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1930_ivia3ca"</message>
   </messages>
  </entity>
  <entity
    kind="altera_reset_controller"
-   version="19.2.1"
+   version="19.2.2"
    name="altera_reset_controller">
   <generatedFiles>
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1921/synth/altera_reset_controller.v"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1922/synth/altera_reset_controller.v"
        attributes="" />
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1921/synth/altera_reset_synchronizer.v"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1922/synth/altera_reset_synchronizer.v"
        attributes="" />
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1921/synth/altera_reset_controller.sdc"
-       attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1922/synth/altera_reset_controller.sdc"
+       attributes="NO_SDC_PROMOTION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1921/synth/altera_reset_controller.v"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1922/synth/altera_reset_controller.v"
        attributes="" />
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1921/synth/altera_reset_synchronizer.v"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1922/synth/altera_reset_synchronizer.v"
        attributes="" />
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1921/synth/altera_reset_controller.sdc"
-       attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_reset_controller_1922/synth/altera_reset_controller.sdc"
+       attributes="NO_SDC_PROMOTION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator
      instantiator="my_sys"
-     as="rst_controller,rst_controller_001,rst_controller_002" />
+     as="rst_controller,rst_controller_001,rst_controller_002,rst_controller_003" />
   <messages>
    <message level="Info" culprit="my_sys">"Generating: altera_reset_controller"</message>
   </messages>
  </entity>
  <entity
    kind="altera_merlin_axi_translator"
-   version="19.2.1"
-   name="my_sys_altera_merlin_axi_translator_1921_uetfduq">
+   version="19.3.0"
+   name="my_sys_altera_merlin_axi_translator_1930_ivia3ca">
   <parameter name="M0_LOCK_WIDTH" value="1" />
   <parameter name="M0_BURST_LENGTH_WIDTH" value="8" />
   <parameter name="S0_BURST_LENGTH_WIDTH" value="8" />
   <parameter name="S0_LOCK_WIDTH" value="1" />
   <generatedFiles>
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_merlin_axi_translator_1921/synth/my_sys_altera_merlin_axi_translator_1921_uetfduq.sv"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_merlin_axi_translator_1930/synth/my_sys_altera_merlin_axi_translator_1930_ivia3ca.sv"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_merlin_axi_translator_1921/synth/my_sys_altera_merlin_axi_translator_1921_uetfduq.sv"
+       path="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/hbm_simulation/agilex/axi_driver/HBM2e_AXI_BFM_Simulation/my_sys/altera_merlin_axi_translator_1930/synth/my_sys_altera_merlin_axi_translator_1930_ivia3ca.sv"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/merlin/altera_merlin_axi_translator/altera_merlin_axi_translator_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator
-     instantiator="my_sys_altera_mm_interconnect_1920_5ioayuq"
+     instantiator="my_sys_altera_mm_interconnect_1920_ma2jqha"
      as="mgc_axi4_master_0_altera_axi4_master_translator,intel_noc_initiator_0_s0_axi4_translator" />
   <instantiator
-     instantiator="my_sys_altera_mm_interconnect_1920_dxipmqi"
+     instantiator="my_sys_altera_mm_interconnect_1920_5277t4i"
      as="mgc_axi4_master_1_altera_axi4_master_translator,intel_noc_initiator_0_s1_axi4_translator" />
   <messages>
-   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1921_uetfduq"</message>
+   <message level="Info" culprit="my_sys">"Generating: my_sys_altera_merlin_axi_translator_1930_ivia3ca"</message>
   </messages>
  </entity>
 </deploy>

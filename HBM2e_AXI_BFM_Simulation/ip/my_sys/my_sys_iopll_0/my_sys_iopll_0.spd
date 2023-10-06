@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simPackage>
  <file
-   path="altera_iopll_1931/sim/my_sys_iopll_0_altera_iopll_1931_fisojzi.vo"
+   path="altera_iopll_1931/sim/my_sys_iopll_0_altera_iopll_1931_ad2226y.vo"
    type="VERILOG"
    library="altera_iopll_1931" />
  <file

@@ -21,10 +21,6 @@
             <value>BANDWIDTH_MODE_AUTO</value>
           </parameter>
           <parameter>
-            <name>base_address</name>
-            <value>0</value>
-          </parameter>
-          <parameter>
             <name>c_cnt_bypass_en0</name>
             <value>false</value>
           </parameter>
@@ -1813,6 +1809,10 @@
             <value>C0</value>
           </parameter>
           <parameter>
+            <name>gui_extclkout_source</name>
+            <value>C0</value>
+          </parameter>
+          <parameter>
             <name>gui_feedback_clock</name>
             <value>Global Clock</value>
           </parameter>
@@ -1838,6 +1838,10 @@
           </parameter>
           <parameter>
             <name>gui_include_iossm</name>
+            <value>false</value>
+          </parameter>
+          <parameter>
+            <name>gui_is_downstream_via_core</name>
             <value>false</value>
           </parameter>
           <parameter>
@@ -2347,6 +2351,10 @@
           <parameter>
             <name>gui_use_logical</name>
             <value>false</value>
+          </parameter>
+          <parameter>
+            <name>gui_user_base_address</name>
+            <value>0</value>
           </parameter>
           <parameter>
             <name>gui_usr_device_speed_grade</name>
@@ -3254,7 +3262,7 @@
           </parameter>
           <parameter>
             <name>refclk1_frequency</name>
-            <value>100.0 MHz</value>
+            <value>0 MHz</value>
           </parameter>
           <parameter>
             <name>reference_clock_frequency</name>
@@ -3313,7 +3321,7 @@
         <className>altera_iopll</className>
         <version>19.3.1</version>
         <name>iopll_0</name>
-        <uniqueName>my_sys_iopll_0_altera_iopll_1931_fisojzi</uniqueName>
+        <uniqueName>my_sys_iopll_0_altera_iopll_1931_ad2226y</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>my_sys_iopll_0.iopll_0</path>

@@ -19,7 +19,7 @@ namespace eval my_sys_iopll_0 {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_iopll_1931/sim/my_sys_iopll_0_altera_iopll_1931_fisojzi.vo"]\"  -work altera_iopll_1931"
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_iopll_1931/sim/my_sys_iopll_0_altera_iopll_1931_ad2226y.vo"]\"  -work altera_iopll_1931"
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/my_sys_iopll_0.v"]\"  -work my_sys_iopll_0"                                                       
     return $design_files
   }
@@ -63,17 +63,9 @@ namespace eval my_sys_iopll_0 {
       } 
       return $path 
   } 
-  proc get_mg_bfm_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR QUARTUS_INSTALL_DIR} {
-    set design_files [dict create]
-    return $design_files
-  }
-  
-  proc use_mg_bfm {} {
-    return 0
-  }
-  
-  proc get_mg_bfm_libraries {} {
+  proc get_dpi_libraries {QSYS_SIMDIR} {
     set libraries [dict create]
+    
     return $libraries
   }
   

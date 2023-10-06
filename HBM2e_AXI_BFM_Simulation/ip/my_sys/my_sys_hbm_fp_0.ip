@@ -16,14 +16,14 @@ https://fpgasoftware.intel.com/eula.-->
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
   <ipxact:library>my_sys_hbm_fp_0</ipxact:library>
   <ipxact:name>hbm_fp_0</ipxact:name>
-  <ipxact:version>1.2.0</ipxact:version>
+  <ipxact:version>2.0.0</ipxact:version>
   <ipxact:busInterfaces>
     <ipxact:busInterface>
       <ipxact:name>ch0_u0_wmc_intr</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -57,10 +57,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>ch0_u1_wmc_intr</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -94,10 +94,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>fabric_clk</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="clock" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="clock" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -131,10 +131,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>hbm_reset_n</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="reset" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="reset" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -163,10 +163,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>hbm_reset_in_prog</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -200,10 +200,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>cattrip</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -237,10 +237,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>cattrip_i</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -274,10 +274,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>temp</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -311,10 +311,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>temp_i</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -348,10 +348,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>local_cal_success</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -385,10 +385,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>local_cal_fail</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -422,10 +422,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>uibpll_refclk</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="clock" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="clock" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -459,10 +459,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>t_ch0_u0_axi4noc</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps></ipxact:portMaps>
         </ipxact:abstractionType>
       </ipxact:abstractionTypes>
@@ -473,9 +473,9 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>Internal HPath</ipxact:displayName>
           <ipxact:value>tniu_ch0_u0|target_0.target_inst_0</ipxact:value>
         </ipxact:parameter>
-        <ipxact:parameter parameterId="memorySpanInGB" type="string">
-          <ipxact:name>memorySpanInGB</ipxact:name>
-          <ipxact:displayName>memorySpanInGB</ipxact:displayName>
+        <ipxact:parameter parameterId="memorySpan" type="string">
+          <ipxact:name>memorySpan</ipxact:name>
+          <ipxact:displayName>memorySpan</ipxact:displayName>
           <ipxact:value>0x40000000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="regFunctionHPath" type="string">
@@ -487,10 +487,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>t_ch0_u1_axi4noc</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps></ipxact:portMaps>
         </ipxact:abstractionType>
       </ipxact:abstractionTypes>
@@ -501,9 +501,9 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>Internal HPath</ipxact:displayName>
           <ipxact:value>tniu_ch0_u1|target_0.target_inst_0</ipxact:value>
         </ipxact:parameter>
-        <ipxact:parameter parameterId="memorySpanInGB" type="string">
-          <ipxact:name>memorySpanInGB</ipxact:name>
-          <ipxact:displayName>memorySpanInGB</ipxact:displayName>
+        <ipxact:parameter parameterId="memorySpan" type="string">
+          <ipxact:name>memorySpan</ipxact:name>
+          <ipxact:displayName>memorySpan</ipxact:displayName>
           <ipxact:value>0x40000000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="regFunctionHPath" type="string">
@@ -514,39 +514,11 @@ https://fpgasoftware.intel.com/eula.-->
       </ipxact:parameters>
     </ipxact:busInterface>
     <ipxact:busInterface>
-      <ipxact:name>t_uibssm_sb_axi4noc</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
-      <ipxact:abstractionTypes>
-        <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:abstractionRef>
-          <ipxact:portMaps></ipxact:portMaps>
-        </ipxact:abstractionType>
-      </ipxact:abstractionTypes>
-      <ipxact:slave></ipxact:slave>
-      <ipxact:parameters>
-        <ipxact:parameter parameterId="internalHPath" type="string">
-          <ipxact:name>internalHPath</ipxact:name>
-          <ipxact:displayName>Internal HPath</ipxact:displayName>
-          <ipxact:value>tniu_uibssm_sb|target_0.target_lite_inst_0</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="memorySpanInGB" type="string">
-          <ipxact:name>memorySpanInGB</ipxact:name>
-          <ipxact:displayName>memorySpanInGB</ipxact:displayName>
-          <ipxact:value>0x40000000</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="regFunctionHPath" type="string">
-          <ipxact:name>regFunctionHPath</ipxact:name>
-          <ipxact:displayName>regFunctionHPath</ipxact:displayName>
-          <ipxact:value>tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0</ipxact:value>
-        </ipxact:parameter>
-      </ipxact:parameters>
-    </ipxact:busInterface>
-    <ipxact:busInterface>
       <ipxact:name>t_ch0_ch1_sb_axi4noc</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="axi4noc" version="23.3"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.1"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="axi4noc" version="23.3"></ipxact:abstractionRef>
           <ipxact:portMaps></ipxact:portMaps>
         </ipxact:abstractionType>
       </ipxact:abstractionTypes>
@@ -557,10 +529,10 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>Internal HPath</ipxact:displayName>
           <ipxact:value>tniu_ch0_ch1_sb|target_0.target_lite_inst_0</ipxact:value>
         </ipxact:parameter>
-        <ipxact:parameter parameterId="memorySpanInGB" type="string">
-          <ipxact:name>memorySpanInGB</ipxact:name>
-          <ipxact:displayName>memorySpanInGB</ipxact:displayName>
-          <ipxact:value>0x40000000</ipxact:value>
+        <ipxact:parameter parameterId="memorySpan" type="string">
+          <ipxact:name>memorySpan</ipxact:name>
+          <ipxact:displayName>memorySpan</ipxact:displayName>
+          <ipxact:value>0x8000000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="regFunctionHPath" type="string">
           <ipxact:name>regFunctionHPath</ipxact:name>
@@ -762,7 +734,7 @@ https://fpgasoftware.intel.com/eula.-->
       <ipxact:vendor>Intel Corporation</ipxact:vendor>
       <ipxact:library>my_sys_hbm_fp_0</ipxact:library>
       <ipxact:name>hbm_fp</ipxact:name>
-      <ipxact:version>1.2.0</ipxact:version>
+      <ipxact:version>2.0.0</ipxact:version>
     </altera:entity_info>
     <altera:altera_module_parameters>
       <ipxact:parameters>
@@ -775,6 +747,16 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:name>SYS_INFO_DEVICE</ipxact:name>
           <ipxact:displayName>SYS_INFO_DEVICE</ipxact:displayName>
           <ipxact:value>AGMF039R47A2E2VR0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="SYS_INFO_DEVICE_FAMILY_VARIANT" type="string">
+          <ipxact:name>SYS_INFO_DEVICE_FAMILY_VARIANT</ipxact:name>
+          <ipxact:displayName>SYS_INFO_DEVICE_FAMILY_VARIANT</ipxact:displayName>
+          <ipxact:value>M-Series with both HPS and 32GB HBM</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="SYS_INFO_DEVICE_GROUP" type="string">
+          <ipxact:name>SYS_INFO_DEVICE_GROUP</ipxact:name>
+          <ipxact:displayName>SYS_INFO_DEVICE_GROUP</ipxact:displayName>
+          <ipxact:value></ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SYS_INFO_DEVICE_SPEEDGRADE" type="string">
           <ipxact:name>SYS_INFO_DEVICE_SPEEDGRADE</ipxact:name>
@@ -1676,6 +1658,11 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>Generate location assignments </ipxact:displayName>
           <ipxact:value>LOCATION_ASSIGNMENTS_NONE</ipxact:value>
         </ipxact:parameter>
+        <ipxact:parameter parameterId="EX_DESIGN_USE_PD_NOC_FLOW" type="bit">
+          <ipxact:name>EX_DESIGN_USE_PD_NOC_FLOW</ipxact:name>
+          <ipxact:displayName>Specify NoC connections via the Platform Designer flow</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
         <ipxact:parameter parameterId="EX_DESIGN_GEN_SIM" type="bit">
           <ipxact:name>EX_DESIGN_GEN_SIM</ipxact:name>
           <ipxact:displayName>Simulation</ipxact:displayName>
@@ -1710,6 +1697,16 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:name>EX_DESIGN_CORE_REFCLK_FREQ_MHZ</ipxact:name>
           <ipxact:displayName>Reference clock frequency for example design fabric PLL</ipxact:displayName>
           <ipxact:value>100</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="EX_DESIGN_NOC_READ_TRANSACTION_SIZE" type="int">
+          <ipxact:name>EX_DESIGN_NOC_READ_TRANSACTION_SIZE</ipxact:name>
+          <ipxact:displayName>NoC read transaction size</ipxact:displayName>
+          <ipxact:value>64</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="EX_DESIGN_NOC_WRITE_TRANSACTION_SIZE" type="int">
+          <ipxact:name>EX_DESIGN_NOC_WRITE_TRANSACTION_SIZE</ipxact:name>
+          <ipxact:displayName>NoC write transaction size</ipxact:displayName>
+          <ipxact:value>64</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="EX_DESIGN_HDL_FORMAT_AUTO_BOOL" type="bit">
           <ipxact:name>EX_DESIGN_HDL_FORMAT_AUTO_BOOL</ipxact:name>
@@ -2200,7 +2197,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x40000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -2225,37 +2222,12 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x40000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;regFunctionHPath&lt;/key&gt;
                         &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
-        &lt;interface&gt;
-            &lt;name&gt;t_uibssm_sb_axi4noc&lt;/name&gt;
-            &lt;type&gt;axi4noc&lt;/type&gt;
-            &lt;isStart&gt;false&lt;/isStart&gt;
-            &lt;ports/&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap/&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;internalHPath&lt;/key&gt;
-                        &lt;value&gt;tniu_uibssm_sb|target_0.target_lite_inst_0&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                        &lt;value&gt;0x40000000&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
-                        &lt;value&gt;tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -2275,8 +2247,8 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                        &lt;value&gt;0x40000000&lt;/value&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x8000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;regFunctionHPath&lt;/key&gt;
@@ -2294,6 +2266,11 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:value>&lt;systemInfosDefinition&gt;
     &lt;connPtSystemInfos/&gt;
 &lt;/systemInfosDefinition&gt;</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="dflBitArray" type="string">
+          <ipxact:name>dflBitArray</ipxact:name>
+          <ipxact:displayName>dflBitArray</ipxact:displayName>
+          <ipxact:value></ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_system_parameters>
@@ -2329,7 +2306,7 @@ https://fpgasoftware.intel.com/eula.-->
       <altera:interface_mapping altera:name="t_ch0_ch1_sb_axi4noc" altera:internal="hbm_fp_0.t_ch0_ch1_sb_axi4noc" altera:type="axi4noc" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="t_ch0_u0_axi4noc" altera:internal="hbm_fp_0.t_ch0_u0_axi4noc" altera:type="axi4noc" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="t_ch0_u1_axi4noc" altera:internal="hbm_fp_0.t_ch0_u1_axi4noc" altera:type="axi4noc" altera:dir="end"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="t_uibssm_sb_axi4noc" altera:internal="hbm_fp_0.t_uibssm_sb_axi4noc" altera:type="axi4noc" altera:dir="end"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="t_uibssm_sb_axi4noc" altera:internal="hbm_fp_0.t_uibssm_sb_axi4noc"></altera:interface_mapping>
       <altera:interface_mapping altera:name="temp" altera:internal="hbm_fp_0.temp" altera:type="conduit" altera:dir="end">
         <altera:port_mapping altera:name="hbm_temp" altera:internal="hbm_temp"></altera:port_mapping>
       </altera:interface_mapping>

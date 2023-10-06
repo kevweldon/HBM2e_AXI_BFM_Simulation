@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 23.1 115 linux 2023.05.02.17:10:53
+# ACDS 23.3 104 linux 2023.10.06.15:24:12
 
 # ----------------------------------------
 # Initialize variables
@@ -113,7 +113,7 @@ if ![info exists QSYS_SIMDIR] {
 }
 
 if ![info exists QUARTUS_INSTALL_DIR] { 
-  set QUARTUS_INSTALL_DIR "/nfs/site/disks/swbld_archive_3/acds/23.1/115/linux64/quartus/"
+  set QUARTUS_INSTALL_DIR "/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/quartus/"
 }
 
 if ![info exists USER_DEFINED_COMPILE_OPTIONS] { 
@@ -209,6 +209,23 @@ ensure_lib          ./libraries/
 ensure_lib          ./libraries/work/
 vmap       work     ./libraries/work/
 vmap       work_lib ./libraries/work/
+
+# ----------------------------------------
+# get DPI libraries
+set libraries [dict create]
+set libraries [dict merge $libraries [my_sys::get_dpi_libraries "$QSYS_SIMDIR"]]
+set dpi_libraries [dict values $libraries]
+
+# ----------------------------------------
+# setup shared libraries
+set DPI_LIBRARIES_ELAB ""
+if { [llength $dpi_libraries] != 0 } {
+  echo "Using DPI Library settings"
+  foreach library $dpi_libraries {
+    append DPI_LIBRARIES_ELAB "-sv_lib $library "
+  }
+}
+
 if [string is false -strict [modelsim_ae_select $FORCE_MODELSIM_AE_SELECTION]] {
   ensure_lib                   ./libraries/lpm_ver/          
   vmap       lpm_ver           ./libraries/lpm_ver/          
@@ -270,8 +287,8 @@ alias dev_com {
     eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                       "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_hssi_atoms.sv"              -work tennm_hssi_ver   
     eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                       "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_hssi_atoms_ncrypt.sv"       -work tennm_hssi_ver   
     eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                       "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctfb_hssi_atoms.sv"               -work tennm_hssi_f1_ver
-    eval  vlog -sv -suppress 7070,2244,2388,12003 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                        "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctfb_hssi_atoms_ncrypt.sv"        -work tennm_hssi_f1_ver
-    eval  vlog -sv -suppress 7070,2244,2388,12003 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                        "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctfb_hssi_atoms2_ncrypt.sv"       -work tennm_hssi_f1_ver
+    eval  vlog -sv -suppress 7070,2244,2388,12003,13314,2248,2583,2635,2600 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                              "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctfb_hssi_atoms_ncrypt.sv"        -work tennm_hssi_f1_ver
+    eval  vlog -sv -suppress 7070,2244,2388,12003,13314,2248,2583,2635,2600 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                              "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctfb_hssi_atoms2_ncrypt.sv"       -work tennm_hssi_f1_ver
     eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                       "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctr_hssi_atoms.sv"                -work tennm_hssi_r1_ver
     eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                       "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctr_hssi_atoms_ncrypt.sv"         -work tennm_hssi_r1_ver
     eval  vlog -sv -suppress 12003,2388,2244,2902,7033,13276,13388,7061 +define+rnrb_one_lib_CXL_TOP_OFF $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctrb_hssi_atoms_ncrypt.sv"        -work tennm_hssi_r1_ver
@@ -287,7 +304,7 @@ alias dev_com {
     eval  vcom $USER_DEFINED_VHDL_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                              "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.vhd"            -work altera           
     eval  vcom $USER_DEFINED_VHDL_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                              "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf_components.vhd"         -work altera_mf        
     eval  vcom $USER_DEFINED_VHDL_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                              "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.vhd"                    -work altera_mf        
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                       "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/altera_lnsim_for_vhdl.sv"  -work altera_lnsim     
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                       "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv"                  -work altera_lnsim     
     eval  vcom $USER_DEFINED_VHDL_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                              "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim_components.vhd"      -work altera_lnsim     
     eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                       "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/tennm_atoms_ncrypt.sv"     -work tennm            
     eval  vcom $USER_DEFINED_VHDL_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                                                                                              "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_atoms.vhd"                  -work tennm            
@@ -324,7 +341,7 @@ alias elab {
   }
   set elabcommand " $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS"
   foreach library $logical_libraries { append elabcommand " -L $library" }
-  append elabcommand " $TOP_LEVEL_NAME"
+  append elabcommand " $TOP_LEVEL_NAME $DPI_LIBRARIES_ELAB "
   eval vsim $elabcommand
 }
 
@@ -336,7 +353,7 @@ alias elab_debug {
   }
   set elabcommand " $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS"
   foreach library $logical_libraries { append elabcommand " -L $library" }
-  append elabcommand " $TOP_LEVEL_NAME"
+  append elabcommand " $TOP_LEVEL_NAME $DPI_LIBRARIES_ELAB "
   eval vsim -voptargs=+acc $elabcommand
 }
 

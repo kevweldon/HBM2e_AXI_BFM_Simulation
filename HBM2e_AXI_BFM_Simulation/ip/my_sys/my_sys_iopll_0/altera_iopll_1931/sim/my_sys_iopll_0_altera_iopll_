@@ -1,4 +1,4 @@
-// (C) 2001-2022 Intel Corporation. All rights reserved.
+// (C) 2001-2023 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files from any of the foregoing (including device programming or simulation 
@@ -14,7 +14,7 @@
 // Wrappers for other families can be found in altera_pll.v (pre Arria 10) and twentynm_iopll.v
 
 `timescale 1ps/1ps
-module my_sys_iopll_0_altera_iopll_1931_oz3cxky 
+module my_sys_iopll_0_altera_iopll_1931_ad2226y 
 (
     // interface refclk
     input wire refclk,
@@ -81,7 +81,7 @@ wire gnd /* synthesis keep*/;
 // ==========================================================================================
 tennm_ph2_iopll #(
     .bandwidth_mode("BANDWIDTH_MODE_AUTO"),
-    .base_address(0),
+    .base_address(11'd0),
     .cascade_mode("CASCADE_MODE_STANDALONE"),
     .clk_switch_auto_en("FALSE"),
     .clk_switch_manual_en("FALSE"),
@@ -165,7 +165,7 @@ tennm_ph2_iopll #(
     .pfd_clk_freq(32'd100000000),
     .protocol_mode("PROTOCOL_MODE_BASIC"),
     .ref_clk_0_freq(32'd100000000),
-    .ref_clk_1_freq(32'd100000000),
+    .ref_clk_1_freq(32'd0),
     .ref_clk_delay(0),
     .ref_clk_n_div(1),
     .self_reset_en("FALSE"),

@@ -21,6 +21,10 @@
             <value>-1</value>
           </parameter>
           <parameter>
+            <name>bspCpu</name>
+            <value></value>
+          </parameter>
+          <parameter>
             <name>componentDefinition</name>
             <value>&lt;componentDefinition&gt;
     &lt;boundary&gt;
@@ -277,7 +281,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller/reset_in0</end>
             <start>axi_reset/out_reset</start>
           </incidentConnection>
@@ -298,7 +302,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_002/reset_in0</end>
             <start>axi_reset/out_reset</start>
           </incidentConnection>
@@ -314,6 +318,10 @@
           <parameter>
             <name>DERIVED_CLOCK_RATE</name>
             <value>0</value>
+          </parameter>
+          <parameter>
+            <name>bspCpu</name>
+            <value></value>
           </parameter>
           <parameter>
             <name>componentDefinition</name>
@@ -619,7 +627,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_clock_ctrl_0/refclk</end>
             <start>clk100/out_clk</start>
           </incidentConnection>
@@ -644,7 +652,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>iopll_0/refclk</end>
             <start>clk100/out_clk</start>
           </incidentConnection>
@@ -670,6 +678,14 @@
             <value>Agilex 7</value>
           </parameter>
           <parameter>
+            <name>SYS_INFO_DEVICE_FAMILY_VARIANT</name>
+            <value>M-Series with both HPS and 32GB HBM</value>
+          </parameter>
+          <parameter>
+            <name>SYS_INFO_DEVICE_GROUP</name>
+            <value></value>
+          </parameter>
+          <parameter>
             <name>SYS_INFO_DEVICE_POWER_MODEL</name>
             <value>STANDARD_POWER</value>
           </parameter>
@@ -684,6 +700,10 @@
           <parameter>
             <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
             <value>EXTENDED</value>
+          </parameter>
+          <parameter>
+            <name>bspCpu</name>
+            <value></value>
           </parameter>
           <parameter>
             <name>componentDefinition</name>
@@ -1101,7 +1121,7 @@
                             &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x40000000&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
@@ -1126,37 +1146,12 @@
                             &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x40000000&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;regFunctionHPath&lt;/key&gt;
                             &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
-                        &lt;/entry&gt;
-                    &lt;/parameterValueMap&gt;
-                &lt;/parameters&gt;
-            &lt;/interface&gt;
-            &lt;interface&gt;
-                &lt;name&gt;t_uibssm_sb_axi4noc&lt;/name&gt;
-                &lt;type&gt;axi4noc&lt;/type&gt;
-                &lt;isStart&gt;false&lt;/isStart&gt;
-                &lt;ports/&gt;
-                &lt;assignments&gt;
-                    &lt;assignmentValueMap/&gt;
-                &lt;/assignments&gt;
-                &lt;parameters&gt;
-                    &lt;parameterValueMap&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;internalHPath&lt;/key&gt;
-                            &lt;value&gt;tniu_uibssm_sb|target_0.target_lite_inst_0&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                            &lt;value&gt;0x40000000&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;regFunctionHPath&lt;/key&gt;
-                            &lt;value&gt;tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -1176,8 +1171,8 @@
                             &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                            &lt;value&gt;0x40000000&lt;/value&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
+                            &lt;value&gt;0x8000000&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;regFunctionHPath&lt;/key&gt;
@@ -1190,7 +1185,7 @@
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;hbm_fp&lt;/className&gt;
-        &lt;version&gt;1.2.0&lt;/version&gt;
+        &lt;version&gt;2.0.0&lt;/version&gt;
         &lt;displayName&gt;High Bandwidth Memory (HBM2E) Interface Intel Agilex 7 FPGA IP &lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
@@ -1212,6 +1207,20 @@
                 &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY&lt;/parameterName&gt;
                 &lt;parameterType&gt;java.lang.String&lt;/parameterType&gt;
                 &lt;systemInfotype&gt;DEVICE_FAMILY&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY_VARIANT&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;FAMILY_VARIANT&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_GROUP&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;DEVICE_GROUP&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
             &lt;/descriptor&gt;
             &lt;descriptor&gt;
                 &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
@@ -1662,7 +1671,7 @@
                         &lt;value&gt;tniu_ch0_u0|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x40000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -1687,37 +1696,12 @@
                         &lt;value&gt;tniu_ch0_u1|target_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x40000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;regFunctionHPath&lt;/key&gt;
                         &lt;value&gt;tniu_ch0_u1.target_0.target_inst_0&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
-        &lt;interface&gt;
-            &lt;name&gt;t_uibssm_sb_axi4noc&lt;/name&gt;
-            &lt;type&gt;axi4noc&lt;/type&gt;
-            &lt;isStart&gt;false&lt;/isStart&gt;
-            &lt;ports/&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap/&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;internalHPath&lt;/key&gt;
-                        &lt;value&gt;tniu_uibssm_sb|target_0.target_lite_inst_0&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                        &lt;value&gt;0x40000000&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;regFunctionHPath&lt;/key&gt;
-                        &lt;value&gt;tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -1737,8 +1721,8 @@
                         &lt;value&gt;tniu_ch0_ch1_sb|target_0.target_lite_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
-                        &lt;value&gt;0x40000000&lt;/value&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
+                        &lt;value&gt;0x8000000&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;regFunctionHPath&lt;/key&gt;
@@ -1840,7 +1824,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>hbm_fp_0/fabric_clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -1865,7 +1849,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>hbm_fp_0/uibpll_refclk</end>
             <start>iopll_0/outclk1</start>
           </incidentConnection>
@@ -1886,7 +1870,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>hbm_fp_0/hbm_reset_n</end>
             <start>rst_controller/reset_out</start>
           </incidentConnection>
@@ -1910,6 +1894,10 @@
           <parameter>
             <name>DEVICE_SPEEDGRADE</name>
             <value>2</value>
+          </parameter>
+          <parameter>
+            <name>bspCpu</name>
+            <value></value>
           </parameter>
           <parameter>
             <name>componentDefinition</name>
@@ -1998,7 +1986,7 @@
                             &lt;value&gt;ssm_inst&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x7400&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
@@ -2128,7 +2116,7 @@
                         &lt;value&gt;ssm_inst&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x7400&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -2231,7 +2219,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_clock_ctrl_0/refclk</end>
             <start>clk100/out_clk</start>
           </incidentConnection>
@@ -2257,6 +2245,14 @@
             <value>Agilex 7</value>
           </parameter>
           <parameter>
+            <name>SYS_INFO_DEVICE_FAMILY_VARIANT</name>
+            <value>M-Series with both HPS and 32GB HBM</value>
+          </parameter>
+          <parameter>
+            <name>SYS_INFO_DEVICE_GROUP</name>
+            <value></value>
+          </parameter>
+          <parameter>
             <name>SYS_INFO_DEVICE_POWER_MODEL</name>
             <value>STANDARD_POWER</value>
           </parameter>
@@ -2271,6 +2267,10 @@
           <parameter>
             <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
             <value>EXTENDED</value>
+          </parameter>
+          <parameter>
+            <name>bspCpu</name>
+            <value></value>
           </parameter>
           <parameter>
             <name>componentDefinition</name>
@@ -2292,7 +2292,7 @@
                             &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
@@ -2677,6 +2677,22 @@
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -2707,6 +2723,41 @@
                         &lt;entry&gt;
                             &lt;key&gt;bridgesToMaster&lt;/key&gt;
                         &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhGroupId&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterId&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterName&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterData&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                            &lt;value&gt;35&lt;/value&gt;
+                        &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
             &lt;/interface&gt;
@@ -2725,7 +2776,7 @@
                             &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
-                            &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                            &lt;key&gt;memorySpan&lt;/key&gt;
                             &lt;value&gt;0x0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
@@ -3110,6 +3161,22 @@
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -3139,6 +3206,41 @@
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhGroupId&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterId&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterName&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterData&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                            &lt;value&gt;35&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
                 &lt;/parameters&gt;
@@ -3237,6 +3339,20 @@
             &lt;/descriptor&gt;
             &lt;descriptor&gt;
                 &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_FAMILY_VARIANT&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;FAMILY_VARIANT&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
+                &lt;parameterName&gt;SYS_INFO_DEVICE_GROUP&lt;/parameterName&gt;
+                &lt;parameterType&gt;[Ljava.lang.String;&lt;/parameterType&gt;
+                &lt;systemInfoArgs&gt;DEVICE_GROUP&lt;/systemInfoArgs&gt;
+                &lt;systemInfotype&gt;DEVICE_INFO&lt;/systemInfotype&gt;
+            &lt;/descriptor&gt;
+            &lt;descriptor&gt;
+                &lt;parameterDefaultValue&gt;&lt;/parameterDefaultValue&gt;
                 &lt;parameterName&gt;SYS_INFO_DEVICE_POWER_MODEL&lt;/parameterName&gt;
                 &lt;parameterType&gt;java.lang.String&lt;/parameterType&gt;
                 &lt;systemInfoArgs&gt;DEVICE_POWER_MODEL&lt;/systemInfoArgs&gt;
@@ -3331,7 +3447,7 @@
                         &lt;value&gt;iniu_0|initiator_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -3716,6 +3832,22 @@
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -3746,6 +3878,41 @@
                     &lt;entry&gt;
                         &lt;key&gt;bridgesToMaster&lt;/key&gt;
                     &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhGroupId&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterId&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterName&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterData&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                        &lt;value&gt;35&lt;/value&gt;
+                    &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
         &lt;/interface&gt;
@@ -3764,7 +3931,7 @@
                         &lt;value&gt;iniu_1|initiator_inst_0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
-                        &lt;key&gt;memorySpanInGB&lt;/key&gt;
+                        &lt;key&gt;memorySpan&lt;/key&gt;
                         &lt;value&gt;0x0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
@@ -4149,6 +4316,22 @@
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -4178,6 +4361,41 @@
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;bridgesToMaster&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureGuid&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhGroupId&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterId&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterName&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterVersion&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterData&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhParameterDataLength&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMajorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureMinorVersion&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dfhFeatureId&lt;/key&gt;
+                        &lt;value&gt;35&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
@@ -4340,7 +4558,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_initiator_0/s_axi4_aclk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -4437,7 +4655,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>avalon</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_initiator_0/s0_axi4</end>
             <start>mm_interconnect_0/intel_noc_initiator_0_s0_axi4</start>
           </incidentConnection>
@@ -4534,7 +4752,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>avalon</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_initiator_0/s1_axi4</end>
             <start>mm_interconnect_1/intel_noc_initiator_0_s1_axi4</start>
           </incidentConnection>
@@ -4555,7 +4773,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_initiator_0/s_axi4_aresetn</end>
             <start>rst_controller_001/reset_out</start>
           </incidentConnection>
@@ -4568,6 +4786,10 @@
       <instanceKey xsi:type="xs:string">iopll_0</instanceKey>
       <instanceData xsi:type="data">
         <parameters>
+          <parameter>
+            <name>bspCpu</name>
+            <value></value>
+          </parameter>
           <parameter>
             <name>componentDefinition</name>
             <value>&lt;componentDefinition&gt;
@@ -5186,7 +5408,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>iopll_0/refclk</end>
             <start>clk100/out_clk</start>
           </incidentConnection>
@@ -5211,7 +5433,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>hbm_fp_0/fabric_clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5236,7 +5458,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_initiator_0/s_axi4_aclk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5261,7 +5483,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mgc_axi4_master_0/clock_sink</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5286,7 +5508,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mgc_axi4_master_1/clock_sink</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5311,7 +5533,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_0/iopll_0_outclk0</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5336,7 +5558,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_1/iopll_0_outclk0</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5361,7 +5583,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller/clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5386,7 +5608,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_001/clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5411,7 +5633,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_002/clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5436,7 +5658,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_003/clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -5461,7 +5683,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>hbm_fp_0/uibpll_refclk</end>
             <start>iopll_0/outclk1</start>
           </incidentConnection>
@@ -5474,6 +5696,10 @@
       <instanceKey xsi:type="xs:string">mgc_axi4_master_0</instanceKey>
       <instanceData xsi:type="data">
         <parameters>
+          <parameter>
+            <name>bspCpu</name>
+            <value></value>
+          </parameter>
           <parameter>
             <name>componentDefinition</name>
             <value>&lt;componentDefinition&gt;
@@ -5872,6 +6098,22 @@
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -5894,14 +6136,6 @@
                         &lt;entry&gt;
                             &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                             &lt;value&gt;16&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -6395,6 +6629,22 @@
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -6417,14 +6667,6 @@
                     &lt;entry&gt;
                         &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                         &lt;value&gt;16&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -6960,7 +7202,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mgc_axi4_master_0/clock_sink</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -7057,7 +7299,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>avalon</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_0/mgc_axi4_master_0_altera_axi4_master</end>
             <start>mgc_axi4_master_0/altera_axi4_master</start>
           </incidentConnection>
@@ -7078,7 +7320,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mgc_axi4_master_0/reset_sink</end>
             <start>rst_controller/reset_out</start>
           </incidentConnection>
@@ -7091,6 +7333,10 @@
       <instanceKey xsi:type="xs:string">mgc_axi4_master_1</instanceKey>
       <instanceData xsi:type="data">
         <parameters>
+          <parameter>
+            <name>bspCpu</name>
+            <value></value>
+          </parameter>
           <parameter>
             <name>componentDefinition</name>
             <value>&lt;componentDefinition&gt;
@@ -7489,6 +7735,22 @@
                             &lt;value&gt;true&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
+                            &lt;key&gt;wakeupSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;poison&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;traceSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
                             &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                             &lt;value&gt;1&lt;/value&gt;
                         &lt;/entry&gt;
@@ -7511,14 +7773,6 @@
                         &lt;entry&gt;
                             &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                             &lt;value&gt;16&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -8012,6 +8266,22 @@
                         &lt;value&gt;true&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
+                        &lt;key&gt;wakeupSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;uniqueIdSupport&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;poison&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;traceSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
                         &lt;key&gt;maximumOutstandingReads&lt;/key&gt;
                         &lt;value&gt;1&lt;/value&gt;
                     &lt;/entry&gt;
@@ -8034,14 +8304,6 @@
                     &lt;entry&gt;
                         &lt;key&gt;combinedIssuingCapability&lt;/key&gt;
                         &lt;value&gt;16&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;noRepeatedIdsBetweenSubordinates&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;issuesINCRBursts&lt;/key&gt;
@@ -8577,7 +8839,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mgc_axi4_master_1/clock_sink</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -8674,7 +8936,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>avalon</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_1/mgc_axi4_master_1_altera_axi4_master</end>
             <start>mgc_axi4_master_1/altera_axi4_master</start>
           </incidentConnection>
@@ -8695,7 +8957,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mgc_axi4_master_1/reset_sink</end>
             <start>rst_controller/reset_out</start>
           </incidentConnection>
@@ -8710,7 +8972,7 @@
         <parameters>
           <parameter>
             <name>COMPOSE_CONTENTS</name>
-            <value>add_instance {mgc_axi4_master_0_altera_axi4_master_translator} {altera_merlin_axi_translator};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWCACHE} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWCACHE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARCACHE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARCACHE} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {DATA_WIDTH} {256};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_READ_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_READ_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BUSER} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_BUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {WRITE_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s0_axi4_translator} {altera_merlin_axi_translator};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {DATA_WIDTH} {256};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_ADDR_WIDTH} {44};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_BUSER} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {WRITE_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {SYNC_RESET} {1};add_instance {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {iopll_0_outclk0_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {EXPLICIT_CLOCK_RATE} {250000000};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mgc_axi4_master_0_altera_axi4_master_translator.m0} {intel_noc_initiator_0_s0_axi4_translator.s0} {avalon};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {arbitrationPriority} {1};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {baseAddress} {0x0000};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {defaultConnection} {false};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {domainAlias} {};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.piplineType} {PIPELINE_STAGE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableAllPipelines} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.syncResets} {TRUE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.optimizeRdFifoSize} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.responseFifoType} {REGISTER_BASED};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableOutOfOrderSupport} {FALSE};add_connection {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset} {mgc_axi4_master_0_altera_axi4_master_translator.clk_reset} {reset};add_connection {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.out_reset} {intel_noc_initiator_0_s0_axi4_translator.clk_reset} {reset};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_0_altera_axi4_master_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s0_axi4_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.clk} {clock};add_interface {mgc_axi4_master_0_altera_axi4_master} {axi4} {slave};set_interface_property {mgc_axi4_master_0_altera_axi4_master} {EXPORT_OF} {mgc_axi4_master_0_altera_axi4_master_translator.s0};add_interface {intel_noc_initiator_0_s0_axi4} {axi4} {master};set_interface_property {intel_noc_initiator_0_s0_axi4} {EXPORT_OF} {intel_noc_initiator_0_s0_axi4_translator.m0};add_interface {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.in_reset};add_interface {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.in_reset};add_interface {iopll_0_outclk0} {clock} {slave};set_interface_property {iopll_0_outclk0} {EXPORT_OF} {iopll_0_outclk0_clock_bridge.in_clk};set_module_assignment {interconnect_id.intel_noc_initiator_0.s0_axi4} {0};set_module_assignment {interconnect_id.mgc_axi4_master_0.altera_axi4_master} {0};</value>
+            <value>add_instance {mgc_axi4_master_0_altera_axi4_master_translator} {altera_merlin_axi_translator};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWCACHE} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWCACHE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARCACHE} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARCACHE} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RID} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {DATA_WIDTH} {256};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_SAI_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_SAI_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_READ_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_READ_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_BUSER} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_BUSER} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {WRITE_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {SYNC_RESET} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_AWUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_ARUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_WUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_M0_RUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_AWUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_ARUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_WUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {USE_S0_RUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator} {ROLE_BASED_USER} {0};add_instance {intel_noc_initiator_0_s0_axi4_translator} {altera_merlin_axi_translator};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RID} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {DATA_WIDTH} {256};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_SAI_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_SAI_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_ADDR_WIDTH} {44};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_BUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_BUSER} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {WRITE_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {SYNC_RESET} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_AWUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_ARUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_WUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_M0_RUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_AWUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_ARUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_WUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {USE_S0_RUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator} {ROLE_BASED_USER} {0};add_instance {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {iopll_0_outclk0_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {EXPLICIT_CLOCK_RATE} {250000000};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mgc_axi4_master_0_altera_axi4_master_translator.m0} {intel_noc_initiator_0_s0_axi4_translator.s0} {avalon};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {arbitrationPriority} {1};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {baseAddress} {0x0000};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {defaultConnection} {false};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {domainAlias} {};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.piplineType} {PIPELINE_STAGE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableAllPipelines} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.syncResets} {TRUE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.optimizeRdFifoSize} {FALSE};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.responseFifoType} {REGISTER_BASED};set_connection_parameter_value {mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0} {qsys_mm.enableOutOfOrderSupport} {FALSE};add_connection {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset} {mgc_axi4_master_0_altera_axi4_master_translator.clk_reset} {reset};add_connection {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.out_reset} {intel_noc_initiator_0_s0_axi4_translator.clk_reset} {reset};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_0_altera_axi4_master_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s0_axi4_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.clk} {clock};add_interface {mgc_axi4_master_0_altera_axi4_master} {axi4} {slave};set_interface_property {mgc_axi4_master_0_altera_axi4_master} {EXPORT_OF} {mgc_axi4_master_0_altera_axi4_master_translator.s0};add_interface {intel_noc_initiator_0_s0_axi4} {axi4} {master};set_interface_property {intel_noc_initiator_0_s0_axi4} {EXPORT_OF} {intel_noc_initiator_0_s0_axi4_translator.m0};add_interface {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.in_reset};add_interface {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.in_reset};add_interface {iopll_0_outclk0} {clock} {slave};set_interface_property {iopll_0_outclk0} {EXPORT_OF} {iopll_0_outclk0_clock_bridge.in_clk};set_module_assignment {interconnect_id.intel_noc_initiator_0.s0_axi4} {0};set_module_assignment {interconnect_id.mgc_axi4_master_0.altera_axi4_master} {0};</value>
           </parameter>
           <parameter>
             <name>SYNC_RESET</name>
@@ -8721,7 +8983,7 @@
         <className>altera_mm_interconnect</className>
         <version>19.2.0</version>
         <name>mm_interconnect_0</name>
-        <uniqueName>my_sys_altera_mm_interconnect_1920_shrp3yq</uniqueName>
+        <uniqueName>my_sys_altera_mm_interconnect_1920_ma2jqha</uniqueName>
         <nonce>0</nonce>
         <incidentConnections>
           <incidentConnection>
@@ -8745,7 +9007,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_0/iopll_0_outclk0</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -8842,7 +9104,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>avalon</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_0/mgc_axi4_master_0_altera_axi4_master</end>
             <start>mgc_axi4_master_0/altera_axi4_master</start>
           </incidentConnection>
@@ -8939,7 +9201,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>avalon</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_initiator_0/s0_axi4</end>
             <start>mm_interconnect_0/intel_noc_initiator_0_s0_axi4</start>
           </incidentConnection>
@@ -8960,7 +9222,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_0/mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset</end>
             <start>rst_controller_002/reset_out</start>
           </incidentConnection>
@@ -8981,7 +9243,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_0/intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset</end>
             <start>rst_controller_003/reset_out</start>
           </incidentConnection>
@@ -9038,6 +9300,14 @@
                 <value>32</value>
               </parameter>
               <parameter>
+                <name>M0_SAI_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>M0_USER_ADDRCHK_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
                 <name>M0_WRITE_ADDR_USER_WIDTH</name>
                 <value>11</value>
               </parameter>
@@ -9060,6 +9330,10 @@
               <parameter>
                 <name>READ_ISSUING_CAPABILITY</name>
                 <value>16</value>
+              </parameter>
+              <parameter>
+                <name>ROLE_BASED_USER</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>S0_ADDR_WIDTH</name>
@@ -9088,6 +9362,14 @@
               <parameter>
                 <name>S0_READ_DATA_USER_WIDTH</name>
                 <value>32</value>
+              </parameter>
+              <parameter>
+                <name>S0_SAI_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>S0_USER_ADDRCHK_WIDTH</name>
+                <value>4</value>
               </parameter>
               <parameter>
                 <name>S0_WRITE_ADDR_USER_WIDTH</name>
@@ -9130,6 +9412,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_ARUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_ARUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_AWCACHE</name>
                 <value>0</value>
               </parameter>
@@ -9154,6 +9444,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_AWUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_AWUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_BRESP</name>
                 <value>1</value>
               </parameter>
@@ -9170,12 +9468,28 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_RUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_RUSER_POISON</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_WLAST</name>
                 <value>1</value>
               </parameter>
               <parameter>
                 <name>USE_M0_WUSER</name>
                 <value>1</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_WUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_WUSER_POISON</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>USE_S0_ARBURST</name>
@@ -9214,6 +9528,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_ARUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_ARUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_AWBURST</name>
                 <value>1</value>
               </parameter>
@@ -9250,6 +9572,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_AWUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_AWUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_BID</name>
                 <value>1</value>
               </parameter>
@@ -9278,12 +9608,28 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_RUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_RUSER_POISON</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_WSTRB</name>
                 <value>1</value>
               </parameter>
               <parameter>
                 <name>USE_S0_WUSER</name>
                 <value>1</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_WUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_WUSER_POISON</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>WRITE_ACCEPTANCE_CAPABILITY</name>
@@ -9296,9 +9642,9 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>altera_merlin_axi_translator</className>
-            <version>19.2.1</version>
+            <version>19.3.0</version>
             <name>intel_noc_initiator_0_s0_axi4_translator</name>
-            <uniqueName>my_sys_altera_merlin_axi_translator_1921_uetfduq</uniqueName>
+            <uniqueName>my_sys_altera_merlin_axi_translator_1930_ivia3ca</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -9318,7 +9664,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.out_reset/intel_noc_initiator_0_s0_axi4_translator.clk_reset</name>
                 <end>intel_noc_initiator_0_s0_axi4_translator/clk_reset</end>
                 <start>intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge/out_reset</start>
@@ -9344,7 +9690,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/intel_noc_initiator_0_s0_axi4_translator.clk</name>
                 <end>intel_noc_initiator_0_s0_axi4_translator/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -9442,7 +9788,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0</name>
                 <end>intel_noc_initiator_0_s0_axi4_translator/s0</end>
                 <start>mgc_axi4_master_0_altera_axi4_master_translator/m0</start>
@@ -9501,7 +9847,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.out_reset/intel_noc_initiator_0_s0_axi4_translator.clk_reset</name>
                 <end>intel_noc_initiator_0_s0_axi4_translator/clk_reset</end>
                 <start>intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge/out_reset</start>
@@ -9527,7 +9873,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.clk</name>
                 <end>intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -9582,7 +9928,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/intel_noc_initiator_0_s0_axi4_translator.clk</name>
                 <end>intel_noc_initiator_0_s0_axi4_translator/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -9608,7 +9954,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge.clk</name>
                 <end>intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -9634,7 +9980,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/mgc_axi4_master_0_altera_axi4_master_translator.clk</name>
                 <end>mgc_axi4_master_0_altera_axi4_master_translator/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -9660,7 +10006,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.clk</name>
                 <end>mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -9719,6 +10065,14 @@
                 <value>32</value>
               </parameter>
               <parameter>
+                <name>M0_SAI_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>M0_USER_ADDRCHK_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
                 <name>M0_WRITE_ADDR_USER_WIDTH</name>
                 <value>11</value>
               </parameter>
@@ -9741,6 +10095,10 @@
               <parameter>
                 <name>READ_ISSUING_CAPABILITY</name>
                 <value>16</value>
+              </parameter>
+              <parameter>
+                <name>ROLE_BASED_USER</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>S0_ADDR_WIDTH</name>
@@ -9769,6 +10127,14 @@
               <parameter>
                 <name>S0_READ_DATA_USER_WIDTH</name>
                 <value>8</value>
+              </parameter>
+              <parameter>
+                <name>S0_SAI_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>S0_USER_ADDRCHK_WIDTH</name>
+                <value>4</value>
               </parameter>
               <parameter>
                 <name>S0_WRITE_ADDR_USER_WIDTH</name>
@@ -9811,6 +10177,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_ARUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_ARUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_AWCACHE</name>
                 <value>1</value>
               </parameter>
@@ -9835,6 +10209,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_AWUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_AWUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_BRESP</name>
                 <value>1</value>
               </parameter>
@@ -9851,12 +10233,28 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_RUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_RUSER_POISON</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_WLAST</name>
                 <value>1</value>
               </parameter>
               <parameter>
                 <name>USE_M0_WUSER</name>
                 <value>1</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_WUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_WUSER_POISON</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>USE_S0_ARBURST</name>
@@ -9895,6 +10293,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_ARUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_ARUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_AWBURST</name>
                 <value>1</value>
               </parameter>
@@ -9931,6 +10337,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_AWUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_AWUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_BID</name>
                 <value>1</value>
               </parameter>
@@ -9959,12 +10373,28 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_RUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_RUSER_POISON</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_WSTRB</name>
                 <value>1</value>
               </parameter>
               <parameter>
                 <name>USE_S0_WUSER</name>
                 <value>1</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_WUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_WUSER_POISON</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>WRITE_ACCEPTANCE_CAPABILITY</name>
@@ -9977,9 +10407,9 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>altera_merlin_axi_translator</className>
-            <version>19.2.1</version>
+            <version>19.3.0</version>
             <name>mgc_axi4_master_0_altera_axi4_master_translator</name>
-            <uniqueName>my_sys_altera_merlin_axi_translator_1921_uetfduq</uniqueName>
+            <uniqueName>my_sys_altera_merlin_axi_translator_1930_ivia3ca</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -10003,7 +10433,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/mgc_axi4_master_0_altera_axi4_master_translator.clk</name>
                 <end>mgc_axi4_master_0_altera_axi4_master_translator/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -10101,7 +10531,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>mgc_axi4_master_0_altera_axi4_master_translator.m0/intel_noc_initiator_0_s0_axi4_translator.s0</name>
                 <end>intel_noc_initiator_0_s0_axi4_translator/s0</end>
                 <start>mgc_axi4_master_0_altera_axi4_master_translator/m0</start>
@@ -10123,7 +10553,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset/mgc_axi4_master_0_altera_axi4_master_translator.clk_reset</name>
                 <end>mgc_axi4_master_0_altera_axi4_master_translator/clk_reset</end>
                 <start>mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge/out_reset</start>
@@ -10186,7 +10616,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.clk</name>
                 <end>mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -10208,7 +10638,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset/mgc_axi4_master_0_altera_axi4_master_translator.clk_reset</name>
                 <end>mgc_axi4_master_0_altera_axi4_master_translator/clk_reset</end>
                 <start>mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge/out_reset</start>
@@ -10226,7 +10656,7 @@
         <parameters>
           <parameter>
             <name>COMPOSE_CONTENTS</name>
-            <value>add_instance {mgc_axi4_master_1_altera_axi4_master_translator} {altera_merlin_axi_translator};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWCACHE} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWCACHE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARCACHE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARCACHE} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {DATA_WIDTH} {256};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_READ_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_READ_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BUSER} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_BUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {WRITE_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s1_axi4_translator} {altera_merlin_axi_translator};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {DATA_WIDTH} {256};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_ADDR_WIDTH} {44};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_BUSER} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {WRITE_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {SYNC_RESET} {1};add_instance {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {iopll_0_outclk0_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {EXPLICIT_CLOCK_RATE} {250000000};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mgc_axi4_master_1_altera_axi4_master_translator.m0} {intel_noc_initiator_0_s1_axi4_translator.s0} {avalon};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {arbitrationPriority} {1};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {baseAddress} {0x0000};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {defaultConnection} {false};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {domainAlias} {};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.piplineType} {PIPELINE_STAGE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableAllPipelines} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.syncResets} {TRUE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.optimizeRdFifoSize} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.responseFifoType} {REGISTER_BASED};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableOutOfOrderSupport} {FALSE};add_connection {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset} {mgc_axi4_master_1_altera_axi4_master_translator.clk_reset} {reset};add_connection {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.out_reset} {intel_noc_initiator_0_s1_axi4_translator.clk_reset} {reset};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_1_altera_axi4_master_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s1_axi4_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.clk} {clock};add_interface {mgc_axi4_master_1_altera_axi4_master} {axi4} {slave};set_interface_property {mgc_axi4_master_1_altera_axi4_master} {EXPORT_OF} {mgc_axi4_master_1_altera_axi4_master_translator.s0};add_interface {intel_noc_initiator_0_s1_axi4} {axi4} {master};set_interface_property {intel_noc_initiator_0_s1_axi4} {EXPORT_OF} {intel_noc_initiator_0_s1_axi4_translator.m0};add_interface {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.in_reset};add_interface {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.in_reset};add_interface {iopll_0_outclk0} {clock} {slave};set_interface_property {iopll_0_outclk0} {EXPORT_OF} {iopll_0_outclk0_clock_bridge.in_clk};set_module_assignment {interconnect_id.intel_noc_initiator_0.s1_axi4} {0};set_module_assignment {interconnect_id.mgc_axi4_master_1.altera_axi4_master} {0};</value>
+            <value>add_instance {mgc_axi4_master_1_altera_axi4_master_translator} {altera_merlin_axi_translator};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWCACHE} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWCACHE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARREGION} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARCACHE} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARCACHE} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RID} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {DATA_WIDTH} {256};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_SAI_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_SAI_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_READ_ADDR_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_READ_DATA_USER_WIDTH} {8};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_BUSER} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_BUSER} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {WRITE_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {16};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {SYNC_RESET} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_AWUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_ARUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_WUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_M0_RUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_AWUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_ARUSER_SAI} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_WUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RUSER_DATACHK} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {USE_S0_RUSER_POISON} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator} {ROLE_BASED_USER} {0};add_instance {intel_noc_initiator_0_s1_axi4_translator} {altera_merlin_axi_translator};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WSTRB} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_BRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARREGION} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARREGION} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARLEN} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARSIZE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARBURST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARLOCK} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARCACHE} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARPROT} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARCACHE} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARQOS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RID} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RRESP} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RLAST} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {DATA_WIDTH} {256};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_SAI_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_SAI_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_USER_ADDRCHK_WIDTH} {4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_ID_WIDTH} {7};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_ADDR_WIDTH} {44};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_READ_ADDR_USER_WIDTH} {11};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_WRITE_RESPONSE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_WRITE_RESPONSE_DATA_USER_WIDTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_READ_DATA_USER_WIDTH} {32};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_ADDR_WIDTH} {64};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_BUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RUSER} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_BUSER} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {M0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {S0_AXI_VERSION} {AXI4};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {WRITE_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {COMBINED_ISSUING_CAPABILITY} {16};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {WRITE_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {COMBINED_ACCEPTANCE_CAPABILITY} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {READ_DATA_REORDERING_DEPTH} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {ACE_LITE_SUPPORT} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {SYNC_RESET} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_AWUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_ARUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_WUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_M0_RUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_AWUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARUSER_ADDRCHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_ARUSER_SAI} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_WUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RUSER_DATACHK} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {USE_S0_RUSER_POISON} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator} {ROLE_BASED_USER} {0};add_instance {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge} {SYNC_RESET} {1};add_instance {iopll_0_outclk0_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {EXPLICIT_CLOCK_RATE} {250000000};set_instance_parameter_value {iopll_0_outclk0_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {mgc_axi4_master_1_altera_axi4_master_translator.m0} {intel_noc_initiator_0_s1_axi4_translator.s0} {avalon};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {arbitrationPriority} {1};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {baseAddress} {0x0000};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {defaultConnection} {false};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {domainAlias} {};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.piplineType} {PIPELINE_STAGE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableAllPipelines} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.syncResets} {TRUE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.optimizeRdFifoSize} {FALSE};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.responseFifoType} {REGISTER_BASED};set_connection_parameter_value {mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0} {qsys_mm.enableOutOfOrderSupport} {FALSE};add_connection {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset} {mgc_axi4_master_1_altera_axi4_master_translator.clk_reset} {reset};add_connection {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.out_reset} {intel_noc_initiator_0_s1_axi4_translator.clk_reset} {reset};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_1_altera_axi4_master_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s1_axi4_translator.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.clk} {clock};add_connection {iopll_0_outclk0_clock_bridge.out_clk} {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.clk} {clock};add_interface {mgc_axi4_master_1_altera_axi4_master} {axi4} {slave};set_interface_property {mgc_axi4_master_1_altera_axi4_master} {EXPORT_OF} {mgc_axi4_master_1_altera_axi4_master_translator.s0};add_interface {intel_noc_initiator_0_s1_axi4} {axi4} {master};set_interface_property {intel_noc_initiator_0_s1_axi4} {EXPORT_OF} {intel_noc_initiator_0_s1_axi4_translator.m0};add_interface {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.in_reset};add_interface {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.in_reset};add_interface {iopll_0_outclk0} {clock} {slave};set_interface_property {iopll_0_outclk0} {EXPORT_OF} {iopll_0_outclk0_clock_bridge.in_clk};set_module_assignment {interconnect_id.intel_noc_initiator_0.s1_axi4} {0};set_module_assignment {interconnect_id.mgc_axi4_master_1.altera_axi4_master} {0};</value>
           </parameter>
           <parameter>
             <name>SYNC_RESET</name>
@@ -10237,7 +10667,7 @@
         <className>altera_mm_interconnect</className>
         <version>19.2.0</version>
         <name>mm_interconnect_1</name>
-        <uniqueName>my_sys_altera_mm_interconnect_1920_ddk3qei</uniqueName>
+        <uniqueName>my_sys_altera_mm_interconnect_1920_5277t4i</uniqueName>
         <nonce>0</nonce>
         <incidentConnections>
           <incidentConnection>
@@ -10261,7 +10691,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_1/iopll_0_outclk0</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -10358,7 +10788,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>avalon</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_1/mgc_axi4_master_1_altera_axi4_master</end>
             <start>mgc_axi4_master_1/altera_axi4_master</start>
           </incidentConnection>
@@ -10455,7 +10885,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>avalon</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_initiator_0/s1_axi4</end>
             <start>mm_interconnect_1/intel_noc_initiator_0_s1_axi4</start>
           </incidentConnection>
@@ -10476,7 +10906,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_1/mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset</end>
             <start>rst_controller_002/reset_out</start>
           </incidentConnection>
@@ -10497,7 +10927,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_1/intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset</end>
             <start>rst_controller_003/reset_out</start>
           </incidentConnection>
@@ -10554,6 +10984,14 @@
                 <value>32</value>
               </parameter>
               <parameter>
+                <name>M0_SAI_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>M0_USER_ADDRCHK_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
                 <name>M0_WRITE_ADDR_USER_WIDTH</name>
                 <value>11</value>
               </parameter>
@@ -10576,6 +11014,10 @@
               <parameter>
                 <name>READ_ISSUING_CAPABILITY</name>
                 <value>16</value>
+              </parameter>
+              <parameter>
+                <name>ROLE_BASED_USER</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>S0_ADDR_WIDTH</name>
@@ -10604,6 +11046,14 @@
               <parameter>
                 <name>S0_READ_DATA_USER_WIDTH</name>
                 <value>32</value>
+              </parameter>
+              <parameter>
+                <name>S0_SAI_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>S0_USER_ADDRCHK_WIDTH</name>
+                <value>4</value>
               </parameter>
               <parameter>
                 <name>S0_WRITE_ADDR_USER_WIDTH</name>
@@ -10646,6 +11096,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_ARUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_ARUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_AWCACHE</name>
                 <value>0</value>
               </parameter>
@@ -10670,6 +11128,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_AWUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_AWUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_BRESP</name>
                 <value>1</value>
               </parameter>
@@ -10686,12 +11152,28 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_RUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_RUSER_POISON</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_WLAST</name>
                 <value>1</value>
               </parameter>
               <parameter>
                 <name>USE_M0_WUSER</name>
                 <value>1</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_WUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_WUSER_POISON</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>USE_S0_ARBURST</name>
@@ -10730,6 +11212,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_ARUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_ARUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_AWBURST</name>
                 <value>1</value>
               </parameter>
@@ -10766,6 +11256,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_AWUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_AWUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_BID</name>
                 <value>1</value>
               </parameter>
@@ -10794,12 +11292,28 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_RUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_RUSER_POISON</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_WSTRB</name>
                 <value>1</value>
               </parameter>
               <parameter>
                 <name>USE_S0_WUSER</name>
                 <value>1</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_WUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_WUSER_POISON</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>WRITE_ACCEPTANCE_CAPABILITY</name>
@@ -10812,9 +11326,9 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>altera_merlin_axi_translator</className>
-            <version>19.2.1</version>
+            <version>19.3.0</version>
             <name>intel_noc_initiator_0_s1_axi4_translator</name>
-            <uniqueName>my_sys_altera_merlin_axi_translator_1921_uetfduq</uniqueName>
+            <uniqueName>my_sys_altera_merlin_axi_translator_1930_ivia3ca</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -10834,7 +11348,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.out_reset/intel_noc_initiator_0_s1_axi4_translator.clk_reset</name>
                 <end>intel_noc_initiator_0_s1_axi4_translator/clk_reset</end>
                 <start>intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge/out_reset</start>
@@ -10860,7 +11374,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/intel_noc_initiator_0_s1_axi4_translator.clk</name>
                 <end>intel_noc_initiator_0_s1_axi4_translator/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -10958,7 +11472,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0</name>
                 <end>intel_noc_initiator_0_s1_axi4_translator/s0</end>
                 <start>mgc_axi4_master_1_altera_axi4_master_translator/m0</start>
@@ -11017,7 +11531,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.out_reset/intel_noc_initiator_0_s1_axi4_translator.clk_reset</name>
                 <end>intel_noc_initiator_0_s1_axi4_translator/clk_reset</end>
                 <start>intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge/out_reset</start>
@@ -11043,7 +11557,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.clk</name>
                 <end>intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -11098,7 +11612,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/intel_noc_initiator_0_s1_axi4_translator.clk</name>
                 <end>intel_noc_initiator_0_s1_axi4_translator/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -11124,7 +11638,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge.clk</name>
                 <end>intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -11150,7 +11664,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/mgc_axi4_master_1_altera_axi4_master_translator.clk</name>
                 <end>mgc_axi4_master_1_altera_axi4_master_translator/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -11176,7 +11690,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.clk</name>
                 <end>mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -11235,6 +11749,14 @@
                 <value>32</value>
               </parameter>
               <parameter>
+                <name>M0_SAI_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>M0_USER_ADDRCHK_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
                 <name>M0_WRITE_ADDR_USER_WIDTH</name>
                 <value>11</value>
               </parameter>
@@ -11257,6 +11779,10 @@
               <parameter>
                 <name>READ_ISSUING_CAPABILITY</name>
                 <value>16</value>
+              </parameter>
+              <parameter>
+                <name>ROLE_BASED_USER</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>S0_ADDR_WIDTH</name>
@@ -11285,6 +11811,14 @@
               <parameter>
                 <name>S0_READ_DATA_USER_WIDTH</name>
                 <value>8</value>
+              </parameter>
+              <parameter>
+                <name>S0_SAI_WIDTH</name>
+                <value>4</value>
+              </parameter>
+              <parameter>
+                <name>S0_USER_ADDRCHK_WIDTH</name>
+                <value>4</value>
               </parameter>
               <parameter>
                 <name>S0_WRITE_ADDR_USER_WIDTH</name>
@@ -11327,6 +11861,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_ARUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_ARUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_AWCACHE</name>
                 <value>1</value>
               </parameter>
@@ -11351,6 +11893,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_AWUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_AWUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_BRESP</name>
                 <value>1</value>
               </parameter>
@@ -11367,12 +11917,28 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_M0_RUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_RUSER_POISON</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_M0_WLAST</name>
                 <value>1</value>
               </parameter>
               <parameter>
                 <name>USE_M0_WUSER</name>
                 <value>1</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_WUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_M0_WUSER_POISON</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>USE_S0_ARBURST</name>
@@ -11411,6 +11977,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_ARUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_ARUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_AWBURST</name>
                 <value>1</value>
               </parameter>
@@ -11447,6 +12021,14 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_AWUSER_ADDRCHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_AWUSER_SAI</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_BID</name>
                 <value>1</value>
               </parameter>
@@ -11475,12 +12057,28 @@
                 <value>1</value>
               </parameter>
               <parameter>
+                <name>USE_S0_RUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_RUSER_POISON</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
                 <name>USE_S0_WSTRB</name>
                 <value>1</value>
               </parameter>
               <parameter>
                 <name>USE_S0_WUSER</name>
                 <value>1</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_WUSER_DATACHK</name>
+                <value>0</value>
+              </parameter>
+              <parameter>
+                <name>USE_S0_WUSER_POISON</name>
+                <value>0</value>
               </parameter>
               <parameter>
                 <name>WRITE_ACCEPTANCE_CAPABILITY</name>
@@ -11493,9 +12091,9 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>altera_merlin_axi_translator</className>
-            <version>19.2.1</version>
+            <version>19.3.0</version>
             <name>mgc_axi4_master_1_altera_axi4_master_translator</name>
-            <uniqueName>my_sys_altera_merlin_axi_translator_1921_uetfduq</uniqueName>
+            <uniqueName>my_sys_altera_merlin_axi_translator_1930_ivia3ca</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -11519,7 +12117,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/mgc_axi4_master_1_altera_axi4_master_translator.clk</name>
                 <end>mgc_axi4_master_1_altera_axi4_master_translator/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -11617,7 +12215,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>mgc_axi4_master_1_altera_axi4_master_translator.m0/intel_noc_initiator_0_s1_axi4_translator.s0</name>
                 <end>intel_noc_initiator_0_s1_axi4_translator/s0</end>
                 <start>mgc_axi4_master_1_altera_axi4_master_translator/m0</start>
@@ -11639,7 +12237,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset/mgc_axi4_master_1_altera_axi4_master_translator.clk_reset</name>
                 <end>mgc_axi4_master_1_altera_axi4_master_translator/clk_reset</end>
                 <start>mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge/out_reset</start>
@@ -11702,7 +12300,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>iopll_0_outclk0_clock_bridge.out_clk/mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.clk</name>
                 <end>mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge/clk</end>
                 <start>iopll_0_outclk0_clock_bridge/out_clk</start>
@@ -11724,7 +12322,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>23.1</version>
+                <version>23.3</version>
                 <name>mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge.out_reset/mgc_axi4_master_1_altera_axi4_master_translator.clk_reset</name>
                 <end>mgc_axi4_master_1_altera_axi4_master_translator/clk_reset</end>
                 <start>mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge/out_reset</start>
@@ -11743,6 +12341,10 @@
           <parameter>
             <name>AUTO_CLK_CLOCK_RATE</name>
             <value>-1</value>
+          </parameter>
+          <parameter>
+            <name>bspCpu</name>
+            <value></value>
           </parameter>
           <parameter>
             <name>componentDefinition</name>
@@ -12001,7 +12603,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_001/reset_in0</end>
             <start>noc_reset/out_reset</start>
           </incidentConnection>
@@ -12022,7 +12624,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_003/reset_in0</end>
             <start>noc_reset/out_reset</start>
           </incidentConnection>
@@ -12138,7 +12740,7 @@
         </parameters>
         <interconnectAssignments></interconnectAssignments>
         <className>altera_reset_controller</className>
-        <version>19.2.1</version>
+        <version>19.2.2</version>
         <name>rst_controller</name>
         <uniqueName>altera_reset_controller</uniqueName>
         <fixedName>altera_reset_controller</fixedName>
@@ -12161,7 +12763,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller/reset_in0</end>
             <start>axi_reset/out_reset</start>
           </incidentConnection>
@@ -12186,7 +12788,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller/clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -12207,7 +12809,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>hbm_fp_0/hbm_reset_n</end>
             <start>rst_controller/reset_out</start>
           </incidentConnection>
@@ -12228,7 +12830,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mgc_axi4_master_0/reset_sink</end>
             <start>rst_controller/reset_out</start>
           </incidentConnection>
@@ -12249,7 +12851,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mgc_axi4_master_1/reset_sink</end>
             <start>rst_controller/reset_out</start>
           </incidentConnection>
@@ -12365,7 +12967,7 @@
         </parameters>
         <interconnectAssignments></interconnectAssignments>
         <className>altera_reset_controller</className>
-        <version>19.2.1</version>
+        <version>19.2.2</version>
         <name>rst_controller_001</name>
         <uniqueName>altera_reset_controller</uniqueName>
         <fixedName>altera_reset_controller</fixedName>
@@ -12392,7 +12994,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_001/clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -12413,7 +13015,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_001/reset_in0</end>
             <start>noc_reset/out_reset</start>
           </incidentConnection>
@@ -12434,7 +13036,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>intel_noc_initiator_0/s_axi4_aresetn</end>
             <start>rst_controller_001/reset_out</start>
           </incidentConnection>
@@ -12550,7 +13152,7 @@
         </parameters>
         <interconnectAssignments></interconnectAssignments>
         <className>altera_reset_controller</className>
-        <version>19.2.1</version>
+        <version>19.2.2</version>
         <name>rst_controller_002</name>
         <uniqueName>altera_reset_controller</uniqueName>
         <fixedName>altera_reset_controller</fixedName>
@@ -12573,7 +13175,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_002/reset_in0</end>
             <start>axi_reset/out_reset</start>
           </incidentConnection>
@@ -12598,7 +13200,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_002/clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -12619,7 +13221,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_0/mgc_axi4_master_0_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset</end>
             <start>rst_controller_002/reset_out</start>
           </incidentConnection>
@@ -12640,7 +13242,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_1/mgc_axi4_master_1_altera_axi4_master_translator_clk_reset_reset_bridge_in_reset</end>
             <start>rst_controller_002/reset_out</start>
           </incidentConnection>
@@ -12756,7 +13358,7 @@
         </parameters>
         <interconnectAssignments></interconnectAssignments>
         <className>altera_reset_controller</className>
-        <version>19.2.1</version>
+        <version>19.2.2</version>
         <name>rst_controller_003</name>
         <uniqueName>altera_reset_controller</uniqueName>
         <fixedName>altera_reset_controller</fixedName>
@@ -12783,7 +13385,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>clock</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_003/clk</end>
             <start>iopll_0/outclk0</start>
           </incidentConnection>
@@ -12804,7 +13406,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>rst_controller_003/reset_in0</end>
             <start>noc_reset/out_reset</start>
           </incidentConnection>
@@ -12825,7 +13427,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_0/intel_noc_initiator_0_s0_axi4_translator_clk_reset_reset_bridge_in_reset</end>
             <start>rst_controller_003/reset_out</start>
           </incidentConnection>
@@ -12846,7 +13448,7 @@
             </parameters>
             <interconnectAssignments></interconnectAssignments>
             <className>reset</className>
-            <version>23.1</version>
+            <version>23.3</version>
             <end>mm_interconnect_1/intel_noc_initiator_0_s1_axi4_translator_clk_reset_reset_bridge_in_reset</end>
             <start>rst_controller_003/reset_out</start>
           </incidentConnection>

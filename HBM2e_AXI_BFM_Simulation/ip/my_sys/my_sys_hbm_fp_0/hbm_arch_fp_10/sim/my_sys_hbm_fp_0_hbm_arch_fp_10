@@ -1,4 +1,4 @@
-// (C) 2001-2022 Intel Corporation. All rights reserved.
+// (C) 2001-2023 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files from any of the foregoing (including device programming or simulation 
@@ -16,15 +16,15 @@
 `default_nettype none
 
 
-module my_sys_hbm_fp_0_hbm_arch_fp_10_n6zfhsa_uibssm #(
-   parameter SSM_FW_CONTENTS,
-   parameter SSM_MEM_CONTENTS_0,
-   parameter SSM_MEM_CONTENTS_1,
-   parameter SSM_MEM_CONTENTS_2,
-   parameter SSM_MEM_CONTENTS_3,
-   parameter SSM_MEM_CONTENTS_VALID = "False",
-   parameter SSM_PARAM_TABLE_CONTENTS,
-   parameter SSM_NIOS_FW_FILE,
+module my_sys_hbm_fp_0_hbm_arch_fp_10_ohbrbza_uibssm #(
+   parameter SSM_FW_CONTENTS          = "INVALID",
+   parameter SSM_MEM_CONTENTS_0       = "INVALID",
+   parameter SSM_MEM_CONTENTS_1       = "INVALID",
+   parameter SSM_MEM_CONTENTS_2       = "INVALID",
+   parameter SSM_MEM_CONTENTS_3       = "INVALID",
+   parameter SSM_MEM_CONTENTS_VALID   = "False",
+   parameter SSM_PARAM_TABLE_CONTENTS = "INVALID",
+   parameter SSM_NIOS_FW_FILE         = "INVALID",
    parameter SSM_NIOS_CALIBRATION_CODE_HEX_FILE = "",
    parameter SSM_PARAM_TABLE_HEX_FILE = ""
 ) (

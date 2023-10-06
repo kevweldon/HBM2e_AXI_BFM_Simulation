@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="my_sys" kind="my_sys" version="1.0" fabric="QSYS">
- <!-- Format version 23.1 115 (Future versions may contain additional information.) -->
- <!-- 2023.05.02.17:10:52 -->
+ <!-- Format version 23.3 104 (Future versions may contain additional information.) -->
+ <!-- 2023.10.06.15:24:11 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -369,6 +369,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="AUTO_CLK_CLOCK_RATE">
    <type>java.lang.Long</type>
    <value>-1</value>
@@ -414,7 +422,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="in_reset" kind="reset_sink" version="23.1">
+  <interface name="in_reset" kind="reset_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -459,7 +467,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="out_reset" kind="reset_source" version="23.1">
+  <interface name="out_reset" kind="reset_source" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -838,6 +846,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="DERIVED_CLOCK_RATE">
    <type>java.lang.Long</type>
    <value>0</value>
@@ -883,7 +899,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="in_clk" kind="clock_sink" version="23.1">
+  <interface name="in_clk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -944,7 +960,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="out_clk" kind="clock_source" version="23.1">
+  <interface name="out_clk" kind="clock_source" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -1029,7 +1045,7 @@ parameters are a RESULT of the module parameters. -->
  <module
    name="hbm_fp_0"
    kind="hbm_fp"
-   version="1.2.0"
+   version="2.0.0"
    entity="my_sys_hbm_fp_0"
    library="my_sys_hbm_fp_0"
    path="hbm_fp_0"
@@ -1453,7 +1469,7 @@ the requested settings for a module instance. -->
                             <value>tniu_ch0_u0|target_0.target_inst_0</value>
                         </entry>
                         <entry>
-                            <key>memorySpanInGB</key>
+                            <key>memorySpan</key>
                             <value>0x40000000</value>
                         </entry>
                         <entry>
@@ -1478,37 +1494,12 @@ the requested settings for a module instance. -->
                             <value>tniu_ch0_u1|target_0.target_inst_0</value>
                         </entry>
                         <entry>
-                            <key>memorySpanInGB</key>
+                            <key>memorySpan</key>
                             <value>0x40000000</value>
                         </entry>
                         <entry>
                             <key>regFunctionHPath</key>
                             <value>tniu_ch0_u1.target_0.target_inst_0</value>
-                        </entry>
-                    </parameterValueMap>
-                </parameters>
-            </interface>
-            <interface>
-                <name>t_uibssm_sb_axi4noc</name>
-                <type>axi4noc</type>
-                <isStart>false</isStart>
-                <ports/>
-                <assignments>
-                    <assignmentValueMap/>
-                </assignments>
-                <parameters>
-                    <parameterValueMap>
-                        <entry>
-                            <key>internalHPath</key>
-                            <value>tniu_uibssm_sb|target_0.target_lite_inst_0</value>
-                        </entry>
-                        <entry>
-                            <key>memorySpanInGB</key>
-                            <value>0x40000000</value>
-                        </entry>
-                        <entry>
-                            <key>regFunctionHPath</key>
-                            <value>tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0</value>
                         </entry>
                     </parameterValueMap>
                 </parameters>
@@ -1528,8 +1519,8 @@ the requested settings for a module instance. -->
                             <value>tniu_ch0_ch1_sb|target_0.target_lite_inst_0</value>
                         </entry>
                         <entry>
-                            <key>memorySpanInGB</key>
-                            <value>0x40000000</value>
+                            <key>memorySpan</key>
+                            <value>0x8000000</value>
                         </entry>
                         <entry>
                             <key>regFunctionHPath</key>
@@ -1542,7 +1533,7 @@ the requested settings for a module instance. -->
     </boundary>
     <originalModuleInfo>
         <className>hbm_fp</className>
-        <version>1.2.0</version>
+        <version>2.0.0</version>
         <displayName>High Bandwidth Memory (HBM2E) Interface Intel Agilex 7 FPGA IP </displayName>
     </originalModuleInfo>
     <systemInfoParameterDescriptors>
@@ -1564,6 +1555,20 @@ the requested settings for a module instance. -->
                 <parameterName>SYS_INFO_DEVICE_FAMILY</parameterName>
                 <parameterType>java.lang.String</parameterType>
                 <systemInfotype>DEVICE_FAMILY</systemInfotype>
+            </descriptor>
+            <descriptor>
+                <parameterDefaultValue></parameterDefaultValue>
+                <parameterName>SYS_INFO_DEVICE_FAMILY_VARIANT</parameterName>
+                <parameterType>[Ljava.lang.String;</parameterType>
+                <systemInfoArgs>FAMILY_VARIANT</systemInfoArgs>
+                <systemInfotype>DEVICE_INFO</systemInfotype>
+            </descriptor>
+            <descriptor>
+                <parameterDefaultValue></parameterDefaultValue>
+                <parameterName>SYS_INFO_DEVICE_GROUP</parameterName>
+                <parameterType>[Ljava.lang.String;</parameterType>
+                <systemInfoArgs>DEVICE_GROUP</systemInfoArgs>
+                <systemInfotype>DEVICE_INFO</systemInfotype>
             </descriptor>
             <descriptor>
                 <parameterDefaultValue></parameterDefaultValue>
@@ -2076,7 +2081,7 @@ the requested settings for a module instance. -->
                         <value>tniu_ch0_u0|target_0.target_inst_0</value>
                     </entry>
                     <entry>
-                        <key>memorySpanInGB</key>
+                        <key>memorySpan</key>
                         <value>0x40000000</value>
                     </entry>
                     <entry>
@@ -2101,37 +2106,12 @@ the requested settings for a module instance. -->
                         <value>tniu_ch0_u1|target_0.target_inst_0</value>
                     </entry>
                     <entry>
-                        <key>memorySpanInGB</key>
+                        <key>memorySpan</key>
                         <value>0x40000000</value>
                     </entry>
                     <entry>
                         <key>regFunctionHPath</key>
                         <value>tniu_ch0_u1.target_0.target_inst_0</value>
-                    </entry>
-                </parameterValueMap>
-            </parameters>
-        </interface>
-        <interface>
-            <name>t_uibssm_sb_axi4noc</name>
-            <type>axi4noc</type>
-            <isStart>false</isStart>
-            <ports/>
-            <assignments>
-                <assignmentValueMap/>
-            </assignments>
-            <parameters>
-                <parameterValueMap>
-                    <entry>
-                        <key>internalHPath</key>
-                        <value>tniu_uibssm_sb|target_0.target_lite_inst_0</value>
-                    </entry>
-                    <entry>
-                        <key>memorySpanInGB</key>
-                        <value>0x40000000</value>
-                    </entry>
-                    <entry>
-                        <key>regFunctionHPath</key>
-                        <value>tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0</value>
                     </entry>
                 </parameterValueMap>
             </parameters>
@@ -2151,8 +2131,8 @@ the requested settings for a module instance. -->
                         <value>tniu_ch0_ch1_sb|target_0.target_lite_inst_0</value>
                     </entry>
                     <entry>
-                        <key>memorySpanInGB</key>
-                        <value>0x40000000</value>
+                        <key>memorySpan</key>
+                        <value>0x8000000</value>
                     </entry>
                     <entry>
                         <key>regFunctionHPath</key>
@@ -2194,6 +2174,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="SYS_INFO_DEVICE">
    <type>java.lang.String</type>
    <value>AGMF039R47A2E2VR0</value>
@@ -2220,6 +2208,26 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
    <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+  </parameter>
+  <parameter name="SYS_INFO_DEVICE_FAMILY_VARIANT">
+   <type>[Ljava.lang.String;</type>
+   <value>M-Series with both HPS and 32GB HBM</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_INFO</sysinfo_type>
+   <sysinfo_arg>FAMILY_VARIANT</sysinfo_arg>
+  </parameter>
+  <parameter name="SYS_INFO_DEVICE_GROUP">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_INFO</sysinfo_type>
+   <sysinfo_arg>DEVICE_GROUP</sysinfo_arg>
   </parameter>
   <parameter name="SYS_INFO_DEVICE_POWER_MODEL">
    <type>java.lang.String</type>
@@ -2295,7 +2303,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="ch0_u0_wmc_intr" kind="conduit_end" version="23.1">
+  <interface name="ch0_u0_wmc_intr" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2348,7 +2356,7 @@ parameters are a RESULT of the module parameters. -->
     <role>conduit</role>
    </port>
   </interface>
-  <interface name="ch0_u1_wmc_intr" kind="conduit_end" version="23.1">
+  <interface name="ch0_u1_wmc_intr" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2401,7 +2409,7 @@ parameters are a RESULT of the module parameters. -->
     <role>conduit</role>
    </port>
   </interface>
-  <interface name="fabric_clk" kind="clock_sink" version="23.1">
+  <interface name="fabric_clk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2446,7 +2454,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="hbm_reset_n" kind="reset_sink" version="23.1">
+  <interface name="hbm_reset_n" kind="reset_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2491,7 +2499,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset_n</role>
    </port>
   </interface>
-  <interface name="hbm_reset_in_prog" kind="conduit_end" version="23.1">
+  <interface name="hbm_reset_in_prog" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2544,7 +2552,7 @@ parameters are a RESULT of the module parameters. -->
     <role>hbm_reset_in_prog</role>
    </port>
   </interface>
-  <interface name="cattrip" kind="conduit_end" version="23.1">
+  <interface name="cattrip" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2597,7 +2605,7 @@ parameters are a RESULT of the module parameters. -->
     <role>hbm_cattrip</role>
    </port>
   </interface>
-  <interface name="cattrip_i" kind="conduit_end" version="23.1">
+  <interface name="cattrip_i" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2650,7 +2658,7 @@ parameters are a RESULT of the module parameters. -->
     <role>conduit</role>
    </port>
   </interface>
-  <interface name="temp" kind="conduit_end" version="23.1">
+  <interface name="temp" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2703,7 +2711,7 @@ parameters are a RESULT of the module parameters. -->
     <role>hbm_temp</role>
    </port>
   </interface>
-  <interface name="temp_i" kind="conduit_end" version="23.1">
+  <interface name="temp_i" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2756,7 +2764,7 @@ parameters are a RESULT of the module parameters. -->
     <role>conduit</role>
    </port>
   </interface>
-  <interface name="local_cal_success" kind="conduit_end" version="23.1">
+  <interface name="local_cal_success" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2809,7 +2817,7 @@ parameters are a RESULT of the module parameters. -->
     <role>local_cal_success</role>
    </port>
   </interface>
-  <interface name="local_cal_fail" kind="conduit_end" version="23.1">
+  <interface name="local_cal_fail" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2862,7 +2870,7 @@ parameters are a RESULT of the module parameters. -->
     <role>local_cal_fail</role>
    </port>
   </interface>
-  <interface name="uibpll_refclk" kind="clock_sink" version="23.1">
+  <interface name="uibpll_refclk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2907,7 +2915,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="t_ch0_u0_axi4noc" kind="axi4noc_subordinate" version="23.1">
+  <interface name="t_ch0_u0_axi4noc" kind="axi4noc_subordinate" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2919,7 +2927,7 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
     <value>0x40000000</value>
     <derived>false</derived>
@@ -2962,7 +2970,7 @@ parameters are a RESULT of the module parameters. -->
    <type>axi4noc</type>
    <isStart>false</isStart>
   </interface>
-  <interface name="t_ch0_u1_axi4noc" kind="axi4noc_subordinate" version="23.1">
+  <interface name="t_ch0_u1_axi4noc" kind="axi4noc_subordinate" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2974,7 +2982,7 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
     <value>0x40000000</value>
     <derived>false</derived>
@@ -3017,62 +3025,7 @@ parameters are a RESULT of the module parameters. -->
    <type>axi4noc</type>
    <isStart>false</isStart>
   </interface>
-  <interface name="t_uibssm_sb_axi4noc" kind="axi4noc_subordinate" version="23.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="internalHPath">
-    <type>java.lang.String</type>
-    <value>tniu_uibssm_sb|target_0.target_lite_inst_0</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="memorySpanInGB">
-    <type>java.lang.String</type>
-    <value>0x40000000</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="regFunctionHPath">
-    <type>java.lang.String</type>
-    <value>tniu_uibssm_sb.target_0.target_lite_inst_0.target_inst_0</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="addressSpan">
-    <type>java.math.BigInteger</type>
-    <value>1073741824</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>axi4noc</type>
-   <isStart>false</isStart>
-  </interface>
-  <interface name="t_ch0_ch1_sb_axi4noc" kind="axi4noc_subordinate" version="23.1">
+  <interface name="t_ch0_ch1_sb_axi4noc" kind="axi4noc_subordinate" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -3084,9 +3037,9 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
-    <value>0x40000000</value>
+    <value>0x8000000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -3118,7 +3071,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>1073741824</value>
+    <value>134217728</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -3226,7 +3179,7 @@ the requested settings for a module instance. -->
                             <value>ssm_inst</value>
                         </entry>
                         <entry>
-                            <key>memorySpanInGB</key>
+                            <key>memorySpan</key>
                             <value>0x7400</value>
                         </entry>
                         <entry>
@@ -3418,7 +3371,7 @@ the requested settings for a module instance. -->
                         <value>ssm_inst</value>
                     </entry>
                     <entry>
-                        <key>memorySpanInGB</key>
+                        <key>memorySpan</key>
                         <value>0x7400</value>
                     </entry>
                     <entry>
@@ -3456,6 +3409,14 @@ the requested settings for a module instance. -->
   <parameter name="hdlParameters">
    <type>com.altera.qsys.blackboxmodule.definitions.HdlParameterDescriptorDefinitionList</type>
    <value><![CDATA[<hdlParameterDescriptorDefinitionList/>]]></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3523,7 +3484,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="refclk" kind="clock_sink" version="23.1">
+  <interface name="refclk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -3568,7 +3529,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="pll_lock_o" kind="conduit_end" version="23.1">
+  <interface name="pll_lock_o" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -3621,7 +3582,7 @@ parameters are a RESULT of the module parameters. -->
     <role>pll_lock_o</role>
    </port>
   </interface>
-  <interface name="target_inst_0" kind="axi4noc_subordinate" version="23.1">
+  <interface name="target_inst_0" kind="axi4noc_subordinate" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -3633,7 +3594,7 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
     <value>0x7400</value>
     <derived>false</derived>
@@ -3708,7 +3669,7 @@ the requested settings for a module instance. -->
                             <value>iniu_0|initiator_inst_0</value>
                         </entry>
                         <entry>
-                            <key>memorySpanInGB</key>
+                            <key>memorySpan</key>
                             <value>0x0</value>
                         </entry>
                         <entry>
@@ -4093,6 +4054,22 @@ the requested settings for a module instance. -->
                             <value>true</value>
                         </entry>
                         <entry>
+                            <key>wakeupSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>uniqueIdSupport</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>poison</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>traceSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
                             <key>maximumOutstandingReads</key>
                             <value>1</value>
                         </entry>
@@ -4123,6 +4100,41 @@ the requested settings for a module instance. -->
                         <entry>
                             <key>bridgesToMaster</key>
                         </entry>
+                        <entry>
+                            <key>dfhFeatureGuid</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dfhGroupId</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterId</key>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterName</key>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterVersion</key>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterData</key>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterDataLength</key>
+                        </entry>
+                        <entry>
+                            <key>dfhFeatureMajorVersion</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dfhFeatureMinorVersion</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dfhFeatureId</key>
+                            <value>35</value>
+                        </entry>
                     </parameterValueMap>
                 </parameters>
             </interface>
@@ -4141,7 +4153,7 @@ the requested settings for a module instance. -->
                             <value>iniu_1|initiator_inst_0</value>
                         </entry>
                         <entry>
-                            <key>memorySpanInGB</key>
+                            <key>memorySpan</key>
                             <value>0x0</value>
                         </entry>
                         <entry>
@@ -4526,6 +4538,22 @@ the requested settings for a module instance. -->
                             <value>true</value>
                         </entry>
                         <entry>
+                            <key>wakeupSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>uniqueIdSupport</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>poison</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>traceSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
                             <key>maximumOutstandingReads</key>
                             <value>1</value>
                         </entry>
@@ -4555,6 +4583,41 @@ the requested settings for a module instance. -->
                         </entry>
                         <entry>
                             <key>bridgesToMaster</key>
+                        </entry>
+                        <entry>
+                            <key>dfhFeatureGuid</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dfhGroupId</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterId</key>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterName</key>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterVersion</key>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterData</key>
+                        </entry>
+                        <entry>
+                            <key>dfhParameterDataLength</key>
+                        </entry>
+                        <entry>
+                            <key>dfhFeatureMajorVersion</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dfhFeatureMinorVersion</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dfhFeatureId</key>
+                            <value>35</value>
                         </entry>
                     </parameterValueMap>
                 </parameters>
@@ -4650,6 +4713,20 @@ the requested settings for a module instance. -->
                 <parameterName>SYS_INFO_DEVICE_FAMILY</parameterName>
                 <parameterType>java.lang.String</parameterType>
                 <systemInfotype>DEVICE_FAMILY</systemInfotype>
+            </descriptor>
+            <descriptor>
+                <parameterDefaultValue></parameterDefaultValue>
+                <parameterName>SYS_INFO_DEVICE_FAMILY_VARIANT</parameterName>
+                <parameterType>[Ljava.lang.String;</parameterType>
+                <systemInfoArgs>FAMILY_VARIANT</systemInfoArgs>
+                <systemInfotype>DEVICE_INFO</systemInfotype>
+            </descriptor>
+            <descriptor>
+                <parameterDefaultValue></parameterDefaultValue>
+                <parameterName>SYS_INFO_DEVICE_GROUP</parameterName>
+                <parameterType>[Ljava.lang.String;</parameterType>
+                <systemInfoArgs>DEVICE_GROUP</systemInfoArgs>
+                <systemInfotype>DEVICE_INFO</systemInfotype>
             </descriptor>
             <descriptor>
                 <parameterDefaultValue></parameterDefaultValue>
@@ -4809,7 +4886,7 @@ the requested settings for a module instance. -->
                         <value>iniu_0|initiator_inst_0</value>
                     </entry>
                     <entry>
-                        <key>memorySpanInGB</key>
+                        <key>memorySpan</key>
                         <value>0x0</value>
                     </entry>
                     <entry>
@@ -5194,6 +5271,22 @@ the requested settings for a module instance. -->
                         <value>true</value>
                     </entry>
                     <entry>
+                        <key>wakeupSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>uniqueIdSupport</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>poison</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>traceSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
                         <key>maximumOutstandingReads</key>
                         <value>1</value>
                     </entry>
@@ -5224,6 +5317,41 @@ the requested settings for a module instance. -->
                     <entry>
                         <key>bridgesToMaster</key>
                     </entry>
+                    <entry>
+                        <key>dfhFeatureGuid</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>dfhGroupId</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterId</key>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterName</key>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterVersion</key>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterData</key>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterDataLength</key>
+                    </entry>
+                    <entry>
+                        <key>dfhFeatureMajorVersion</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>dfhFeatureMinorVersion</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>dfhFeatureId</key>
+                        <value>35</value>
+                    </entry>
                 </parameterValueMap>
             </parameters>
         </interface>
@@ -5242,7 +5370,7 @@ the requested settings for a module instance. -->
                         <value>iniu_1|initiator_inst_0</value>
                     </entry>
                     <entry>
-                        <key>memorySpanInGB</key>
+                        <key>memorySpan</key>
                         <value>0x0</value>
                     </entry>
                     <entry>
@@ -5627,6 +5755,22 @@ the requested settings for a module instance. -->
                         <value>true</value>
                     </entry>
                     <entry>
+                        <key>wakeupSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>uniqueIdSupport</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>poison</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>traceSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
                         <key>maximumOutstandingReads</key>
                         <value>1</value>
                     </entry>
@@ -5656,6 +5800,41 @@ the requested settings for a module instance. -->
                     </entry>
                     <entry>
                         <key>bridgesToMaster</key>
+                    </entry>
+                    <entry>
+                        <key>dfhFeatureGuid</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>dfhGroupId</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterId</key>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterName</key>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterVersion</key>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterData</key>
+                    </entry>
+                    <entry>
+                        <key>dfhParameterDataLength</key>
+                    </entry>
+                    <entry>
+                        <key>dfhFeatureMajorVersion</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>dfhFeatureMinorVersion</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>dfhFeatureId</key>
+                        <value>35</value>
                     </entry>
                 </parameterValueMap>
             </parameters>
@@ -5758,6 +5937,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="SYS_INFO_DEVICE">
    <type>java.lang.String</type>
    <value>AGMF039R47A2E2VR0</value>
@@ -5784,6 +5971,26 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
    <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+  </parameter>
+  <parameter name="SYS_INFO_DEVICE_FAMILY_VARIANT">
+   <type>[Ljava.lang.String;</type>
+   <value>M-Series with both HPS and 32GB HBM</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_INFO</sysinfo_type>
+   <sysinfo_arg>FAMILY_VARIANT</sysinfo_arg>
+  </parameter>
+  <parameter name="SYS_INFO_DEVICE_GROUP">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_INFO</sysinfo_type>
+   <sysinfo_arg>DEVICE_GROUP</sysinfo_arg>
   </parameter>
   <parameter name="SYS_INFO_DEVICE_POWER_MODEL">
    <type>java.lang.String</type>
@@ -5859,7 +6066,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="i0_axi4noc" kind="axi4noc_manager" version="23.1">
+  <interface name="i0_axi4noc" kind="axi4noc_manager" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -5871,7 +6078,7 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
     <value>0x0</value>
     <derived>false</derived>
@@ -5906,7 +6113,7 @@ parameters are a RESULT of the module parameters. -->
    <type>axi4noc</type>
    <isStart>true</isStart>
   </interface>
-  <interface name="s0_axi4" kind="altera_axi4_slave" version="23.1">
+  <interface name="s0_axi4" kind="altera_axi4_slave" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -5932,6 +6139,38 @@ parameters are a RESULT of the module parameters. -->
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="wakeupSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="uniqueIdSupport">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="poison">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="traceSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
     <valid>true</valid>
    </parameter>
    <parameter name="maximumOutstandingReads">
@@ -5993,6 +6232,86 @@ parameters are a RESULT of the module parameters. -->
    <parameter name="bridgesToMaster">
     <type>com.altera.entityinterfaces.IConnectionPoint</type>
     <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhFeatureGuid">
+    <type>java.math.BigInteger</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhGroupId">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterId">
+    <type>[Ljava.lang.Integer;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterName">
+    <type>[Ljava.lang.String;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterVersion">
+    <type>[Ljava.lang.Integer;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterData">
+    <type>[Ljava.lang.String;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterDataLength">
+    <type>[Ljava.lang.Integer;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhFeatureMajorVersion">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhFeatureMinorVersion">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhFeatureId">
+    <type>int</type>
+    <value>35</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -6259,7 +6578,7 @@ parameters are a RESULT of the module parameters. -->
     <role>ruser</role>
    </port>
   </interface>
-  <interface name="i1_axi4noc" kind="axi4noc_manager" version="23.1">
+  <interface name="i1_axi4noc" kind="axi4noc_manager" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -6271,7 +6590,7 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="memorySpanInGB">
+   <parameter name="memorySpan">
     <type>java.lang.String</type>
     <value>0x0</value>
     <derived>false</derived>
@@ -6306,7 +6625,7 @@ parameters are a RESULT of the module parameters. -->
    <type>axi4noc</type>
    <isStart>true</isStart>
   </interface>
-  <interface name="s1_axi4" kind="altera_axi4_slave" version="23.1">
+  <interface name="s1_axi4" kind="altera_axi4_slave" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -6332,6 +6651,38 @@ parameters are a RESULT of the module parameters. -->
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="wakeupSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="uniqueIdSupport">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="poison">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="traceSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
     <valid>true</valid>
    </parameter>
    <parameter name="maximumOutstandingReads">
@@ -6393,6 +6744,86 @@ parameters are a RESULT of the module parameters. -->
    <parameter name="bridgesToMaster">
     <type>com.altera.entityinterfaces.IConnectionPoint</type>
     <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhFeatureGuid">
+    <type>java.math.BigInteger</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhGroupId">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterId">
+    <type>[Ljava.lang.Integer;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterName">
+    <type>[Ljava.lang.String;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterVersion">
+    <type>[Ljava.lang.Integer;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterData">
+    <type>[Ljava.lang.String;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhParameterDataLength">
+    <type>[Ljava.lang.Integer;</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhFeatureMajorVersion">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhFeatureMinorVersion">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="dfhFeatureId">
+    <type>int</type>
+    <value>35</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -6659,7 +7090,7 @@ parameters are a RESULT of the module parameters. -->
     <role>ruser</role>
    </port>
   </interface>
-  <interface name="s_axi4_aclk" kind="clock_sink" version="23.1">
+  <interface name="s_axi4_aclk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -6704,7 +7135,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="s_axi4_aresetn" kind="reset_sink" version="23.1">
+  <interface name="s_axi4_aresetn" kind="reset_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7373,6 +7804,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="system_info_device_component">
    <type>java.lang.String</type>
    <value>AGMF039R47A2E2VR0</value>
@@ -7455,7 +7894,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="refclk" kind="clock_sink" version="23.1">
+  <interface name="refclk" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7520,7 +7959,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="locked" kind="conduit_end" version="23.1">
+  <interface name="locked" kind="conduit_end" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7577,7 +8016,7 @@ parameters are a RESULT of the module parameters. -->
     <role>export</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="23.1">
+  <interface name="reset" kind="reset_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7626,7 +8065,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="outclk0" kind="clock_source" version="23.1">
+  <interface name="outclk0" kind="clock_source" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7723,7 +8162,7 @@ parameters are a RESULT of the module parameters. -->
     <name>intel_noc_initiator_0.s_axi4_aclk</name>
    </clockDomainMember>
   </interface>
-  <interface name="outclk1" kind="clock_source" version="23.1">
+  <interface name="outclk1" kind="clock_source" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -8212,6 +8651,22 @@ the requested settings for a module instance. -->
                             <value>true</value>
                         </entry>
                         <entry>
+                            <key>wakeupSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>uniqueIdSupport</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>poison</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>traceSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
                             <key>maximumOutstandingReads</key>
                             <value>1</value>
                         </entry>
@@ -8234,14 +8689,6 @@ the requested settings for a module instance. -->
                         <entry>
                             <key>combinedIssuingCapability</key>
                             <value>16</value>
-                        </entry>
-                        <entry>
-                            <key>enableConcurrentSubordinateAccess</key>
-                            <value>0</value>
-                        </entry>
-                        <entry>
-                            <key>noRepeatedIdsBetweenSubordinates</key>
-                            <value>0</value>
                         </entry>
                         <entry>
                             <key>issuesINCRBursts</key>
@@ -8797,6 +9244,22 @@ the requested settings for a module instance. -->
                         <value>true</value>
                     </entry>
                     <entry>
+                        <key>wakeupSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>uniqueIdSupport</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>poison</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>traceSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
                         <key>maximumOutstandingReads</key>
                         <value>1</value>
                     </entry>
@@ -8819,14 +9282,6 @@ the requested settings for a module instance. -->
                     <entry>
                         <key>combinedIssuingCapability</key>
                         <value>16</value>
-                    </entry>
-                    <entry>
-                        <key>enableConcurrentSubordinateAccess</key>
-                        <value>0</value>
-                    </entry>
-                    <entry>
-                        <key>noRepeatedIdsBetweenSubordinates</key>
-                        <value>0</value>
                     </entry>
                     <entry>
                         <key>issuesINCRBursts</key>
@@ -9302,6 +9757,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="AUTO_DEVICE_FAMILY">
    <type>java.lang.String</type>
    <value>Agilex 7</value>
@@ -9337,7 +9800,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="altera_axi4_master" kind="altera_axi4_master" version="23.1">
+  <interface name="altera_axi4_master" kind="altera_axi4_master" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -9363,6 +9826,38 @@ parameters are a RESULT of the module parameters. -->
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="wakeupSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="uniqueIdSupport">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="poison">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="traceSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
     <valid>true</valid>
    </parameter>
    <parameter name="maximumOutstandingReads">
@@ -9408,22 +9903,6 @@ parameters are a RESULT of the module parameters. -->
    <parameter name="combinedIssuingCapability">
     <type>java.lang.Integer</type>
     <value>16</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="enableConcurrentSubordinateAccess">
-    <type>java.lang.Integer</type>
-    <value>0</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="noRepeatedIdsBetweenSubordinates">
-    <type>java.lang.Integer</type>
-    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -9726,7 +10205,7 @@ parameters are a RESULT of the module parameters. -->
     <span>17592186044416</span>
    </memoryBlock>
   </interface>
-  <interface name="clock_sink" kind="clock_sink" version="23.1">
+  <interface name="clock_sink" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -9771,7 +10250,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset_sink" kind="reset_sink" version="23.1">
+  <interface name="reset_sink" kind="reset_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -10224,6 +10703,22 @@ the requested settings for a module instance. -->
                             <value>true</value>
                         </entry>
                         <entry>
+                            <key>wakeupSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>uniqueIdSupport</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>poison</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>traceSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
                             <key>maximumOutstandingReads</key>
                             <value>1</value>
                         </entry>
@@ -10246,14 +10741,6 @@ the requested settings for a module instance. -->
                         <entry>
                             <key>combinedIssuingCapability</key>
                             <value>16</value>
-                        </entry>
-                        <entry>
-                            <key>enableConcurrentSubordinateAccess</key>
-                            <value>0</value>
-                        </entry>
-                        <entry>
-                            <key>noRepeatedIdsBetweenSubordinates</key>
-                            <value>0</value>
                         </entry>
                         <entry>
                             <key>issuesINCRBursts</key>
@@ -10809,6 +11296,22 @@ the requested settings for a module instance. -->
                         <value>true</value>
                     </entry>
                     <entry>
+                        <key>wakeupSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>uniqueIdSupport</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>poison</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>traceSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
                         <key>maximumOutstandingReads</key>
                         <value>1</value>
                     </entry>
@@ -10831,14 +11334,6 @@ the requested settings for a module instance. -->
                     <entry>
                         <key>combinedIssuingCapability</key>
                         <value>16</value>
-                    </entry>
-                    <entry>
-                        <key>enableConcurrentSubordinateAccess</key>
-                        <value>0</value>
-                    </entry>
-                    <entry>
-                        <key>noRepeatedIdsBetweenSubordinates</key>
-                        <value>0</value>
                     </entry>
                     <entry>
                         <key>issuesINCRBursts</key>
@@ -11314,6 +11809,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="AUTO_DEVICE_FAMILY">
    <type>java.lang.String</type>
    <value>Agilex 7</value>
@@ -11349,7 +11852,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="altera_axi4_master" kind="altera_axi4_master" version="23.1">
+  <interface name="altera_axi4_master" kind="altera_axi4_master" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -11375,6 +11878,38 @@ parameters are a RESULT of the module parameters. -->
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="wakeupSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="uniqueIdSupport">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="poison">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="traceSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
     <valid>true</valid>
    </parameter>
    <parameter name="maximumOutstandingReads">
@@ -11420,22 +11955,6 @@ parameters are a RESULT of the module parameters. -->
    <parameter name="combinedIssuingCapability">
     <type>java.lang.Integer</type>
     <value>16</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="enableConcurrentSubordinateAccess">
-    <type>java.lang.Integer</type>
-    <value>0</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="noRepeatedIdsBetweenSubordinates">
-    <type>java.lang.Integer</type>
-    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -11738,7 +12257,7 @@ parameters are a RESULT of the module parameters. -->
     <span>17592186044416</span>
    </memoryBlock>
   </interface>
-  <interface name="clock_sink" kind="clock_sink" version="23.1">
+  <interface name="clock_sink" kind="clock_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -11783,7 +12302,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset_sink" kind="reset_sink" version="23.1">
+  <interface name="reset_sink" kind="reset_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12103,6 +12622,14 @@ the requested settings for a module instance. -->
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
   <parameter name="AUTO_CLK_CLOCK_RATE">
    <type>java.lang.Long</type>
    <value>-1</value>
@@ -12148,7 +12675,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="in_reset" kind="reset_sink" version="23.1">
+  <interface name="in_reset" kind="reset_sink" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12193,7 +12720,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="out_reset" kind="reset_source" version="23.1">
+  <interface name="out_reset" kind="reset_source" version="23.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12258,7 +12785,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4"
    kind="avalon"
-   version="23.1"
+   version="23.3"
    start="mgc_axi4_master_0.altera_axi4_master"
    end="intel_noc_initiator_0.s0_axi4">
   <parameter name="arbitrationPriority">
@@ -12464,7 +12991,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4"
    kind="avalon"
-   version="23.1"
+   version="23.3"
    start="mgc_axi4_master_1.altera_axi4_master"
    end="intel_noc_initiator_0.s1_axi4">
   <parameter name="arbitrationPriority">
@@ -12670,7 +13197,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="clk100.out_clk/iopll_0.refclk"
    kind="clock"
-   version="23.1"
+   version="23.3"
    start="clk100.out_clk"
    end="iopll_0.refclk">
   <parameter name="clockRateSysInfo">
@@ -12733,7 +13260,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="clk100.out_clk/intel_noc_clock_ctrl_0.refclk"
    kind="clock"
-   version="23.1"
+   version="23.3"
    start="clk100.out_clk"
    end="intel_noc_clock_ctrl_0.refclk">
   <parameter name="clockRateSysInfo">
@@ -12796,7 +13323,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="iopll_0.outclk0/mgc_axi4_master_0.clock_sink"
    kind="clock"
-   version="23.1"
+   version="23.3"
    start="iopll_0.outclk0"
    end="mgc_axi4_master_0.clock_sink">
   <parameter name="clockRateSysInfo">
@@ -12859,7 +13386,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="iopll_0.outclk0/mgc_axi4_master_1.clock_sink"
    kind="clock"
-   version="23.1"
+   version="23.3"
    start="iopll_0.outclk0"
    end="mgc_axi4_master_1.clock_sink">
   <parameter name="clockRateSysInfo">
@@ -12922,7 +13449,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="iopll_0.outclk0/hbm_fp_0.fabric_clk"
    kind="clock"
-   version="23.1"
+   version="23.3"
    start="iopll_0.outclk0"
    end="hbm_fp_0.fabric_clk">
   <parameter name="clockRateSysInfo">
@@ -12985,7 +13512,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="iopll_0.outclk0/intel_noc_initiator_0.s_axi4_aclk"
    kind="clock"
-   version="23.1"
+   version="23.3"
    start="iopll_0.outclk0"
    end="intel_noc_initiator_0.s_axi4_aclk">
   <parameter name="clockRateSysInfo">
@@ -13048,7 +13575,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="iopll_0.outclk1/hbm_fp_0.uibpll_refclk"
    kind="clock"
-   version="23.1"
+   version="23.3"
    start="iopll_0.outclk1"
    end="hbm_fp_0.uibpll_refclk">
   <parameter name="clockRateSysInfo">
@@ -13111,7 +13638,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="axi_reset.out_reset/hbm_fp_0.hbm_reset_n"
    kind="reset"
-   version="23.1"
+   version="23.3"
    start="axi_reset.out_reset"
    end="hbm_fp_0.hbm_reset_n">
   <parameter name="resetDomainSysInfo">
@@ -13165,7 +13692,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="axi_reset.out_reset/mgc_axi4_master_0.reset_sink"
    kind="reset"
-   version="23.1"
+   version="23.3"
    start="axi_reset.out_reset"
    end="mgc_axi4_master_0.reset_sink">
   <parameter name="resetDomainSysInfo">
@@ -13219,7 +13746,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="axi_reset.out_reset/mgc_axi4_master_1.reset_sink"
    kind="reset"
-   version="23.1"
+   version="23.3"
    start="axi_reset.out_reset"
    end="mgc_axi4_master_1.reset_sink">
   <parameter name="resetDomainSysInfo">
@@ -13273,7 +13800,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="noc_reset.out_reset/intel_noc_initiator_0.s_axi4_aresetn"
    kind="reset"
-   version="23.1"
+   version="23.3"
    start="noc_reset.out_reset"
    end="intel_noc_initiator_0.s_axi4_aresetn">
   <parameter name="resetDomainSysInfo">
@@ -13338,7 +13865,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -13346,7 +13873,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Output</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>8</instanceCount>
@@ -13354,7 +13881,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>3</instanceCount>
@@ -13362,7 +13889,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Output</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>11</instanceCount>
@@ -13370,15 +13897,15 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
-  <instanceCount>5</instanceCount>
+  <instanceCount>4</instanceCount>
   <name>axi4noc_subordinate</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>AXI4 NoC Subordinate</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -13386,7 +13913,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>AXI4 NoC Manager</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -13394,7 +13921,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>AXI4 Subordinate</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -13402,7 +13929,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>AXI4 Manager</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -13410,7 +13937,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>Avalon Memory Mapped Connection</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>7</instanceCount>
@@ -13418,7 +13945,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>Clock Connection</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
  <plugin>
   <instanceCount>4</instanceCount>
@@ -13426,8 +13953,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>Reset Connection</displayName>
-  <version>23.1</version>
+  <version>23.3</version>
  </plugin>
- <reportVersion>23.1 115</reportVersion>
+ <reportVersion>23.3 104</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

@@ -22,7 +22,7 @@
           </parameter>
           <parameter>
             <name>DEVICE_FAMILY</name>
-            <value>Agilex</value>
+            <value>Agilex 7</value>
           </parameter>
           <parameter>
             <name>DEVICE_SPEEDGRADE</name>
@@ -39,7 +39,7 @@
         </parameters>
         <interconnectAssignments></interconnectAssignments>
         <className>intel_noc_clock_ctrl</className>
-        <version>1.0.0</version>
+        <version>2.0.0</version>
         <name>intel_noc_clock_ctrl_0</name>
         <uniqueName>intel_noc_clock_ctrl</uniqueName>
         <fixedName>intel_noc_clock_ctrl</fixedName>

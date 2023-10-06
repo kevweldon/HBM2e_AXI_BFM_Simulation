@@ -18,9 +18,9 @@ namespace eval my_sys {
     set libraries [dict merge $libraries [my_sys_hbm_fp_0::get_design_libraries]]
     set libraries [dict merge $libraries [my_sys_mgc_axi4_master_0::get_design_libraries]]
     set libraries [dict merge $libraries [clk100::get_design_libraries]]
-    dict set libraries altera_merlin_axi_translator_1921 1
+    dict set libraries altera_merlin_axi_translator_1930 1
     dict set libraries altera_mm_interconnect_1920       1
-    dict set libraries altera_reset_controller_1921      1
+    dict set libraries altera_reset_controller_1922      1
     dict set libraries my_sys                            1
     return $libraries
   }
@@ -61,11 +61,11 @@ namespace eval my_sys {
     set design_files [concat $design_files [my_sys_hbm_fp_0::get_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_hbm_fp_0/sim/"]]
     set design_files [concat $design_files [my_sys_mgc_axi4_master_0::get_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_mgc_axi4_master_0/sim/"]]
     set design_files [concat $design_files [clk100::get_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/clk100/sim/"]]
-    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_merlin_axi_translator_1921/sim/my_sys_altera_merlin_axi_translator_1921_uetfduq.sv"]\"  -work altera_merlin_axi_translator_1921"
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_mm_interconnect_1920/sim/my_sys_altera_mm_interconnect_1920_shrp3yq.v"]\"  -work altera_mm_interconnect_1920"                       
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_mm_interconnect_1920/sim/my_sys_altera_mm_interconnect_1920_ddk3qei.v"]\"  -work altera_mm_interconnect_1920"                       
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_reset_controller_1921/sim/altera_reset_controller.v"]\"  -work altera_reset_controller_1921"                                        
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_reset_controller_1921/sim/altera_reset_synchronizer.v"]\"  -work altera_reset_controller_1921"                                      
+    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_merlin_axi_translator_1930/sim/my_sys_altera_merlin_axi_translator_1930_ivia3ca.sv"]\"  -work altera_merlin_axi_translator_1930"
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_mm_interconnect_1920/sim/my_sys_altera_mm_interconnect_1920_ma2jqha.v"]\"  -work altera_mm_interconnect_1920"                       
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_mm_interconnect_1920/sim/my_sys_altera_mm_interconnect_1920_5277t4i.v"]\"  -work altera_mm_interconnect_1920"                       
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_reset_controller_1922/sim/altera_reset_controller.v"]\"  -work altera_reset_controller_1922"                                        
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_reset_controller_1922/sim/altera_reset_synchronizer.v"]\"  -work altera_reset_controller_1922"                                      
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/my_sys.v"]\"  -work my_sys"                                                                                                                   
     return $design_files
   }
@@ -133,41 +133,17 @@ namespace eval my_sys {
       } 
       return $path 
   } 
-  proc get_mg_bfm_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR QUARTUS_INSTALL_DIR} {
-    set design_files [dict create]
-    set design_files [dict merge $design_files [my_sys_iopll_0::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_iopll_0/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [my_sys_intel_noc_clock_ctrl_0::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_intel_noc_clock_ctrl_0/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [axi_reset::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/axi_reset/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [my_sys_intel_noc_initiator_1::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_intel_noc_initiator_1/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [noc_reset::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/noc_reset/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [my_sys_hbm_fp_0::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_hbm_fp_0/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [my_sys_mgc_axi4_master_0::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_mgc_axi4_master_0/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [clk100::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/clk100/sim/" $QUARTUS_INSTALL_DIR]]
-    return $design_files
-  }
-  
-  proc use_mg_bfm {} {
-    if [string is true -strict [my_sys_iopll_0::use_mg_bfm]] {return 1}
-    if [string is true -strict [my_sys_intel_noc_clock_ctrl_0::use_mg_bfm]] {return 1}
-    if [string is true -strict [axi_reset::use_mg_bfm]] {return 1}
-    if [string is true -strict [my_sys_intel_noc_initiator_1::use_mg_bfm]] {return 1}
-    if [string is true -strict [noc_reset::use_mg_bfm]] {return 1}
-    if [string is true -strict [my_sys_hbm_fp_0::use_mg_bfm]] {return 1}
-    if [string is true -strict [my_sys_mgc_axi4_master_0::use_mg_bfm]] {return 1}
-    if [string is true -strict [clk100::use_mg_bfm]] {return 1}
-    return 0
-  }
-  
-  proc get_mg_bfm_libraries {} {
+  proc get_dpi_libraries {QSYS_SIMDIR} {
     set libraries [dict create]
-    set libraries [dict merge $libraries [my_sys_iopll_0::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [my_sys_intel_noc_clock_ctrl_0::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [axi_reset::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [my_sys_intel_noc_initiator_1::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [noc_reset::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [my_sys_hbm_fp_0::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [my_sys_mgc_axi4_master_0::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [clk100::get_mg_bfm_libraries]]
+    set libraries [dict merge $libraries [my_sys_iopll_0::get_dpi_libraries "$QSYS_SIMDIR/../../ip/my_sys/my_sys_iopll_0/sim/"]]
+    set libraries [dict merge $libraries [my_sys_intel_noc_clock_ctrl_0::get_dpi_libraries "$QSYS_SIMDIR/../../ip/my_sys/my_sys_intel_noc_clock_ctrl_0/sim/"]]
+    set libraries [dict merge $libraries [axi_reset::get_dpi_libraries "$QSYS_SIMDIR/../../ip/my_sys/axi_reset/sim/"]]
+    set libraries [dict merge $libraries [my_sys_intel_noc_initiator_1::get_dpi_libraries "$QSYS_SIMDIR/../../ip/my_sys/my_sys_intel_noc_initiator_1/sim/"]]
+    set libraries [dict merge $libraries [noc_reset::get_dpi_libraries "$QSYS_SIMDIR/../../ip/my_sys/noc_reset/sim/"]]
+    set libraries [dict merge $libraries [my_sys_hbm_fp_0::get_dpi_libraries "$QSYS_SIMDIR/../../ip/my_sys/my_sys_hbm_fp_0/sim/"]]
+    set libraries [dict merge $libraries [my_sys_mgc_axi4_master_0::get_dpi_libraries "$QSYS_SIMDIR/../../ip/my_sys/my_sys_mgc_axi4_master_0/sim/"]]
+    set libraries [dict merge $libraries [clk100::get_dpi_libraries "$QSYS_SIMDIR/../../ip/my_sys/clk100/sim/"]]
+    
     return $libraries
   }
   
