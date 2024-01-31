@@ -1,7 +1,0 @@
-	component axi_reset is
-		port (
-			in_reset  : in  std_logic := 'X'; -- reset
-			out_reset : out std_logic         -- reset
-		);
-	end component axi_reset;
-
