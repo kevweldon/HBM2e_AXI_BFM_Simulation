@@ -1,0 +1,1328 @@
+package require -exact qsys 24.1
+
+# create the system "my_sys"
+proc do_create_my_sys {} {
+	# create the system
+	create_system my_sys
+	set_project_property BOARD {default}
+	set_project_property DEVICE {AGMF039R47A2E2V}
+	set_project_property DEVICE_FAMILY {Agilex 7}
+	set_project_property HIDE_FROM_IP_CATALOG {false}
+	set_use_testbench_naming_pattern 0 {}
+
+	# add HDL parameters
+
+	# add the components
+	add_component axi_reset ip/my_sys/axi_reset.ip altera_reset_bridge axi_reset 19.2.0
+	load_component axi_reset
+	set_component_parameter_value ACTIVE_LOW_RESET {0}
+	set_component_parameter_value NUM_RESET_OUTPUTS {1}
+	set_component_parameter_value SYNCHRONOUS_EDGES {none}
+	set_component_parameter_value SYNC_RESET {0}
+	set_component_parameter_value USE_RESET_REQUEST {0}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation axi_reset
+	remove_instantiation_interfaces_and_ports
+	add_instantiation_interface in_reset reset INPUT
+	set_instantiation_interface_parameter_value in_reset associatedClock {}
+	set_instantiation_interface_parameter_value in_reset synchronousEdges {NONE}
+	add_instantiation_interface_port in_reset in_reset reset 1 STD_LOGIC Input
+	add_instantiation_interface out_reset reset OUTPUT
+	set_instantiation_interface_parameter_value out_reset associatedClock {}
+	set_instantiation_interface_parameter_value out_reset associatedDirectReset {in_reset}
+	set_instantiation_interface_parameter_value out_reset associatedResetSinks {in_reset}
+	set_instantiation_interface_parameter_value out_reset synchronousEdges {NONE}
+	add_instantiation_interface_port out_reset out_reset reset 1 STD_LOGIC Output
+	save_instantiation
+	add_component clk100 ip/my_sys/clk100.ip altera_clock_bridge clk100 19.2.0
+	load_component clk100
+	set_component_parameter_value EXPLICIT_CLOCK_RATE {100000000.0}
+	set_component_parameter_value NUM_CLOCK_OUTPUTS {1}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation clk100
+	remove_instantiation_interfaces_and_ports
+	add_instantiation_interface in_clk clock INPUT
+	set_instantiation_interface_parameter_value in_clk clockRate {0}
+	set_instantiation_interface_parameter_value in_clk externallyDriven {false}
+	set_instantiation_interface_parameter_value in_clk ptfSchematicName {}
+	add_instantiation_interface_port in_clk in_clk clk 1 STD_LOGIC Input
+	add_instantiation_interface out_clk clock OUTPUT
+	set_instantiation_interface_parameter_value out_clk associatedDirectClock {in_clk}
+	set_instantiation_interface_parameter_value out_clk clockRate {100000000}
+	set_instantiation_interface_parameter_value out_clk clockRateKnown {true}
+	set_instantiation_interface_parameter_value out_clk externallyDriven {false}
+	set_instantiation_interface_parameter_value out_clk ptfSchematicName {}
+	set_instantiation_interface_sysinfo_parameter_value out_clk clock_rate {100000000}
+	add_instantiation_interface_port out_clk out_clk clk 1 STD_LOGIC Output
+	save_instantiation
+	add_component hbm_fp_0 ip/my_sys/my_sys_hbm_fp_0.ip hbm_fp hbm_fp_0 4.0.0
+	load_component hbm_fp_0
+	set_component_parameter_value CTRL_CH0_ADDR_ORDERING {BGRBC}
+	set_component_parameter_value CTRL_CH0_CLONE_OF_ID {None}
+	set_component_parameter_value CTRL_CH0_CLONE_OF_ID_AUTO_BOOL {1}
+	set_component_parameter_value CTRL_CH0_CMD_USER_AP_EN {1}
+	set_component_parameter_value CTRL_CH0_EN {1}
+	set_component_parameter_value CTRL_CH0_HBM_DATA_MODE {B256_DATA_MASK}
+	set_component_parameter_value CTRL_CH0_PC0_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH0_PC0_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH0_PC0_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH0_PC1_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH0_PC1_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH0_PC1_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH0_POISON_EN {0}
+	set_component_parameter_value CTRL_CH0_POWER_DOWN_EN {0}
+	set_component_parameter_value CTRL_CH0_PSEUDO_BL8_EN {0}
+	set_component_parameter_value CTRL_CH0_RCMD_USER_AP_POLICY {RDAP_HINT}
+	set_component_parameter_value CTRL_CH0_REFRESH_MODE {RFSH_MODE_CTRL_RFSH_ALL}
+	set_component_parameter_value CTRL_CH0_TEMP010_THROTTLE_RATIO {25}
+	set_component_parameter_value CTRL_CH0_TEMP110_THROTTLE_RATIO {50}
+	set_component_parameter_value CTRL_CH0_TEMP_THROTTLE_EN {0}
+	set_component_parameter_value CTRL_CH0_WCMD_USER_AP_POLICY {WRAP_HINT}
+	set_component_parameter_value CTRL_CH1_ADDR_ORDERING {BGRBC}
+	set_component_parameter_value CTRL_CH1_CLONE_OF_ID {0}
+	set_component_parameter_value CTRL_CH1_CLONE_OF_ID_AUTO_BOOL {1}
+	set_component_parameter_value CTRL_CH1_CMD_USER_AP_EN {1}
+	set_component_parameter_value CTRL_CH1_EN {0}
+	set_component_parameter_value CTRL_CH1_HBM_DATA_MODE {B256_DATA_MASK}
+	set_component_parameter_value CTRL_CH1_PC0_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH1_PC0_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH1_PC0_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH1_PC1_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH1_PC1_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH1_PC1_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH1_POISON_EN {0}
+	set_component_parameter_value CTRL_CH1_POWER_DOWN_EN {0}
+	set_component_parameter_value CTRL_CH1_PSEUDO_BL8_EN {1}
+	set_component_parameter_value CTRL_CH1_RCMD_USER_AP_POLICY {RDAP_HINT}
+	set_component_parameter_value CTRL_CH1_REFRESH_MODE {RFSH_MODE_CTRL_RFSH_ALL}
+	set_component_parameter_value CTRL_CH1_TEMP010_THROTTLE_RATIO {25}
+	set_component_parameter_value CTRL_CH1_TEMP110_THROTTLE_RATIO {50}
+	set_component_parameter_value CTRL_CH1_TEMP_THROTTLE_EN {0}
+	set_component_parameter_value CTRL_CH1_WCMD_USER_AP_POLICY {WRAP_HINT}
+	set_component_parameter_value CTRL_CH2_ADDR_ORDERING {BGRBC}
+	set_component_parameter_value CTRL_CH2_CLONE_OF_ID {0}
+	set_component_parameter_value CTRL_CH2_CLONE_OF_ID_AUTO_BOOL {1}
+	set_component_parameter_value CTRL_CH2_CMD_USER_AP_EN {1}
+	set_component_parameter_value CTRL_CH2_EN {0}
+	set_component_parameter_value CTRL_CH2_HBM_DATA_MODE {B256_DATA_MASK}
+	set_component_parameter_value CTRL_CH2_PC0_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH2_PC0_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH2_PC0_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH2_PC1_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH2_PC1_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH2_PC1_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH2_POISON_EN {0}
+	set_component_parameter_value CTRL_CH2_POWER_DOWN_EN {0}
+	set_component_parameter_value CTRL_CH2_PSEUDO_BL8_EN {1}
+	set_component_parameter_value CTRL_CH2_RCMD_USER_AP_POLICY {RDAP_HINT}
+	set_component_parameter_value CTRL_CH2_REFRESH_MODE {RFSH_MODE_CTRL_RFSH_ALL}
+	set_component_parameter_value CTRL_CH2_TEMP010_THROTTLE_RATIO {25}
+	set_component_parameter_value CTRL_CH2_TEMP110_THROTTLE_RATIO {50}
+	set_component_parameter_value CTRL_CH2_TEMP_THROTTLE_EN {0}
+	set_component_parameter_value CTRL_CH2_WCMD_USER_AP_POLICY {WRAP_HINT}
+	set_component_parameter_value CTRL_CH3_ADDR_ORDERING {BGRBC}
+	set_component_parameter_value CTRL_CH3_CLONE_OF_ID {0}
+	set_component_parameter_value CTRL_CH3_CLONE_OF_ID_AUTO_BOOL {1}
+	set_component_parameter_value CTRL_CH3_CMD_USER_AP_EN {1}
+	set_component_parameter_value CTRL_CH3_EN {0}
+	set_component_parameter_value CTRL_CH3_HBM_DATA_MODE {B256_DATA_MASK}
+	set_component_parameter_value CTRL_CH3_PC0_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH3_PC0_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH3_PC0_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH3_PC1_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH3_PC1_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH3_PC1_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH3_POISON_EN {0}
+	set_component_parameter_value CTRL_CH3_POWER_DOWN_EN {0}
+	set_component_parameter_value CTRL_CH3_PSEUDO_BL8_EN {1}
+	set_component_parameter_value CTRL_CH3_RCMD_USER_AP_POLICY {RDAP_HINT}
+	set_component_parameter_value CTRL_CH3_REFRESH_MODE {RFSH_MODE_CTRL_RFSH_ALL}
+	set_component_parameter_value CTRL_CH3_TEMP010_THROTTLE_RATIO {25}
+	set_component_parameter_value CTRL_CH3_TEMP110_THROTTLE_RATIO {50}
+	set_component_parameter_value CTRL_CH3_TEMP_THROTTLE_EN {0}
+	set_component_parameter_value CTRL_CH3_WCMD_USER_AP_POLICY {WRAP_HINT}
+	set_component_parameter_value CTRL_CH4_ADDR_ORDERING {BGRBC}
+	set_component_parameter_value CTRL_CH4_CLONE_OF_ID {0}
+	set_component_parameter_value CTRL_CH4_CLONE_OF_ID_AUTO_BOOL {1}
+	set_component_parameter_value CTRL_CH4_CMD_USER_AP_EN {1}
+	set_component_parameter_value CTRL_CH4_EN {0}
+	set_component_parameter_value CTRL_CH4_HBM_DATA_MODE {B256_DATA_MASK}
+	set_component_parameter_value CTRL_CH4_PC0_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH4_PC0_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH4_PC0_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH4_PC1_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH4_PC1_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH4_PC1_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH4_POISON_EN {0}
+	set_component_parameter_value CTRL_CH4_POWER_DOWN_EN {0}
+	set_component_parameter_value CTRL_CH4_PSEUDO_BL8_EN {1}
+	set_component_parameter_value CTRL_CH4_RCMD_USER_AP_POLICY {RDAP_HINT}
+	set_component_parameter_value CTRL_CH4_REFRESH_MODE {RFSH_MODE_CTRL_RFSH_ALL}
+	set_component_parameter_value CTRL_CH4_TEMP010_THROTTLE_RATIO {25}
+	set_component_parameter_value CTRL_CH4_TEMP110_THROTTLE_RATIO {50}
+	set_component_parameter_value CTRL_CH4_TEMP_THROTTLE_EN {0}
+	set_component_parameter_value CTRL_CH4_WCMD_USER_AP_POLICY {WRAP_HINT}
+	set_component_parameter_value CTRL_CH5_ADDR_ORDERING {BGRBC}
+	set_component_parameter_value CTRL_CH5_CLONE_OF_ID {0}
+	set_component_parameter_value CTRL_CH5_CLONE_OF_ID_AUTO_BOOL {1}
+	set_component_parameter_value CTRL_CH5_CMD_USER_AP_EN {1}
+	set_component_parameter_value CTRL_CH5_EN {0}
+	set_component_parameter_value CTRL_CH5_HBM_DATA_MODE {B256_DATA_MASK}
+	set_component_parameter_value CTRL_CH5_PC0_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH5_PC0_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH5_PC0_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH5_PC1_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH5_PC1_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH5_PC1_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH5_POISON_EN {0}
+	set_component_parameter_value CTRL_CH5_POWER_DOWN_EN {0}
+	set_component_parameter_value CTRL_CH5_PSEUDO_BL8_EN {1}
+	set_component_parameter_value CTRL_CH5_RCMD_USER_AP_POLICY {RDAP_HINT}
+	set_component_parameter_value CTRL_CH5_REFRESH_MODE {RFSH_MODE_CTRL_RFSH_ALL}
+	set_component_parameter_value CTRL_CH5_TEMP010_THROTTLE_RATIO {25}
+	set_component_parameter_value CTRL_CH5_TEMP110_THROTTLE_RATIO {50}
+	set_component_parameter_value CTRL_CH5_TEMP_THROTTLE_EN {0}
+	set_component_parameter_value CTRL_CH5_WCMD_USER_AP_POLICY {WRAP_HINT}
+	set_component_parameter_value CTRL_CH6_ADDR_ORDERING {BGRBC}
+	set_component_parameter_value CTRL_CH6_CLONE_OF_ID {0}
+	set_component_parameter_value CTRL_CH6_CLONE_OF_ID_AUTO_BOOL {1}
+	set_component_parameter_value CTRL_CH6_CMD_USER_AP_EN {1}
+	set_component_parameter_value CTRL_CH6_EN {0}
+	set_component_parameter_value CTRL_CH6_HBM_DATA_MODE {B256_DATA_MASK}
+	set_component_parameter_value CTRL_CH6_PC0_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH6_PC0_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH6_PC0_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH6_PC1_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH6_PC1_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH6_PC1_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH6_POISON_EN {0}
+	set_component_parameter_value CTRL_CH6_POWER_DOWN_EN {0}
+	set_component_parameter_value CTRL_CH6_PSEUDO_BL8_EN {1}
+	set_component_parameter_value CTRL_CH6_RCMD_USER_AP_POLICY {RDAP_HINT}
+	set_component_parameter_value CTRL_CH6_REFRESH_MODE {RFSH_MODE_CTRL_RFSH_ALL}
+	set_component_parameter_value CTRL_CH6_TEMP010_THROTTLE_RATIO {25}
+	set_component_parameter_value CTRL_CH6_TEMP110_THROTTLE_RATIO {50}
+	set_component_parameter_value CTRL_CH6_TEMP_THROTTLE_EN {0}
+	set_component_parameter_value CTRL_CH6_WCMD_USER_AP_POLICY {WRAP_HINT}
+	set_component_parameter_value CTRL_CH7_ADDR_ORDERING {BGRBC}
+	set_component_parameter_value CTRL_CH7_CLONE_OF_ID {0}
+	set_component_parameter_value CTRL_CH7_CLONE_OF_ID_AUTO_BOOL {1}
+	set_component_parameter_value CTRL_CH7_CMD_USER_AP_EN {1}
+	set_component_parameter_value CTRL_CH7_EN {0}
+	set_component_parameter_value CTRL_CH7_HBM_DATA_MODE {B256_DATA_MASK}
+	set_component_parameter_value CTRL_CH7_PC0_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH7_PC0_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH7_PC0_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH7_PC1_POWER_EST_BANDWIDTH_PCT {0}
+	set_component_parameter_value CTRL_CH7_PC1_POWER_EST_PAGE_HIT_PCT {50}
+	set_component_parameter_value CTRL_CH7_PC1_POWER_EST_READ_PCT {50}
+	set_component_parameter_value CTRL_CH7_POISON_EN {0}
+	set_component_parameter_value CTRL_CH7_POWER_DOWN_EN {0}
+	set_component_parameter_value CTRL_CH7_PSEUDO_BL8_EN {1}
+	set_component_parameter_value CTRL_CH7_RCMD_USER_AP_POLICY {RDAP_HINT}
+	set_component_parameter_value CTRL_CH7_REFRESH_MODE {RFSH_MODE_CTRL_RFSH_ALL}
+	set_component_parameter_value CTRL_CH7_TEMP010_THROTTLE_RATIO {25}
+	set_component_parameter_value CTRL_CH7_TEMP110_THROTTLE_RATIO {50}
+	set_component_parameter_value CTRL_CH7_TEMP_THROTTLE_EN {0}
+	set_component_parameter_value CTRL_CH7_WCMD_USER_AP_POLICY {WRAP_HINT}
+	set_component_parameter_value EX_DESIGN_AXI4LITE_MODE {AXI4LITE_MODE_NONE}
+	set_component_parameter_value EX_DESIGN_CORE_CLK_FREQ_MHZ {250}
+	set_component_parameter_value EX_DESIGN_CORE_REFCLK_FREQ_MHZ {100}
+	set_component_parameter_value EX_DESIGN_CORE_REFCLK_FREQ_MHZ_AUTO_BOOL {1}
+	set_component_parameter_value EX_DESIGN_DEFAULT_TRAFFIC_PATTERN {Sequential_Medium}
+	set_component_parameter_value EX_DESIGN_FABRIC_NOC_MODE {FABRIC_NOC_MODE_NONE}
+	set_component_parameter_value EX_DESIGN_GEN_SIM {1}
+	set_component_parameter_value EX_DESIGN_GEN_SYNTH {1}
+	set_component_parameter_value EX_DESIGN_HDL_FORMAT {HDL_FORMAT_VERILOG}
+	set_component_parameter_value EX_DESIGN_HDL_FORMAT_AUTO_BOOL {1}
+	set_component_parameter_value EX_DESIGN_LOCATION_ASSIGNMENTS {LOCATION_ASSIGNMENTS_NONE}
+	set_component_parameter_value EX_DESIGN_NOC_BRIDGE_CLK_FREQ_MHZ {550}
+	set_component_parameter_value EX_DESIGN_NOC_PAIRING {ONE_TO_ONE}
+	set_component_parameter_value EX_DESIGN_NOC_PAIRING_INTERNAL {NONE}
+	set_component_parameter_value EX_DESIGN_NOC_READ_TRANSACTION_SIZE {64}
+	set_component_parameter_value EX_DESIGN_NOC_REFCLK_FREQ_MHZ {100}
+	set_component_parameter_value EX_DESIGN_NOC_REFCLK_FREQ_MHZ_AUTO_BOOL {1}
+	set_component_parameter_value EX_DESIGN_NOC_WRITE_TRANSACTION_SIZE {64}
+	set_component_parameter_value EX_DESIGN_PMON_CH0_PC0_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH0_PC1_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH1_PC0_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH1_PC1_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH2_PC0_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH2_PC1_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH3_PC0_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH3_PC1_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH4_PC0_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH4_PC1_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH5_PC0_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH5_PC1_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH6_PC0_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH6_PC1_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH7_PC0_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_CH7_PC1_EN {0}
+	set_component_parameter_value EX_DESIGN_PMON_ENABLED {0}
+	set_component_parameter_value EX_DESIGN_PMON_INTERNAL_JAMB {1}
+	set_component_parameter_value EX_DESIGN_USER_RO_CLK_FREQ_MHZ {400}
+	set_component_parameter_value EX_DESIGN_USE_PD_NOC_FLOW {1}
+	set_component_parameter_value PHY_CALIBRATION_STATUS_EN {1}
+	set_component_parameter_value PHY_CTRL_CH_IRQ_O_EN {1}
+	set_component_parameter_value PHY_HPS_BOOT_EN {0}
+	set_component_parameter_value PHY_MEMCLK_FREQ_MHZ {1400}
+	set_component_parameter_value PHY_PLL_REF_CLK_IO_STD {LVDS_NO_ONCHIP_TERMINATION}
+	set_component_parameter_value PHY_PLL_REF_CLK_IO_STD_AUTO_BOOL {1}
+	set_component_parameter_value PHY_REFCLK_FREQ_MHZ {100}
+	set_component_parameter_value PHY_REFCLK_FREQ_MHZ_AUTO_BOOL {1}
+	set_component_parameter_value PHY_RESET_TYPE {HBM_ONLY_RESET}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation hbm_fp_0
+	remove_instantiation_interfaces_and_ports
+	add_instantiation_interface ch0_u0_wmc_intr conduit INPUT
+	set_instantiation_interface_parameter_value ch0_u0_wmc_intr associatedClock {}
+	set_instantiation_interface_parameter_value ch0_u0_wmc_intr associatedReset {}
+	set_instantiation_interface_parameter_value ch0_u0_wmc_intr prSafe {false}
+	add_instantiation_interface_port ch0_u0_wmc_intr ch0_u0_wmc_intr conduit 1 STD_LOGIC Output
+	add_instantiation_interface ch0_u1_wmc_intr conduit INPUT
+	set_instantiation_interface_parameter_value ch0_u1_wmc_intr associatedClock {}
+	set_instantiation_interface_parameter_value ch0_u1_wmc_intr associatedReset {}
+	set_instantiation_interface_parameter_value ch0_u1_wmc_intr prSafe {false}
+	add_instantiation_interface_port ch0_u1_wmc_intr ch0_u1_wmc_intr conduit 1 STD_LOGIC Output
+	add_instantiation_interface fabric_clk clock INPUT
+	set_instantiation_interface_parameter_value fabric_clk clockRate {0}
+	set_instantiation_interface_parameter_value fabric_clk externallyDriven {false}
+	set_instantiation_interface_parameter_value fabric_clk ptfSchematicName {}
+	add_instantiation_interface_port fabric_clk fabric_clk clk 1 STD_LOGIC Input
+	add_instantiation_interface hbm_reset_n reset INPUT
+	set_instantiation_interface_parameter_value hbm_reset_n associatedClock {fabric_clk}
+	set_instantiation_interface_parameter_value hbm_reset_n synchronousEdges {DEASSERT}
+	add_instantiation_interface_port hbm_reset_n hbm_reset_n reset_n 1 STD_LOGIC Input
+	add_instantiation_interface hbm_reset_in_prog conduit INPUT
+	set_instantiation_interface_parameter_value hbm_reset_in_prog associatedClock {}
+	set_instantiation_interface_parameter_value hbm_reset_in_prog associatedReset {}
+	set_instantiation_interface_parameter_value hbm_reset_in_prog prSafe {false}
+	add_instantiation_interface_port hbm_reset_in_prog hbm_reset_in_prog hbm_reset_in_prog 1 STD_LOGIC Output
+	add_instantiation_interface cattrip conduit INPUT
+	set_instantiation_interface_parameter_value cattrip associatedClock {}
+	set_instantiation_interface_parameter_value cattrip associatedReset {}
+	set_instantiation_interface_parameter_value cattrip prSafe {false}
+	add_instantiation_interface_port cattrip hbm_cattrip hbm_cattrip 1 STD_LOGIC Output
+	add_instantiation_interface cattrip_i conduit INPUT
+	set_instantiation_interface_parameter_value cattrip_i associatedClock {}
+	set_instantiation_interface_parameter_value cattrip_i associatedReset {}
+	set_instantiation_interface_parameter_value cattrip_i prSafe {false}
+	add_instantiation_interface_port cattrip_i hbm_cattrip_i conduit 1 STD_LOGIC Input
+	add_instantiation_interface temp conduit INPUT
+	set_instantiation_interface_parameter_value temp associatedClock {}
+	set_instantiation_interface_parameter_value temp associatedReset {}
+	set_instantiation_interface_parameter_value temp prSafe {false}
+	add_instantiation_interface_port temp hbm_temp hbm_temp 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface temp_i conduit INPUT
+	set_instantiation_interface_parameter_value temp_i associatedClock {}
+	set_instantiation_interface_parameter_value temp_i associatedReset {}
+	set_instantiation_interface_parameter_value temp_i prSafe {false}
+	add_instantiation_interface_port temp_i hbm_temp_i conduit 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface local_cal_success conduit INPUT
+	set_instantiation_interface_parameter_value local_cal_success associatedClock {}
+	set_instantiation_interface_parameter_value local_cal_success associatedReset {}
+	set_instantiation_interface_parameter_value local_cal_success prSafe {false}
+	add_instantiation_interface_port local_cal_success local_cal_success local_cal_success 1 STD_LOGIC Output
+	add_instantiation_interface local_cal_fail conduit INPUT
+	set_instantiation_interface_parameter_value local_cal_fail associatedClock {}
+	set_instantiation_interface_parameter_value local_cal_fail associatedReset {}
+	set_instantiation_interface_parameter_value local_cal_fail prSafe {false}
+	add_instantiation_interface_port local_cal_fail local_cal_fail local_cal_fail 1 STD_LOGIC Output
+	add_instantiation_interface uibpll_refclk clock INPUT
+	set_instantiation_interface_parameter_value uibpll_refclk clockRate {0}
+	set_instantiation_interface_parameter_value uibpll_refclk externallyDriven {false}
+	set_instantiation_interface_parameter_value uibpll_refclk ptfSchematicName {}
+	add_instantiation_interface_port uibpll_refclk uibpll_refclk clk 1 STD_LOGIC Input
+	add_instantiation_interface t_ch0_u0_axi4noc axi4noc INPUT
+	set_instantiation_interface_parameter_value t_ch0_u0_axi4noc internalHPath {tniu_ch0_u0|target_0.target_inst_0}
+	set_instantiation_interface_parameter_value t_ch0_u0_axi4noc memorySpan {0x40000000}
+	set_instantiation_interface_parameter_value t_ch0_u0_axi4noc regFunctionHPath {tniu_ch0_u0.target_0.target_inst_0}
+	add_instantiation_interface t_ch0_u1_axi4noc axi4noc INPUT
+	set_instantiation_interface_parameter_value t_ch0_u1_axi4noc internalHPath {tniu_ch0_u1|target_0.target_inst_0}
+	set_instantiation_interface_parameter_value t_ch0_u1_axi4noc memorySpan {0x40000000}
+	set_instantiation_interface_parameter_value t_ch0_u1_axi4noc regFunctionHPath {tniu_ch0_u1.target_0.target_inst_0}
+	add_instantiation_interface t_ch0_ch1_sb_axi4noc axi4noc INPUT
+	set_instantiation_interface_parameter_value t_ch0_ch1_sb_axi4noc internalHPath {tniu_ch0_ch1_sb|target_0.target_lite_inst_0}
+	set_instantiation_interface_parameter_value t_ch0_ch1_sb_axi4noc memorySpan {0x8000000}
+	set_instantiation_interface_parameter_value t_ch0_ch1_sb_axi4noc regFunctionHPath {tniu_ch0_ch1_sb.target_0.target_lite_inst_0.target_inst_0}
+	save_instantiation
+	add_component intel_noc_clock_ctrl_0 ip/my_sys/my_sys_intel_noc_clock_ctrl_0.ip intel_noc_clock_ctrl intel_noc_clock_ctrl_0 2.0.0
+	load_component intel_noc_clock_ctrl_0
+	set_component_parameter_value REFCLK_FREQ {NOC_PLL_REFCLK_FREQ_100_MHZ}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation intel_noc_clock_ctrl_0
+	remove_instantiation_interfaces_and_ports
+	add_instantiation_interface refclk clock INPUT
+	set_instantiation_interface_parameter_value refclk clockRate {0}
+	set_instantiation_interface_parameter_value refclk externallyDriven {false}
+	set_instantiation_interface_parameter_value refclk ptfSchematicName {}
+	add_instantiation_interface_port refclk refclk clk 1 STD_LOGIC Input
+	add_instantiation_interface pll_lock_o conduit INPUT
+	set_instantiation_interface_parameter_value pll_lock_o associatedClock {}
+	set_instantiation_interface_parameter_value pll_lock_o associatedReset {}
+	set_instantiation_interface_parameter_value pll_lock_o prSafe {false}
+	add_instantiation_interface_port pll_lock_o pll_lock_o pll_lock_o 1 STD_LOGIC Output
+	add_instantiation_interface target_inst_0 axi4noc INPUT
+	set_instantiation_interface_parameter_value target_inst_0 internalHPath {ssm_inst}
+	set_instantiation_interface_parameter_value target_inst_0 memorySpan {0x7400}
+	set_instantiation_interface_parameter_value target_inst_0 regFunctionHPath {ssm_inst.target_lite_mon_inst_0.target_inst_0}
+	save_instantiation
+	add_component intel_noc_initiator_0 ip/my_sys/my_sys_intel_noc_initiator_0.ip intel_noc_initiator my_sys_intel_noc_initiator_0 3.0.0
+	load_component intel_noc_initiator_0
+	set_component_parameter_value AXI4_DATA_MODE {AXI4_DATA_MODE_256}
+	set_component_parameter_value AXI4_HANDSHAKE {AXI4_HANDSHAKE_STANDARD}
+	set_component_parameter_value INDEPENDENT_WIDE_INTERFACE_CLOCK {1}
+	set_component_parameter_value INDIVIDUAL_AXI_CLKRESET {0}
+	set_component_parameter_value NOC_INIU0_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU0_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU10_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU10_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU11_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU11_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU12_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU12_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU13_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU13_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU14_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU14_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU15_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU15_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU16_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU16_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU17_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU17_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU18_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU18_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU19_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU19_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU1_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU1_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU20_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU20_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU21_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU21_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU22_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU22_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU2_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU2_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU3_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU3_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU4_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU4_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU5_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU5_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU6_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU6_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU7_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU7_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU8_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU8_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU9_THROTTLE_MODE_RD {NOC_INIU_THROTTLE_MODE_RD_STATIC_BW_100}
+	set_component_parameter_value NOC_INIU9_THROTTLE_MODE_WR {NOC_INIU_THROTTLE_MODE_WR_STATIC_BW_100}
+	set_component_parameter_value NOC_QOS_MODE {NOC_QOS_MODE_SOCKET}
+	set_component_parameter_value NOC_QOS_READ_PRIORITY {0}
+	set_component_parameter_value NOC_QOS_WRITE_PRIORITY {0}
+	set_component_parameter_value NUM_AXI4LITE_IF {0}
+	set_component_parameter_value NUM_AXI4_IF {2}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation intel_noc_initiator_0
+	remove_instantiation_interfaces_and_ports
+	add_instantiation_interface i0_axi4noc axi4noc OUTPUT
+	set_instantiation_interface_parameter_value i0_axi4noc internalHPath {iniu_0|initiator_inst_0}
+	set_instantiation_interface_parameter_value i0_axi4noc memorySpan {0x0}
+	set_instantiation_interface_parameter_value i0_axi4noc regFunctionHPath {iniu_0.initiator_inst_0}
+	add_instantiation_interface s0_axi4 axi4 INPUT
+	set_instantiation_interface_parameter_value s0_axi4 associatedClock {s_axi4_aclk}
+	set_instantiation_interface_parameter_value s0_axi4 associatedReset {s_axi4_aresetn}
+	set_instantiation_interface_parameter_value s0_axi4 bridgesToMaster {}
+	set_instantiation_interface_parameter_value s0_axi4 combinedAcceptanceCapability {128}
+	set_instantiation_interface_parameter_value s0_axi4 dfhFeatureGuid {0}
+	set_instantiation_interface_parameter_value s0_axi4 dfhFeatureId {35}
+	set_instantiation_interface_parameter_value s0_axi4 dfhFeatureMajorVersion {0}
+	set_instantiation_interface_parameter_value s0_axi4 dfhFeatureMinorVersion {0}
+	set_instantiation_interface_parameter_value s0_axi4 dfhFeatureType {3}
+	set_instantiation_interface_parameter_value s0_axi4 dfhGroupId {0}
+	set_instantiation_interface_parameter_value s0_axi4 dfhParameterData {}
+	set_instantiation_interface_parameter_value s0_axi4 dfhParameterDataLength {}
+	set_instantiation_interface_parameter_value s0_axi4 dfhParameterId {}
+	set_instantiation_interface_parameter_value s0_axi4 dfhParameterName {}
+	set_instantiation_interface_parameter_value s0_axi4 dfhParameterVersion {}
+	set_instantiation_interface_parameter_value s0_axi4 maximumOutstandingReads {1}
+	set_instantiation_interface_parameter_value s0_axi4 maximumOutstandingTransactions {1}
+	set_instantiation_interface_parameter_value s0_axi4 maximumOutstandingWrites {1}
+	set_instantiation_interface_parameter_value s0_axi4 poison {false}
+	set_instantiation_interface_parameter_value s0_axi4 readAcceptanceCapability {128}
+	set_instantiation_interface_parameter_value s0_axi4 readDataReorderingDepth {1}
+	set_instantiation_interface_parameter_value s0_axi4 traceSignals {false}
+	set_instantiation_interface_parameter_value s0_axi4 trustzoneAware {true}
+	set_instantiation_interface_parameter_value s0_axi4 uniqueIdSupport {false}
+	set_instantiation_interface_parameter_value s0_axi4 wakeupSignals {false}
+	set_instantiation_interface_parameter_value s0_axi4 writeAcceptanceCapability {64}
+	set_instantiation_interface_sysinfo_parameter_value s0_axi4 address_map {<address-map><slave name='s0_axi4' start='0x0' end='0x100000000000' datawidth='256' /></address-map>}
+	set_instantiation_interface_sysinfo_parameter_value s0_axi4 address_width {44}
+	set_instantiation_interface_sysinfo_parameter_value s0_axi4 max_slave_data_width {256}
+	add_instantiation_interface_port s0_axi4 s0_axi4_awid awid 7 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awaddr awaddr 44 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awlen awlen 8 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awsize awsize 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awburst awburst 2 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awlock awlock 1 STD_LOGIC Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awprot awprot 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awuser awuser 11 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awqos awqos 4 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awvalid awvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_awready awready 1 STD_LOGIC Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_wdata wdata 256 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_wstrb wstrb 32 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_wlast wlast 1 STD_LOGIC Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_wvalid wvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_wuser wuser 32 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_wready wready 1 STD_LOGIC Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_bid bid 7 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_bresp bresp 2 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_bvalid bvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_bready bready 1 STD_LOGIC Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arid arid 7 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_araddr araddr 44 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arlen arlen 8 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arsize arsize 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arburst arburst 2 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arlock arlock 1 STD_LOGIC Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arprot arprot 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_aruser aruser 11 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arqos arqos 4 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arvalid arvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_arready arready 1 STD_LOGIC Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_rid rid 7 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_rdata rdata 256 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_rresp rresp 2 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_rlast rlast 1 STD_LOGIC Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_rvalid rvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port s0_axi4 s0_axi4_rready rready 1 STD_LOGIC Input
+	add_instantiation_interface_port s0_axi4 s0_axi4_ruser ruser 32 STD_LOGIC_VECTOR Output
+	add_instantiation_interface i1_axi4noc axi4noc OUTPUT
+	set_instantiation_interface_parameter_value i1_axi4noc internalHPath {iniu_1|initiator_inst_0}
+	set_instantiation_interface_parameter_value i1_axi4noc memorySpan {0x0}
+	set_instantiation_interface_parameter_value i1_axi4noc regFunctionHPath {iniu_1.initiator_inst_0}
+	add_instantiation_interface s1_axi4 axi4 INPUT
+	set_instantiation_interface_parameter_value s1_axi4 associatedClock {s_axi4_aclk}
+	set_instantiation_interface_parameter_value s1_axi4 associatedReset {s_axi4_aresetn}
+	set_instantiation_interface_parameter_value s1_axi4 bridgesToMaster {}
+	set_instantiation_interface_parameter_value s1_axi4 combinedAcceptanceCapability {128}
+	set_instantiation_interface_parameter_value s1_axi4 dfhFeatureGuid {0}
+	set_instantiation_interface_parameter_value s1_axi4 dfhFeatureId {35}
+	set_instantiation_interface_parameter_value s1_axi4 dfhFeatureMajorVersion {0}
+	set_instantiation_interface_parameter_value s1_axi4 dfhFeatureMinorVersion {0}
+	set_instantiation_interface_parameter_value s1_axi4 dfhFeatureType {3}
+	set_instantiation_interface_parameter_value s1_axi4 dfhGroupId {0}
+	set_instantiation_interface_parameter_value s1_axi4 dfhParameterData {}
+	set_instantiation_interface_parameter_value s1_axi4 dfhParameterDataLength {}
+	set_instantiation_interface_parameter_value s1_axi4 dfhParameterId {}
+	set_instantiation_interface_parameter_value s1_axi4 dfhParameterName {}
+	set_instantiation_interface_parameter_value s1_axi4 dfhParameterVersion {}
+	set_instantiation_interface_parameter_value s1_axi4 maximumOutstandingReads {1}
+	set_instantiation_interface_parameter_value s1_axi4 maximumOutstandingTransactions {1}
+	set_instantiation_interface_parameter_value s1_axi4 maximumOutstandingWrites {1}
+	set_instantiation_interface_parameter_value s1_axi4 poison {false}
+	set_instantiation_interface_parameter_value s1_axi4 readAcceptanceCapability {128}
+	set_instantiation_interface_parameter_value s1_axi4 readDataReorderingDepth {1}
+	set_instantiation_interface_parameter_value s1_axi4 traceSignals {false}
+	set_instantiation_interface_parameter_value s1_axi4 trustzoneAware {true}
+	set_instantiation_interface_parameter_value s1_axi4 uniqueIdSupport {false}
+	set_instantiation_interface_parameter_value s1_axi4 wakeupSignals {false}
+	set_instantiation_interface_parameter_value s1_axi4 writeAcceptanceCapability {64}
+	set_instantiation_interface_sysinfo_parameter_value s1_axi4 address_map {<address-map><slave name='s1_axi4' start='0x0' end='0x100000000000' datawidth='256' /></address-map>}
+	set_instantiation_interface_sysinfo_parameter_value s1_axi4 address_width {44}
+	set_instantiation_interface_sysinfo_parameter_value s1_axi4 max_slave_data_width {256}
+	add_instantiation_interface_port s1_axi4 s1_axi4_awid awid 7 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awaddr awaddr 44 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awlen awlen 8 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awsize awsize 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awburst awburst 2 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awlock awlock 1 STD_LOGIC Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awprot awprot 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awuser awuser 11 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awqos awqos 4 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awvalid awvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_awready awready 1 STD_LOGIC Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_wdata wdata 256 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_wstrb wstrb 32 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_wlast wlast 1 STD_LOGIC Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_wvalid wvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_wuser wuser 32 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_wready wready 1 STD_LOGIC Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_bid bid 7 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_bresp bresp 2 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_bvalid bvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_bready bready 1 STD_LOGIC Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arid arid 7 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_araddr araddr 44 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arlen arlen 8 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arsize arsize 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arburst arburst 2 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arlock arlock 1 STD_LOGIC Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arprot arprot 3 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_aruser aruser 11 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arqos arqos 4 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arvalid arvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_arready arready 1 STD_LOGIC Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_rid rid 7 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_rdata rdata 256 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_rresp rresp 2 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_rlast rlast 1 STD_LOGIC Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_rvalid rvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port s1_axi4 s1_axi4_rready rready 1 STD_LOGIC Input
+	add_instantiation_interface_port s1_axi4 s1_axi4_ruser ruser 32 STD_LOGIC_VECTOR Output
+	add_instantiation_interface s_axi4_aclk clock INPUT
+	set_instantiation_interface_parameter_value s_axi4_aclk clockRate {0}
+	set_instantiation_interface_parameter_value s_axi4_aclk externallyDriven {false}
+	set_instantiation_interface_parameter_value s_axi4_aclk ptfSchematicName {}
+	add_instantiation_interface_port s_axi4_aclk s_axi4_aclk clk 1 STD_LOGIC Input
+	add_instantiation_interface s_axi4_aresetn reset INPUT
+	set_instantiation_interface_parameter_value s_axi4_aresetn associatedClock {s_axi4_aclk}
+	set_instantiation_interface_parameter_value s_axi4_aresetn synchronousEdges {DEASSERT}
+	add_instantiation_interface_port s_axi4_aresetn s_axi4_aresetn reset_n 1 STD_LOGIC Input
+	save_instantiation
+	add_component iopll_0 ip/my_sys/my_sys_iopll_0.ip altera_iopll iopll_0 19.3.1
+	load_component iopll_0
+	set_component_parameter_value gui_active_clk {0}
+	set_component_parameter_value gui_c_cnt_in_src0 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_c_cnt_in_src1 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_c_cnt_in_src2 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_c_cnt_in_src3 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_c_cnt_in_src4 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_c_cnt_in_src5 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_c_cnt_in_src6 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_c_cnt_in_src7 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_c_cnt_in_src8 {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_cal_code_hex_file {iossm.hex}
+	set_component_parameter_value gui_cal_converge {0}
+	set_component_parameter_value gui_cal_error {cal_clean}
+	set_component_parameter_value gui_cascade_counter0 {0}
+	set_component_parameter_value gui_cascade_counter1 {0}
+	set_component_parameter_value gui_cascade_counter10 {0}
+	set_component_parameter_value gui_cascade_counter11 {0}
+	set_component_parameter_value gui_cascade_counter12 {0}
+	set_component_parameter_value gui_cascade_counter13 {0}
+	set_component_parameter_value gui_cascade_counter14 {0}
+	set_component_parameter_value gui_cascade_counter15 {0}
+	set_component_parameter_value gui_cascade_counter16 {0}
+	set_component_parameter_value gui_cascade_counter17 {0}
+	set_component_parameter_value gui_cascade_counter2 {0}
+	set_component_parameter_value gui_cascade_counter3 {0}
+	set_component_parameter_value gui_cascade_counter4 {0}
+	set_component_parameter_value gui_cascade_counter5 {0}
+	set_component_parameter_value gui_cascade_counter6 {0}
+	set_component_parameter_value gui_cascade_counter7 {0}
+	set_component_parameter_value gui_cascade_counter8 {0}
+	set_component_parameter_value gui_cascade_counter9 {0}
+	set_component_parameter_value gui_cascade_outclk_index {5}
+	set_component_parameter_value gui_clk_bad {0}
+	set_component_parameter_value gui_clock_name_global {0}
+	set_component_parameter_value gui_clock_name_string0 {pll_clk250}
+	set_component_parameter_value gui_clock_name_string1 {pll_clk100}
+	set_component_parameter_value gui_clock_name_string10 {outclk10}
+	set_component_parameter_value gui_clock_name_string11 {outclk11}
+	set_component_parameter_value gui_clock_name_string12 {outclk12}
+	set_component_parameter_value gui_clock_name_string13 {outclk13}
+	set_component_parameter_value gui_clock_name_string14 {outclk14}
+	set_component_parameter_value gui_clock_name_string15 {outclk15}
+	set_component_parameter_value gui_clock_name_string16 {outclk16}
+	set_component_parameter_value gui_clock_name_string17 {outclk17}
+	set_component_parameter_value gui_clock_name_string2 {outclk2}
+	set_component_parameter_value gui_clock_name_string3 {outclk3}
+	set_component_parameter_value gui_clock_name_string4 {outclk4}
+	set_component_parameter_value gui_clock_name_string5 {outclk5}
+	set_component_parameter_value gui_clock_name_string6 {outclk6}
+	set_component_parameter_value gui_clock_name_string7 {outclk7}
+	set_component_parameter_value gui_clock_name_string8 {outclk8}
+	set_component_parameter_value gui_clock_name_string9 {outclk9}
+	set_component_parameter_value gui_clock_to_compensate {0}
+	set_component_parameter_value gui_debug_mode {0}
+	set_component_parameter_value gui_divide_factor_c0 {6}
+	set_component_parameter_value gui_divide_factor_c1 {6}
+	set_component_parameter_value gui_divide_factor_c10 {6}
+	set_component_parameter_value gui_divide_factor_c11 {6}
+	set_component_parameter_value gui_divide_factor_c12 {6}
+	set_component_parameter_value gui_divide_factor_c13 {6}
+	set_component_parameter_value gui_divide_factor_c14 {6}
+	set_component_parameter_value gui_divide_factor_c15 {6}
+	set_component_parameter_value gui_divide_factor_c16 {6}
+	set_component_parameter_value gui_divide_factor_c17 {6}
+	set_component_parameter_value gui_divide_factor_c2 {6}
+	set_component_parameter_value gui_divide_factor_c3 {6}
+	set_component_parameter_value gui_divide_factor_c4 {6}
+	set_component_parameter_value gui_divide_factor_c5 {6}
+	set_component_parameter_value gui_divide_factor_c6 {6}
+	set_component_parameter_value gui_divide_factor_c7 {6}
+	set_component_parameter_value gui_divide_factor_c8 {6}
+	set_component_parameter_value gui_divide_factor_c9 {6}
+	set_component_parameter_value gui_divide_factor_n {1}
+	set_component_parameter_value gui_dps_cntr {C0}
+	set_component_parameter_value gui_dps_dir {Positive}
+	set_component_parameter_value gui_dps_num {1}
+	set_component_parameter_value gui_dsm_out_sel {1st_order}
+	set_component_parameter_value gui_duty_cycle0 {50.0}
+	set_component_parameter_value gui_duty_cycle1 {50.0}
+	set_component_parameter_value gui_duty_cycle10 {50.0}
+	set_component_parameter_value gui_duty_cycle11 {50.0}
+	set_component_parameter_value gui_duty_cycle12 {50.0}
+	set_component_parameter_value gui_duty_cycle13 {50.0}
+	set_component_parameter_value gui_duty_cycle14 {50.0}
+	set_component_parameter_value gui_duty_cycle15 {50.0}
+	set_component_parameter_value gui_duty_cycle16 {50.0}
+	set_component_parameter_value gui_duty_cycle17 {50.0}
+	set_component_parameter_value gui_duty_cycle2 {50.0}
+	set_component_parameter_value gui_duty_cycle3 {50.0}
+	set_component_parameter_value gui_duty_cycle4 {50.0}
+	set_component_parameter_value gui_duty_cycle5 {50.0}
+	set_component_parameter_value gui_duty_cycle6 {50.0}
+	set_component_parameter_value gui_duty_cycle7 {50.0}
+	set_component_parameter_value gui_duty_cycle8 {50.0}
+	set_component_parameter_value gui_duty_cycle9 {50.0}
+	set_component_parameter_value gui_en_adv_params {0}
+	set_component_parameter_value gui_en_dps_ports {0}
+	set_component_parameter_value gui_en_extclkout_ports {0}
+	set_component_parameter_value gui_en_iossm_reconf {0}
+	set_component_parameter_value gui_en_lvds_ports {Disabled}
+	set_component_parameter_value gui_en_periphery_ports {0}
+	set_component_parameter_value gui_en_phout_ports {0}
+	set_component_parameter_value gui_en_reconf {0}
+	set_component_parameter_value gui_enable_cascade_in {0}
+	set_component_parameter_value gui_enable_cascade_out {0}
+	set_component_parameter_value gui_enable_mif_dps {0}
+	set_component_parameter_value gui_enable_output_counter_cascading {0}
+	set_component_parameter_value gui_enable_permit_cal {0}
+	set_component_parameter_value gui_enable_upstream_out_clk {0}
+	set_component_parameter_value gui_existing_mif_file_path {~/pll.mif}
+	set_component_parameter_value gui_extclkout_0_source {C0}
+	set_component_parameter_value gui_extclkout_1_source {C0}
+	set_component_parameter_value gui_extclkout_source {C0}
+	set_component_parameter_value gui_feedback_clock {Global Clock}
+	set_component_parameter_value gui_fix_vco_frequency {0}
+	set_component_parameter_value gui_fixed_vco_frequency {600.0}
+	set_component_parameter_value gui_fixed_vco_frequency_ps {1667.0}
+	set_component_parameter_value gui_frac_multiply_factor {1.0}
+	set_component_parameter_value gui_fractional_cout {32}
+	set_component_parameter_value gui_include_iossm {0}
+	set_component_parameter_value gui_location_type {I/O Bank}
+	set_component_parameter_value gui_lock_setting {Low Lock Time}
+	set_component_parameter_value gui_mif_config_name {unnamed}
+	set_component_parameter_value gui_mif_gen_options {Generate New MIF File}
+	set_component_parameter_value gui_multiply_factor {6}
+	set_component_parameter_value gui_new_mif_file_path {~/pll.mif}
+	set_component_parameter_value gui_number_of_clocks {2}
+	set_component_parameter_value gui_operation_mode {direct}
+	set_component_parameter_value gui_output_clock_frequency0 {250.0}
+	set_component_parameter_value gui_output_clock_frequency1 {100.0}
+	set_component_parameter_value gui_output_clock_frequency10 {100.0}
+	set_component_parameter_value gui_output_clock_frequency11 {100.0}
+	set_component_parameter_value gui_output_clock_frequency12 {100.0}
+	set_component_parameter_value gui_output_clock_frequency13 {100.0}
+	set_component_parameter_value gui_output_clock_frequency14 {100.0}
+	set_component_parameter_value gui_output_clock_frequency15 {100.0}
+	set_component_parameter_value gui_output_clock_frequency16 {100.0}
+	set_component_parameter_value gui_output_clock_frequency17 {100.0}
+	set_component_parameter_value gui_output_clock_frequency2 {100.0}
+	set_component_parameter_value gui_output_clock_frequency3 {100.0}
+	set_component_parameter_value gui_output_clock_frequency4 {100.0}
+	set_component_parameter_value gui_output_clock_frequency5 {100.0}
+	set_component_parameter_value gui_output_clock_frequency6 {100.0}
+	set_component_parameter_value gui_output_clock_frequency7 {100.0}
+	set_component_parameter_value gui_output_clock_frequency8 {100.0}
+	set_component_parameter_value gui_output_clock_frequency9 {100.0}
+	set_component_parameter_value gui_output_clock_frequency_ps0 {4000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps1 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps10 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps11 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps12 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps13 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps14 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps15 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps16 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps17 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps2 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps3 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps4 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps5 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps6 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps7 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps8 {10000.0}
+	set_component_parameter_value gui_output_clock_frequency_ps9 {10000.0}
+	set_component_parameter_value gui_parameter_table_hex_file {seq_params_sim.hex}
+	set_component_parameter_value gui_phase_shift0 {0.0}
+	set_component_parameter_value gui_phase_shift1 {0.0}
+	set_component_parameter_value gui_phase_shift10 {0.0}
+	set_component_parameter_value gui_phase_shift11 {0.0}
+	set_component_parameter_value gui_phase_shift12 {0.0}
+	set_component_parameter_value gui_phase_shift13 {0.0}
+	set_component_parameter_value gui_phase_shift14 {0.0}
+	set_component_parameter_value gui_phase_shift15 {0.0}
+	set_component_parameter_value gui_phase_shift16 {0.0}
+	set_component_parameter_value gui_phase_shift17 {0.0}
+	set_component_parameter_value gui_phase_shift2 {0.0}
+	set_component_parameter_value gui_phase_shift3 {0.0}
+	set_component_parameter_value gui_phase_shift4 {0.0}
+	set_component_parameter_value gui_phase_shift5 {0.0}
+	set_component_parameter_value gui_phase_shift6 {0.0}
+	set_component_parameter_value gui_phase_shift7 {0.0}
+	set_component_parameter_value gui_phase_shift8 {0.0}
+	set_component_parameter_value gui_phase_shift9 {0.0}
+	set_component_parameter_value gui_phase_shift_deg0 {0.0}
+	set_component_parameter_value gui_phase_shift_deg1 {0.0}
+	set_component_parameter_value gui_phase_shift_deg10 {0.0}
+	set_component_parameter_value gui_phase_shift_deg11 {0.0}
+	set_component_parameter_value gui_phase_shift_deg12 {0.0}
+	set_component_parameter_value gui_phase_shift_deg13 {0.0}
+	set_component_parameter_value gui_phase_shift_deg14 {0.0}
+	set_component_parameter_value gui_phase_shift_deg15 {0.0}
+	set_component_parameter_value gui_phase_shift_deg16 {0.0}
+	set_component_parameter_value gui_phase_shift_deg17 {0.0}
+	set_component_parameter_value gui_phase_shift_deg2 {0.0}
+	set_component_parameter_value gui_phase_shift_deg3 {0.0}
+	set_component_parameter_value gui_phase_shift_deg4 {0.0}
+	set_component_parameter_value gui_phase_shift_deg5 {0.0}
+	set_component_parameter_value gui_phase_shift_deg6 {0.0}
+	set_component_parameter_value gui_phase_shift_deg7 {0.0}
+	set_component_parameter_value gui_phase_shift_deg8 {0.0}
+	set_component_parameter_value gui_phase_shift_deg9 {0.0}
+	set_component_parameter_value gui_phout_division {1}
+	set_component_parameter_value gui_pll_auto_reset {0}
+	set_component_parameter_value gui_pll_bandwidth_preset {Low}
+	set_component_parameter_value gui_pll_cal_done {0}
+	set_component_parameter_value gui_pll_cascading_mode {adjpllin}
+	set_component_parameter_value gui_pll_freqcal_en {1}
+	set_component_parameter_value gui_pll_freqcal_req_flag {1}
+	set_component_parameter_value gui_pll_m_cnt_in_src {c_m_cnt_in_src_ph_mux_clk}
+	set_component_parameter_value gui_pll_mode {Integer-N PLL}
+	set_component_parameter_value gui_pll_tclk_mux_en {0}
+	set_component_parameter_value gui_pll_tclk_sel {pll_tclk_m_src}
+	set_component_parameter_value gui_pll_type {S10_Simple}
+	set_component_parameter_value gui_pll_vco_freq_band_0 {pll_freq_clk0_band18}
+	set_component_parameter_value gui_pll_vco_freq_band_1 {pll_freq_clk1_band18}
+	set_component_parameter_value gui_prot_mode {UNUSED}
+	set_component_parameter_value gui_ps_units0 {ps}
+	set_component_parameter_value gui_ps_units1 {ps}
+	set_component_parameter_value gui_ps_units10 {ps}
+	set_component_parameter_value gui_ps_units11 {ps}
+	set_component_parameter_value gui_ps_units12 {ps}
+	set_component_parameter_value gui_ps_units13 {ps}
+	set_component_parameter_value gui_ps_units14 {ps}
+	set_component_parameter_value gui_ps_units15 {ps}
+	set_component_parameter_value gui_ps_units16 {ps}
+	set_component_parameter_value gui_ps_units17 {ps}
+	set_component_parameter_value gui_ps_units2 {ps}
+	set_component_parameter_value gui_ps_units3 {ps}
+	set_component_parameter_value gui_ps_units4 {ps}
+	set_component_parameter_value gui_ps_units5 {ps}
+	set_component_parameter_value gui_ps_units6 {ps}
+	set_component_parameter_value gui_ps_units7 {ps}
+	set_component_parameter_value gui_ps_units8 {ps}
+	set_component_parameter_value gui_ps_units9 {ps}
+	set_component_parameter_value gui_refclk1_frequency {100.0}
+	set_component_parameter_value gui_refclk_might_change {0}
+	set_component_parameter_value gui_refclk_switch {0}
+	set_component_parameter_value gui_reference_clock_frequency {100.0}
+	set_component_parameter_value gui_reference_clock_frequency_ps {10000.0}
+	set_component_parameter_value gui_simulation_type {0}
+	set_component_parameter_value gui_skip_sdc_generation {0}
+	set_component_parameter_value gui_switchover_delay {0}
+	set_component_parameter_value gui_switchover_mode {Automatic Switchover}
+	set_component_parameter_value gui_use_NDFB_modes {0}
+	set_component_parameter_value gui_use_coreclk {0}
+	set_component_parameter_value gui_use_locked {1}
+	set_component_parameter_value gui_use_logical {0}
+	set_component_parameter_value gui_user_base_address {0}
+	set_component_parameter_value gui_usr_device_speed_grade {1}
+	set_component_parameter_value gui_vco_frequency {600.0}
+	set_component_parameter_value hp_qsys_scripting_mode {0}
+	set_component_parameter_value system_info_device_iobank_rev {}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation iopll_0
+	remove_instantiation_interfaces_and_ports
+	set_instantiation_assignment_value embeddedsw.dts.compatible {altr,pll}
+	set_instantiation_assignment_value embeddedsw.dts.group {clock}
+	set_instantiation_assignment_value embeddedsw.dts.vendor {altr}
+	add_instantiation_interface refclk clock INPUT
+	set_instantiation_interface_parameter_value refclk clockRate {100000000}
+	set_instantiation_interface_parameter_value refclk externallyDriven {false}
+	set_instantiation_interface_parameter_value refclk ptfSchematicName {}
+	set_instantiation_interface_assignment_value refclk ui.blockdiagram.direction {input}
+	add_instantiation_interface_port refclk refclk clk 1 STD_LOGIC Input
+	add_instantiation_interface locked conduit INPUT
+	set_instantiation_interface_parameter_value locked associatedClock {}
+	set_instantiation_interface_parameter_value locked associatedReset {}
+	set_instantiation_interface_parameter_value locked prSafe {false}
+	set_instantiation_interface_assignment_value locked ui.blockdiagram.direction {output}
+	add_instantiation_interface_port locked locked export 1 STD_LOGIC Output
+	add_instantiation_interface reset reset INPUT
+	set_instantiation_interface_parameter_value reset associatedClock {}
+	set_instantiation_interface_parameter_value reset synchronousEdges {NONE}
+	set_instantiation_interface_assignment_value reset ui.blockdiagram.direction {input}
+	add_instantiation_interface_port reset rst reset 1 STD_LOGIC Input
+	add_instantiation_interface outclk0 clock OUTPUT
+	set_instantiation_interface_parameter_value outclk0 associatedDirectClock {}
+	set_instantiation_interface_parameter_value outclk0 clockRate {250000000}
+	set_instantiation_interface_parameter_value outclk0 clockRateKnown {true}
+	set_instantiation_interface_parameter_value outclk0 externallyDriven {false}
+	set_instantiation_interface_parameter_value outclk0 ptfSchematicName {}
+	set_instantiation_interface_assignment_value outclk0 ui.blockdiagram.direction {output}
+	set_instantiation_interface_sysinfo_parameter_value outclk0 clock_rate {250000000}
+	add_instantiation_interface_port outclk0 outclk_0 clk 1 STD_LOGIC Output
+	add_instantiation_interface outclk1 clock OUTPUT
+	set_instantiation_interface_parameter_value outclk1 associatedDirectClock {}
+	set_instantiation_interface_parameter_value outclk1 clockRate {100000000}
+	set_instantiation_interface_parameter_value outclk1 clockRateKnown {true}
+	set_instantiation_interface_parameter_value outclk1 externallyDriven {false}
+	set_instantiation_interface_parameter_value outclk1 ptfSchematicName {}
+	set_instantiation_interface_assignment_value outclk1 ui.blockdiagram.direction {output}
+	set_instantiation_interface_sysinfo_parameter_value outclk1 clock_rate {100000000}
+	add_instantiation_interface_port outclk1 outclk_1 clk 1 STD_LOGIC Output
+	save_instantiation
+	add_component mgc_axi4_master_0 ip/my_sys/my_sys_mgc_axi4_master_0.ip mgc_axi4_master mgc_axi4_master_0 2020.1.0.1
+	load_component mgc_axi4_master_0
+	set_component_parameter_value AXI4_ADDRESS_WIDTH {64}
+	set_component_parameter_value AXI4_ID_WIDTH {7}
+	set_component_parameter_value AXI4_RDATA_WIDTH {256}
+	set_component_parameter_value AXI4_REGION_MAP_SIZE {16}
+	set_component_parameter_value AXI4_USER_WIDTH {8}
+	set_component_parameter_value AXI4_WDATA_WIDTH {256}
+	set_component_parameter_value COMBINED_ISSUING_CAPABILITY {16}
+	set_component_parameter_value READ_ISSUING_CAPABILITY {16}
+	set_component_parameter_value USE_ARBURST {1}
+	set_component_parameter_value USE_ARCACHE {0}
+	set_component_parameter_value USE_ARID {1}
+	set_component_parameter_value USE_ARLEN {1}
+	set_component_parameter_value USE_ARLOCK {1}
+	set_component_parameter_value USE_ARQOS {1}
+	set_component_parameter_value USE_ARREGION {1}
+	set_component_parameter_value USE_ARSIZE {1}
+	set_component_parameter_value USE_ARUSER {1}
+	set_component_parameter_value USE_AWBURST {1}
+	set_component_parameter_value USE_AWCACHE {0}
+	set_component_parameter_value USE_AWID {1}
+	set_component_parameter_value USE_AWLEN {1}
+	set_component_parameter_value USE_AWLOCK {1}
+	set_component_parameter_value USE_AWQOS {1}
+	set_component_parameter_value USE_AWREGION {1}
+	set_component_parameter_value USE_AWSIZE {1}
+	set_component_parameter_value USE_AWUSER {1}
+	set_component_parameter_value USE_BID {1}
+	set_component_parameter_value USE_BRESP {1}
+	set_component_parameter_value USE_BUSER {0}
+	set_component_parameter_value USE_RID {1}
+	set_component_parameter_value USE_RLAST {1}
+	set_component_parameter_value USE_RRESP {1}
+	set_component_parameter_value USE_RUSER {1}
+	set_component_parameter_value USE_WSTRB {1}
+	set_component_parameter_value USE_WUSER {1}
+	set_component_parameter_value WRITE_ISSUING_CAPABILITY {16}
+	set_component_parameter_value index {0}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation mgc_axi4_master_0
+	remove_instantiation_interfaces_and_ports
+	add_instantiation_interface altera_axi4_master axi4 OUTPUT
+	set_instantiation_interface_parameter_value altera_axi4_master associatedClock {clock_sink}
+	set_instantiation_interface_parameter_value altera_axi4_master associatedReset {reset_sink}
+	set_instantiation_interface_parameter_value altera_axi4_master combinedIssuingCapability {16}
+	set_instantiation_interface_parameter_value altera_axi4_master issuesFIXEDBursts {true}
+	set_instantiation_interface_parameter_value altera_axi4_master issuesINCRBursts {true}
+	set_instantiation_interface_parameter_value altera_axi4_master issuesWRAPBursts {true}
+	set_instantiation_interface_parameter_value altera_axi4_master maximumOutstandingReads {1}
+	set_instantiation_interface_parameter_value altera_axi4_master maximumOutstandingTransactions {1}
+	set_instantiation_interface_parameter_value altera_axi4_master maximumOutstandingWrites {1}
+	set_instantiation_interface_parameter_value altera_axi4_master poison {false}
+	set_instantiation_interface_parameter_value altera_axi4_master readIssuingCapability {16}
+	set_instantiation_interface_parameter_value altera_axi4_master traceSignals {false}
+	set_instantiation_interface_parameter_value altera_axi4_master trustzoneAware {true}
+	set_instantiation_interface_parameter_value altera_axi4_master uniqueIdSupport {false}
+	set_instantiation_interface_parameter_value altera_axi4_master wakeupSignals {false}
+	set_instantiation_interface_parameter_value altera_axi4_master writeIssuingCapability {16}
+	add_instantiation_interface_port altera_axi4_master AWVALID awvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master AWPROT awprot 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWREGION awregion 4 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWLEN awlen 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWSIZE awsize 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWBURST awburst 2 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWLOCK awlock 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master AWQOS awqos 4 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWREADY awready 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master ARVALID arvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master ARPROT arprot 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARREGION arregion 4 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARLEN arlen 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARSIZE arsize 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARBURST arburst 2 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARLOCK arlock 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master ARQOS arqos 4 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARREADY arready 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master RVALID rvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master RRESP rresp 2 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master RLAST rlast 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master RREADY rready 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master WVALID wvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master WLAST wlast 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master WREADY wready 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master BVALID bvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master BRESP bresp 2 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master BREADY bready 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master AWADDR awaddr 64 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWID awid 7 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWUSER awuser 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARADDR araddr 64 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARID arid 7 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARUSER aruser 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master RUSER ruser 8 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master WUSER wuser 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master RDATA rdata 256 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master RID rid 7 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master WDATA wdata 256 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master WSTRB wstrb 32 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master BID bid 7 STD_LOGIC_VECTOR Input
+	add_instantiation_interface clock_sink clock INPUT
+	set_instantiation_interface_parameter_value clock_sink clockRate {0}
+	set_instantiation_interface_parameter_value clock_sink externallyDriven {false}
+	set_instantiation_interface_parameter_value clock_sink ptfSchematicName {}
+	add_instantiation_interface_port clock_sink ACLK clk 1 STD_LOGIC Input
+	add_instantiation_interface reset_sink reset INPUT
+	set_instantiation_interface_parameter_value reset_sink associatedClock {clock_sink}
+	set_instantiation_interface_parameter_value reset_sink synchronousEdges {DEASSERT}
+	add_instantiation_interface_port reset_sink ARESETn reset_n 1 STD_LOGIC Input
+	save_instantiation
+	add_component mgc_axi4_master_1 ip/my_sys/my_sys_mgc_axi4_master_0.ip mgc_axi4_master mgc_axi4_master_0 2020.1.0.1
+	load_component mgc_axi4_master_1
+	set_component_parameter_value AXI4_ADDRESS_WIDTH {64}
+	set_component_parameter_value AXI4_ID_WIDTH {7}
+	set_component_parameter_value AXI4_RDATA_WIDTH {256}
+	set_component_parameter_value AXI4_REGION_MAP_SIZE {16}
+	set_component_parameter_value AXI4_USER_WIDTH {8}
+	set_component_parameter_value AXI4_WDATA_WIDTH {256}
+	set_component_parameter_value COMBINED_ISSUING_CAPABILITY {16}
+	set_component_parameter_value READ_ISSUING_CAPABILITY {16}
+	set_component_parameter_value USE_ARBURST {1}
+	set_component_parameter_value USE_ARCACHE {0}
+	set_component_parameter_value USE_ARID {1}
+	set_component_parameter_value USE_ARLEN {1}
+	set_component_parameter_value USE_ARLOCK {1}
+	set_component_parameter_value USE_ARQOS {1}
+	set_component_parameter_value USE_ARREGION {1}
+	set_component_parameter_value USE_ARSIZE {1}
+	set_component_parameter_value USE_ARUSER {1}
+	set_component_parameter_value USE_AWBURST {1}
+	set_component_parameter_value USE_AWCACHE {0}
+	set_component_parameter_value USE_AWID {1}
+	set_component_parameter_value USE_AWLEN {1}
+	set_component_parameter_value USE_AWLOCK {1}
+	set_component_parameter_value USE_AWQOS {1}
+	set_component_parameter_value USE_AWREGION {1}
+	set_component_parameter_value USE_AWSIZE {1}
+	set_component_parameter_value USE_AWUSER {1}
+	set_component_parameter_value USE_BID {1}
+	set_component_parameter_value USE_BRESP {1}
+	set_component_parameter_value USE_BUSER {0}
+	set_component_parameter_value USE_RID {1}
+	set_component_parameter_value USE_RLAST {1}
+	set_component_parameter_value USE_RRESP {1}
+	set_component_parameter_value USE_RUSER {1}
+	set_component_parameter_value USE_WSTRB {1}
+	set_component_parameter_value USE_WUSER {1}
+	set_component_parameter_value WRITE_ISSUING_CAPABILITY {16}
+	set_component_parameter_value index {0}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation mgc_axi4_master_1
+	remove_instantiation_interfaces_and_ports
+	add_instantiation_interface altera_axi4_master axi4 OUTPUT
+	set_instantiation_interface_parameter_value altera_axi4_master associatedClock {clock_sink}
+	set_instantiation_interface_parameter_value altera_axi4_master associatedReset {reset_sink}
+	set_instantiation_interface_parameter_value altera_axi4_master combinedIssuingCapability {16}
+	set_instantiation_interface_parameter_value altera_axi4_master issuesFIXEDBursts {true}
+	set_instantiation_interface_parameter_value altera_axi4_master issuesINCRBursts {true}
+	set_instantiation_interface_parameter_value altera_axi4_master issuesWRAPBursts {true}
+	set_instantiation_interface_parameter_value altera_axi4_master maximumOutstandingReads {1}
+	set_instantiation_interface_parameter_value altera_axi4_master maximumOutstandingTransactions {1}
+	set_instantiation_interface_parameter_value altera_axi4_master maximumOutstandingWrites {1}
+	set_instantiation_interface_parameter_value altera_axi4_master poison {false}
+	set_instantiation_interface_parameter_value altera_axi4_master readIssuingCapability {16}
+	set_instantiation_interface_parameter_value altera_axi4_master traceSignals {false}
+	set_instantiation_interface_parameter_value altera_axi4_master trustzoneAware {true}
+	set_instantiation_interface_parameter_value altera_axi4_master uniqueIdSupport {false}
+	set_instantiation_interface_parameter_value altera_axi4_master wakeupSignals {false}
+	set_instantiation_interface_parameter_value altera_axi4_master writeIssuingCapability {16}
+	add_instantiation_interface_port altera_axi4_master AWVALID awvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master AWPROT awprot 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWREGION awregion 4 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWLEN awlen 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWSIZE awsize 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWBURST awburst 2 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWLOCK awlock 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master AWQOS awqos 4 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWREADY awready 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master ARVALID arvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master ARPROT arprot 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARREGION arregion 4 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARLEN arlen 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARSIZE arsize 3 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARBURST arburst 2 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARLOCK arlock 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master ARQOS arqos 4 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARREADY arready 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master RVALID rvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master RRESP rresp 2 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master RLAST rlast 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master RREADY rready 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master WVALID wvalid 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master WLAST wlast 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master WREADY wready 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master BVALID bvalid 1 STD_LOGIC Input
+	add_instantiation_interface_port altera_axi4_master BRESP bresp 2 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master BREADY bready 1 STD_LOGIC Output
+	add_instantiation_interface_port altera_axi4_master AWADDR awaddr 64 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWID awid 7 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master AWUSER awuser 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARADDR araddr 64 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARID arid 7 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master ARUSER aruser 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master RUSER ruser 8 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master WUSER wuser 8 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master RDATA rdata 256 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master RID rid 7 STD_LOGIC_VECTOR Input
+	add_instantiation_interface_port altera_axi4_master WDATA wdata 256 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master WSTRB wstrb 32 STD_LOGIC_VECTOR Output
+	add_instantiation_interface_port altera_axi4_master BID bid 7 STD_LOGIC_VECTOR Input
+	add_instantiation_interface clock_sink clock INPUT
+	set_instantiation_interface_parameter_value clock_sink clockRate {0}
+	set_instantiation_interface_parameter_value clock_sink externallyDriven {false}
+	set_instantiation_interface_parameter_value clock_sink ptfSchematicName {}
+	add_instantiation_interface_port clock_sink ACLK clk 1 STD_LOGIC Input
+	add_instantiation_interface reset_sink reset INPUT
+	set_instantiation_interface_parameter_value reset_sink associatedClock {clock_sink}
+	set_instantiation_interface_parameter_value reset_sink synchronousEdges {DEASSERT}
+	add_instantiation_interface_port reset_sink ARESETn reset_n 1 STD_LOGIC Input
+	save_instantiation
+	add_component noc_reset ip/my_sys/noc_reset.ip altera_reset_bridge noc_reset 19.2.0
+	load_component noc_reset
+	set_component_parameter_value ACTIVE_LOW_RESET {0}
+	set_component_parameter_value NUM_RESET_OUTPUTS {1}
+	set_component_parameter_value SYNCHRONOUS_EDGES {none}
+	set_component_parameter_value SYNC_RESET {0}
+	set_component_parameter_value USE_RESET_REQUEST {0}
+	set_component_project_property HIDE_FROM_IP_CATALOG {false}
+	save_component
+	load_instantiation noc_reset
+	remove_instantiation_interfaces_and_ports
+	add_instantiation_interface in_reset reset INPUT
+	set_instantiation_interface_parameter_value in_reset associatedClock {}
+	set_instantiation_interface_parameter_value in_reset synchronousEdges {NONE}
+	add_instantiation_interface_port in_reset in_reset reset 1 STD_LOGIC Input
+	add_instantiation_interface out_reset reset OUTPUT
+	set_instantiation_interface_parameter_value out_reset associatedClock {}
+	set_instantiation_interface_parameter_value out_reset associatedDirectReset {in_reset}
+	set_instantiation_interface_parameter_value out_reset associatedResetSinks {in_reset}
+	set_instantiation_interface_parameter_value out_reset synchronousEdges {NONE}
+	add_instantiation_interface_port out_reset out_reset reset 1 STD_LOGIC Output
+	save_instantiation
+
+	# add wirelevel expressions
+
+	# preserve ports for debug
+
+	# add the connections
+	add_connection axi_reset.out_reset/hbm_fp_0.hbm_reset_n
+	set_connection_parameter_value axi_reset.out_reset/hbm_fp_0.hbm_reset_n clockDomainSysInfo {-1}
+	set_connection_parameter_value axi_reset.out_reset/hbm_fp_0.hbm_reset_n clockResetSysInfo {}
+	set_connection_parameter_value axi_reset.out_reset/hbm_fp_0.hbm_reset_n resetDomainSysInfo {-1}
+	add_connection axi_reset.out_reset/mgc_axi4_master_0.reset_sink
+	set_connection_parameter_value axi_reset.out_reset/mgc_axi4_master_0.reset_sink clockDomainSysInfo {-1}
+	set_connection_parameter_value axi_reset.out_reset/mgc_axi4_master_0.reset_sink clockResetSysInfo {}
+	set_connection_parameter_value axi_reset.out_reset/mgc_axi4_master_0.reset_sink resetDomainSysInfo {-1}
+	add_connection axi_reset.out_reset/mgc_axi4_master_1.reset_sink
+	set_connection_parameter_value axi_reset.out_reset/mgc_axi4_master_1.reset_sink clockDomainSysInfo {-1}
+	set_connection_parameter_value axi_reset.out_reset/mgc_axi4_master_1.reset_sink clockResetSysInfo {}
+	set_connection_parameter_value axi_reset.out_reset/mgc_axi4_master_1.reset_sink resetDomainSysInfo {-1}
+	add_connection clk100.out_clk/intel_noc_clock_ctrl_0.refclk
+	set_connection_parameter_value clk100.out_clk/intel_noc_clock_ctrl_0.refclk clockDomainSysInfo {-1}
+	set_connection_parameter_value clk100.out_clk/intel_noc_clock_ctrl_0.refclk clockRateSysInfo {100000000.0}
+	set_connection_parameter_value clk100.out_clk/intel_noc_clock_ctrl_0.refclk clockResetSysInfo {}
+	set_connection_parameter_value clk100.out_clk/intel_noc_clock_ctrl_0.refclk resetDomainSysInfo {-1}
+	add_connection clk100.out_clk/iopll_0.refclk
+	set_connection_parameter_value clk100.out_clk/iopll_0.refclk clockDomainSysInfo {-1}
+	set_connection_parameter_value clk100.out_clk/iopll_0.refclk clockRateSysInfo {100000000.0}
+	set_connection_parameter_value clk100.out_clk/iopll_0.refclk clockResetSysInfo {}
+	set_connection_parameter_value clk100.out_clk/iopll_0.refclk resetDomainSysInfo {-1}
+	add_connection iopll_0.outclk0/hbm_fp_0.fabric_clk
+	set_connection_parameter_value iopll_0.outclk0/hbm_fp_0.fabric_clk clockDomainSysInfo {-1}
+	set_connection_parameter_value iopll_0.outclk0/hbm_fp_0.fabric_clk clockRateSysInfo {250000000.0}
+	set_connection_parameter_value iopll_0.outclk0/hbm_fp_0.fabric_clk clockResetSysInfo {}
+	set_connection_parameter_value iopll_0.outclk0/hbm_fp_0.fabric_clk resetDomainSysInfo {-1}
+	add_connection iopll_0.outclk0/intel_noc_initiator_0.s_axi4_aclk
+	set_connection_parameter_value iopll_0.outclk0/intel_noc_initiator_0.s_axi4_aclk clockDomainSysInfo {-1}
+	set_connection_parameter_value iopll_0.outclk0/intel_noc_initiator_0.s_axi4_aclk clockRateSysInfo {250000000.0}
+	set_connection_parameter_value iopll_0.outclk0/intel_noc_initiator_0.s_axi4_aclk clockResetSysInfo {}
+	set_connection_parameter_value iopll_0.outclk0/intel_noc_initiator_0.s_axi4_aclk resetDomainSysInfo {-1}
+	add_connection iopll_0.outclk0/mgc_axi4_master_0.clock_sink
+	set_connection_parameter_value iopll_0.outclk0/mgc_axi4_master_0.clock_sink clockDomainSysInfo {-1}
+	set_connection_parameter_value iopll_0.outclk0/mgc_axi4_master_0.clock_sink clockRateSysInfo {250000000.0}
+	set_connection_parameter_value iopll_0.outclk0/mgc_axi4_master_0.clock_sink clockResetSysInfo {}
+	set_connection_parameter_value iopll_0.outclk0/mgc_axi4_master_0.clock_sink resetDomainSysInfo {-1}
+	add_connection iopll_0.outclk0/mgc_axi4_master_1.clock_sink
+	set_connection_parameter_value iopll_0.outclk0/mgc_axi4_master_1.clock_sink clockDomainSysInfo {-1}
+	set_connection_parameter_value iopll_0.outclk0/mgc_axi4_master_1.clock_sink clockRateSysInfo {250000000.0}
+	set_connection_parameter_value iopll_0.outclk0/mgc_axi4_master_1.clock_sink clockResetSysInfo {}
+	set_connection_parameter_value iopll_0.outclk0/mgc_axi4_master_1.clock_sink resetDomainSysInfo {-1}
+	add_connection iopll_0.outclk1/hbm_fp_0.uibpll_refclk
+	set_connection_parameter_value iopll_0.outclk1/hbm_fp_0.uibpll_refclk clockDomainSysInfo {-1}
+	set_connection_parameter_value iopll_0.outclk1/hbm_fp_0.uibpll_refclk clockRateSysInfo {100000000.0}
+	set_connection_parameter_value iopll_0.outclk1/hbm_fp_0.uibpll_refclk clockResetSysInfo {}
+	set_connection_parameter_value iopll_0.outclk1/hbm_fp_0.uibpll_refclk resetDomainSysInfo {-1}
+	add_connection mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 addressMapSysInfo {}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 addressWidthSysInfo {}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 arbitrationPriority {1}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 baseAddress {0x0000}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 defaultConnection {0}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 domainAlias {}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.burstAdapterImplementation {GENERIC_CONVERTER}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.clockCrossingAdapter {HANDSHAKE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.enableAllPipelines {FALSE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.enableEccProtection {FALSE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.enableInstrumentation {FALSE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.enableOutOfOrderSupport {FALSE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.insertDefaultSlave {FALSE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.interconnectResetSource {DEFAULT}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.interconnectType {STANDARD}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.maxAdditionalLatency {1}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.optimizeRdFifoSize {FALSE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.piplineType {PIPELINE_STAGE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.responseFifoType {REGISTER_BASED}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.syncResets {TRUE}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 qsys_mm.widthAdapterImplementation {GENERIC_CONVERTER}
+	set_connection_parameter_value mgc_axi4_master_0.altera_axi4_master/intel_noc_initiator_0.s0_axi4 slaveDataWidthSysInfo {-1}
+	add_connection mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 addressMapSysInfo {}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 addressWidthSysInfo {}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 arbitrationPriority {1}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 baseAddress {0x0000}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 defaultConnection {0}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 domainAlias {}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.burstAdapterImplementation {GENERIC_CONVERTER}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.clockCrossingAdapter {HANDSHAKE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.enableAllPipelines {FALSE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.enableEccProtection {FALSE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.enableInstrumentation {FALSE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.enableOutOfOrderSupport {FALSE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.insertDefaultSlave {FALSE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.interconnectResetSource {DEFAULT}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.interconnectType {STANDARD}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.maxAdditionalLatency {1}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.optimizeRdFifoSize {FALSE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.piplineType {PIPELINE_STAGE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.responseFifoType {REGISTER_BASED}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.syncResets {TRUE}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 qsys_mm.widthAdapterImplementation {GENERIC_CONVERTER}
+	set_connection_parameter_value mgc_axi4_master_1.altera_axi4_master/intel_noc_initiator_0.s1_axi4 slaveDataWidthSysInfo {-1}
+	add_connection noc_reset.out_reset/intel_noc_initiator_0.s_axi4_aresetn
+	set_connection_parameter_value noc_reset.out_reset/intel_noc_initiator_0.s_axi4_aresetn clockDomainSysInfo {-1}
+	set_connection_parameter_value noc_reset.out_reset/intel_noc_initiator_0.s_axi4_aresetn clockResetSysInfo {}
+	set_connection_parameter_value noc_reset.out_reset/intel_noc_initiator_0.s_axi4_aresetn resetDomainSysInfo {-1}
+
+	# add the exports
+	set_interface_property axi_reset_in EXPORT_OF axi_reset.in_reset
+	set_interface_property clk100_in EXPORT_OF clk100.in_clk
+	set_interface_property hbm_fp_0_cattrip_i EXPORT_OF hbm_fp_0.cattrip_i
+	set_interface_property hbm_fp_0_temp_i EXPORT_OF hbm_fp_0.temp_i
+	set_interface_property hbm_local_cal_success EXPORT_OF hbm_fp_0.local_cal_success
+	set_interface_property hbm_local_cal_fail EXPORT_OF hbm_fp_0.local_cal_fail
+	set_interface_property iopll_locked EXPORT_OF iopll_0.locked
+	set_interface_property iopll_reset EXPORT_OF iopll_0.reset
+	set_interface_property noc_reset_in EXPORT_OF noc_reset.in_reset
+
+	# set values for exposed HDL parameters
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.burstAdapterImplementation GENERIC_CONVERTER
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.clockCrossingAdapter HANDSHAKE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.enableAllPipelines FALSE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.enableEccProtection FALSE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.enableInstrumentation FALSE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.enableOutOfOrderSupport FALSE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.insertDefaultSlave FALSE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.interconnectResetSource DEFAULT
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.interconnectType STANDARD
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.maxAdditionalLatency 1
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.optimizeRdFifoSize FALSE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.piplineType PIPELINE_STAGE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.responseFifoType REGISTER_BASED
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.syncResets TRUE
+	set_domain_assignment mgc_axi4_master_0.altera_axi4_master qsys_mm.widthAdapterImplementation GENERIC_CONVERTER
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.burstAdapterImplementation GENERIC_CONVERTER
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.clockCrossingAdapter HANDSHAKE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.enableAllPipelines FALSE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.enableEccProtection FALSE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.enableInstrumentation FALSE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.enableOutOfOrderSupport FALSE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.insertDefaultSlave FALSE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.interconnectResetSource DEFAULT
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.interconnectType STANDARD
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.maxAdditionalLatency 1
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.optimizeRdFifoSize FALSE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.piplineType PIPELINE_STAGE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.responseFifoType REGISTER_BASED
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.syncResets TRUE
+	set_domain_assignment mgc_axi4_master_1.altera_axi4_master qsys_mm.widthAdapterImplementation GENERIC_CONVERTER
+
+	# set the the module properties
+	set_module_property BONUS_DATA {<?xml version="1.0" encoding="UTF-8"?>
+<bonusData>
+ <element __value="axi_reset">
+  <datum __value="_sortIndex" value="2" type="int" />
+ </element>
+ <element __value="clk100">
+  <datum __value="_sortIndex" value="0" type="int" />
+ </element>
+ <element __value="hbm_fp_0">
+  <datum __value="_sortIndex" value="8" type="int" />
+ </element>
+ <element __value="intel_noc_clock_ctrl_0">
+  <datum __value="_sortIndex" value="7" type="int" />
+ </element>
+ <element __value="intel_noc_initiator_0">
+  <datum __value="_sortIndex" value="6" type="int" />
+ </element>
+ <element __value="iopll_0">
+  <datum __value="_sortIndex" value="1" type="int" />
+ </element>
+ <element __value="mgc_axi4_master_0">
+  <datum __value="_sortIndex" value="3" type="int" />
+ </element>
+ <element __value="mgc_axi4_master_1">
+  <datum __value="_sortIndex" value="4" type="int" />
+ </element>
+ <element __value="noc_reset">
+  <datum __value="_sortIndex" value="5" type="int" />
+ </element>
+</bonusData>
+}
+	set_module_property FILE {my_sys.qsys}
+	set_module_property GENERATION_ID {0x00000000}
+	set_module_property NAME {my_sys}
+
+	# save the system
+	sync_sysinfo_parameters
+	save_system my_sys
+}
+
+proc do_set_exported_interface_sysinfo_parameters {} {
+}
+
+# create all the systems, from bottom up
+do_create_my_sys
+
+# set system info parameters on exported interface, from bottom up
+do_set_exported_interface_sysinfo_parameters
