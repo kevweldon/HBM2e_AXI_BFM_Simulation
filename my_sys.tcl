@@ -1,4 +1,4 @@
-package require -exact qsys 24.1
+package require -exact qsys 24.2
 
 # create the system "my_sys"
 proc do_create_my_sys {} {
@@ -57,7 +57,7 @@ proc do_create_my_sys {} {
 	set_instantiation_interface_sysinfo_parameter_value out_clk clock_rate {100000000}
 	add_instantiation_interface_port out_clk out_clk clk 1 STD_LOGIC Output
 	save_instantiation
-	add_component hbm_fp_0 ip/my_sys/my_sys_hbm_fp_0.ip hbm_fp hbm_fp_0 4.0.0
+	add_component hbm_fp_0 ip/my_sys/my_sys_hbm_fp_0.ip hbm_fp hbm_fp_0 5.0.0
 	load_component hbm_fp_0
 	set_component_parameter_value CTRL_CH0_ADDR_ORDERING {BGRBC}
 	set_component_parameter_value CTRL_CH0_CLONE_OF_ID {None}
@@ -269,8 +269,6 @@ proc do_create_my_sys {} {
 	set_component_parameter_value PHY_CTRL_CH_IRQ_O_EN {1}
 	set_component_parameter_value PHY_HPS_BOOT_EN {0}
 	set_component_parameter_value PHY_MEMCLK_FREQ_MHZ {1400}
-	set_component_parameter_value PHY_PLL_REF_CLK_IO_STD {LVDS_NO_ONCHIP_TERMINATION}
-	set_component_parameter_value PHY_PLL_REF_CLK_IO_STD_AUTO_BOOL {1}
 	set_component_parameter_value PHY_REFCLK_FREQ_MHZ {100}
 	set_component_parameter_value PHY_REFCLK_FREQ_MHZ_AUTO_BOOL {1}
 	set_component_parameter_value PHY_RESET_TYPE {HBM_ONLY_RESET}
@@ -372,7 +370,7 @@ proc do_create_my_sys {} {
 	set_instantiation_interface_parameter_value target_inst_0 memorySpan {0x7400}
 	set_instantiation_interface_parameter_value target_inst_0 regFunctionHPath {ssm_inst.target_lite_mon_inst_0.target_inst_0}
 	save_instantiation
-	add_component intel_noc_initiator_0 ip/my_sys/my_sys_intel_noc_initiator_0.ip intel_noc_initiator my_sys_intel_noc_initiator_0 3.0.0
+	add_component intel_noc_initiator_0 ip/my_sys/my_sys_intel_noc_initiator_0.ip intel_noc_initiator my_sys_intel_noc_initiator_0 4.0.0
 	load_component intel_noc_initiator_0
 	set_component_parameter_value AXI4_DATA_MODE {AXI4_DATA_MODE_256}
 	set_component_parameter_value AXI4_HANDSHAKE {AXI4_HANDSHAKE_STANDARD}
@@ -438,10 +436,12 @@ proc do_create_my_sys {} {
 	set_instantiation_interface_parameter_value i0_axi4noc memorySpan {0x0}
 	set_instantiation_interface_parameter_value i0_axi4noc regFunctionHPath {iniu_0.initiator_inst_0}
 	add_instantiation_interface s0_axi4 axi4 INPUT
+	set_instantiation_interface_parameter_value s0_axi4 addressCheck {false}
 	set_instantiation_interface_parameter_value s0_axi4 associatedClock {s_axi4_aclk}
 	set_instantiation_interface_parameter_value s0_axi4 associatedReset {s_axi4_aresetn}
 	set_instantiation_interface_parameter_value s0_axi4 bridgesToMaster {}
 	set_instantiation_interface_parameter_value s0_axi4 combinedAcceptanceCapability {128}
+	set_instantiation_interface_parameter_value s0_axi4 dataCheck {false}
 	set_instantiation_interface_parameter_value s0_axi4 dfhFeatureGuid {0}
 	set_instantiation_interface_parameter_value s0_axi4 dfhFeatureId {35}
 	set_instantiation_interface_parameter_value s0_axi4 dfhFeatureMajorVersion {0}
@@ -459,9 +459,11 @@ proc do_create_my_sys {} {
 	set_instantiation_interface_parameter_value s0_axi4 poison {false}
 	set_instantiation_interface_parameter_value s0_axi4 readAcceptanceCapability {128}
 	set_instantiation_interface_parameter_value s0_axi4 readDataReorderingDepth {1}
+	set_instantiation_interface_parameter_value s0_axi4 securityAttribute {false}
 	set_instantiation_interface_parameter_value s0_axi4 traceSignals {false}
 	set_instantiation_interface_parameter_value s0_axi4 trustzoneAware {true}
 	set_instantiation_interface_parameter_value s0_axi4 uniqueIdSupport {false}
+	set_instantiation_interface_parameter_value s0_axi4 userData {false}
 	set_instantiation_interface_parameter_value s0_axi4 wakeupSignals {false}
 	set_instantiation_interface_parameter_value s0_axi4 writeAcceptanceCapability {64}
 	set_instantiation_interface_sysinfo_parameter_value s0_axi4 address_map {<address-map><slave name='s0_axi4' start='0x0' end='0x100000000000' datawidth='256' /></address-map>}
@@ -511,10 +513,12 @@ proc do_create_my_sys {} {
 	set_instantiation_interface_parameter_value i1_axi4noc memorySpan {0x0}
 	set_instantiation_interface_parameter_value i1_axi4noc regFunctionHPath {iniu_1.initiator_inst_0}
 	add_instantiation_interface s1_axi4 axi4 INPUT
+	set_instantiation_interface_parameter_value s1_axi4 addressCheck {false}
 	set_instantiation_interface_parameter_value s1_axi4 associatedClock {s_axi4_aclk}
 	set_instantiation_interface_parameter_value s1_axi4 associatedReset {s_axi4_aresetn}
 	set_instantiation_interface_parameter_value s1_axi4 bridgesToMaster {}
 	set_instantiation_interface_parameter_value s1_axi4 combinedAcceptanceCapability {128}
+	set_instantiation_interface_parameter_value s1_axi4 dataCheck {false}
 	set_instantiation_interface_parameter_value s1_axi4 dfhFeatureGuid {0}
 	set_instantiation_interface_parameter_value s1_axi4 dfhFeatureId {35}
 	set_instantiation_interface_parameter_value s1_axi4 dfhFeatureMajorVersion {0}
@@ -532,9 +536,11 @@ proc do_create_my_sys {} {
 	set_instantiation_interface_parameter_value s1_axi4 poison {false}
 	set_instantiation_interface_parameter_value s1_axi4 readAcceptanceCapability {128}
 	set_instantiation_interface_parameter_value s1_axi4 readDataReorderingDepth {1}
+	set_instantiation_interface_parameter_value s1_axi4 securityAttribute {false}
 	set_instantiation_interface_parameter_value s1_axi4 traceSignals {false}
 	set_instantiation_interface_parameter_value s1_axi4 trustzoneAware {true}
 	set_instantiation_interface_parameter_value s1_axi4 uniqueIdSupport {false}
+	set_instantiation_interface_parameter_value s1_axi4 userData {false}
 	set_instantiation_interface_parameter_value s1_axi4 wakeupSignals {false}
 	set_instantiation_interface_parameter_value s1_axi4 writeAcceptanceCapability {64}
 	set_instantiation_interface_sysinfo_parameter_value s1_axi4 address_map {<address-map><slave name='s1_axi4' start='0x0' end='0x100000000000' datawidth='256' /></address-map>}
@@ -930,9 +936,11 @@ proc do_create_my_sys {} {
 	load_instantiation mgc_axi4_master_0
 	remove_instantiation_interfaces_and_ports
 	add_instantiation_interface altera_axi4_master axi4 OUTPUT
+	set_instantiation_interface_parameter_value altera_axi4_master addressCheck {false}
 	set_instantiation_interface_parameter_value altera_axi4_master associatedClock {clock_sink}
 	set_instantiation_interface_parameter_value altera_axi4_master associatedReset {reset_sink}
 	set_instantiation_interface_parameter_value altera_axi4_master combinedIssuingCapability {16}
+	set_instantiation_interface_parameter_value altera_axi4_master dataCheck {false}
 	set_instantiation_interface_parameter_value altera_axi4_master issuesFIXEDBursts {true}
 	set_instantiation_interface_parameter_value altera_axi4_master issuesINCRBursts {true}
 	set_instantiation_interface_parameter_value altera_axi4_master issuesWRAPBursts {true}
@@ -941,9 +949,11 @@ proc do_create_my_sys {} {
 	set_instantiation_interface_parameter_value altera_axi4_master maximumOutstandingWrites {1}
 	set_instantiation_interface_parameter_value altera_axi4_master poison {false}
 	set_instantiation_interface_parameter_value altera_axi4_master readIssuingCapability {16}
+	set_instantiation_interface_parameter_value altera_axi4_master securityAttribute {false}
 	set_instantiation_interface_parameter_value altera_axi4_master traceSignals {false}
 	set_instantiation_interface_parameter_value altera_axi4_master trustzoneAware {true}
 	set_instantiation_interface_parameter_value altera_axi4_master uniqueIdSupport {false}
+	set_instantiation_interface_parameter_value altera_axi4_master userData {false}
 	set_instantiation_interface_parameter_value altera_axi4_master wakeupSignals {false}
 	set_instantiation_interface_parameter_value altera_axi4_master writeIssuingCapability {16}
 	add_instantiation_interface_port altera_axi4_master AWVALID awvalid 1 STD_LOGIC Output
@@ -1041,9 +1051,11 @@ proc do_create_my_sys {} {
 	load_instantiation mgc_axi4_master_1
 	remove_instantiation_interfaces_and_ports
 	add_instantiation_interface altera_axi4_master axi4 OUTPUT
+	set_instantiation_interface_parameter_value altera_axi4_master addressCheck {false}
 	set_instantiation_interface_parameter_value altera_axi4_master associatedClock {clock_sink}
 	set_instantiation_interface_parameter_value altera_axi4_master associatedReset {reset_sink}
 	set_instantiation_interface_parameter_value altera_axi4_master combinedIssuingCapability {16}
+	set_instantiation_interface_parameter_value altera_axi4_master dataCheck {false}
 	set_instantiation_interface_parameter_value altera_axi4_master issuesFIXEDBursts {true}
 	set_instantiation_interface_parameter_value altera_axi4_master issuesINCRBursts {true}
 	set_instantiation_interface_parameter_value altera_axi4_master issuesWRAPBursts {true}
@@ -1052,9 +1064,11 @@ proc do_create_my_sys {} {
 	set_instantiation_interface_parameter_value altera_axi4_master maximumOutstandingWrites {1}
 	set_instantiation_interface_parameter_value altera_axi4_master poison {false}
 	set_instantiation_interface_parameter_value altera_axi4_master readIssuingCapability {16}
+	set_instantiation_interface_parameter_value altera_axi4_master securityAttribute {false}
 	set_instantiation_interface_parameter_value altera_axi4_master traceSignals {false}
 	set_instantiation_interface_parameter_value altera_axi4_master trustzoneAware {true}
 	set_instantiation_interface_parameter_value altera_axi4_master uniqueIdSupport {false}
+	set_instantiation_interface_parameter_value altera_axi4_master userData {false}
 	set_instantiation_interface_parameter_value altera_axi4_master wakeupSignals {false}
 	set_instantiation_interface_parameter_value altera_axi4_master writeIssuingCapability {16}
 	add_instantiation_interface_port altera_axi4_master AWVALID awvalid 1 STD_LOGIC Output
